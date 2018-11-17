@@ -1,1 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+	margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.centered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);;
+}
+
+.card {
+	position: relative;
+  transform-style: preserve-3d;
+  
+  .card-back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    z-index: -1;
+    box-shadow: 2px 2px 6px 2px #989898;
+  }
+  
+  .card-front {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    box-shadow: 2px 2px 6px 2px #989898;
+  }
+}
+
+.card-entity {
+	height: 100%;
+	width: 100%;
+}
+
+.card-ui {
+	height: 100%;
+	width: 100%;
+}

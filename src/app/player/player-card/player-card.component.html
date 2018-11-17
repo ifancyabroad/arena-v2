@@ -1,0 +1,12 @@
+<section class="card card-entity" [@flip]="cardFace">
+  <!--Front of card-->
+  <div class="card-front">
+    <app-player-details></app-player-details>
+  </div>
+
+  <!--Back of card-->
+  <div class="card-back" [ngSwitch]="backFace">
+    <div class="card-hidden" *ngSwitchCase="'hidden'"></div>
+    <app-player-inventory *ngSwitchCase="'inventory'"></app-player-inventory>
+  </div>
+</section>

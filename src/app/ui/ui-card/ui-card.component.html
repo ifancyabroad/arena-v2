@@ -1,0 +1,18 @@
+<section class="card card-ui" [@flip]="cardFace">
+  <!--Front of card-->
+  <div class="card-front" [ngSwitch]="frontFace">
+    <app-character-create *ngSwitchCase="'character-create'"></app-character-create>
+    <app-roll-stats *ngSwitchCase="'roll-stats'"></app-roll-stats>
+    <app-arena *ngSwitchCase="'arena'"></app-arena>
+    <app-level-up *ngSwitchCase="'level-up'"></app-level-up>
+    <app-store *ngSwitchCase="'store'"></app-store>
+    <app-healer *ngSwitchCase="'healer'"></app-healer>
+  </div>
+
+  <!--Back of card-->
+  <div class="card-back" [ngSwitch]="backFace">
+    <div class="card-hidden" *ngSwitchCase="'hidden'"></div>
+    <app-town *ngSwitchCase="'town'"></app-town>
+  </div>
+</section>
+  
