@@ -11,7 +11,7 @@
 
   <!--Back of card-->
   <div class="card-back" [ngSwitch]="backFace">
-    <div class="card-hidden" *ngSwitchCase="'hidden'"></div>
+    <div class="card-hidden" *ngSwitchCase="'hidden'" (click)="flipCard()"></div>
     <app-town *ngSwitchCase="'town'"></app-town>
   </div>
 </section>

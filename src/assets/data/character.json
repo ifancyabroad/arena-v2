@@ -1,0 +1,53 @@
+{
+  "portraits": [{
+      "active": true,
+      "path": "images/portraits/female-warrior.jpg"
+    },
+    {
+      "active": false,
+      "path": "images/portraits/male-mage.jpg"
+    },
+    {
+      "active": false,
+      "path": "images/portraits/female-mage.jpg"
+    },
+    {
+      "active": false,
+      "path": "images/portraits/male-knight.jpg"
+    },
+    {
+      "active": false,
+      "path": "images/portraits/female-knight.jpg"
+    },
+    {
+      "active": false,
+      "path": "images/portraits/male-thief.png"
+    },
+    {
+      "active": false,
+      "path": "images/portraits/female-thief.jpg"
+    },
+    {
+      "active": false,
+      "path": "images/portraits/male-warrior.jpg"
+    }],
+  "classes": [{
+      "active": true,
+      "name": "Warrior",
+      "description": "Some text describing the warrior class",
+      "maxStats": [15, 10, 13, 6, 10]
+    },
+    {
+      "active": false,
+      "name": "Mage",
+      "description": "Some text describing the mage class",
+      "maxStats": [6, 9, 8, 15, 12]
+    },
+    {
+      "active": false,
+      "name": "Rogue",
+      "description": "Some text describing the rogue class",
+      "maxStats": [9, 15, 11, 8, 12]
+    }
+  ]
+}

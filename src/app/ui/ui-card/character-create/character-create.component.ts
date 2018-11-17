@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { GameEntity } from '../../../shared/classes/game-entity';
+import { Enemy } from '../../../shared/classes/enemy';
+import { Player } from '../../../shared/classes/player';
 
 @Component({
   selector: 'app-character-create',
