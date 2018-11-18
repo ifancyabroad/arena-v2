@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GameEntity } from '../../../shared/classes/game-entity';
-import { Enemy } from '../../../shared/classes/enemy';
+import { NavigationService } from '../../../shared/services/navigation.service';
 import { Player } from '../../../shared/classes/player';
 
 @Component({
@@ -10,9 +9,14 @@ import { Player } from '../../../shared/classes/player';
 })
 export class CharacterCreateComponent implements OnInit {
 
-  constructor() { }
+  navSubscription;
+
+  constructor(private nav: NavigationService) { }
 
   ngOnInit() {
   }
 
+  createPlayer() {
+    this.nav.uiCard.next({face: 'front', view: 'roll-stats', flip: false});
+  }
 }

@@ -1,7 +1,7 @@
 <div class="ui-view">
   <h1>Who Are You?</h1>
 
-  <form id="character-create" class="ui-view-content">
+  <form #characterForm="ngForm" id="character-create" class="ui-view-content" (ngSubmit)="createPlayer()">
     <div class="name-select">
       <label for="name">Name: </label>
       <input type="text" name="name" id="name">
