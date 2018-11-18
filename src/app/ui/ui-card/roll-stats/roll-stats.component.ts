@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayerService } from '../../../shared/services/player.service';
 
 @Component({
   selector: 'app-roll-stats',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RollStatsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ps: PlayerService) { }
 
   ngOnInit() {
+    console.log(this.ps.player);
   }
 
 }

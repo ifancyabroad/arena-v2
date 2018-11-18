@@ -1,3 +1,24 @@
-<p>
-  roll-stats works!
-</p>
+<div class="ui-view">
+  <h1>Roll For Your Stats</h1>
+
+  <form #statsForm="ngForm" id="roll-stats" class="ui-view-content" (ngSubmit)="rollStats()">
+    <div class="controls">
+      <h4>Rerolls: </h4>
+      <button type="submit">Reroll</button>
+    </div>
+
+    <table class="reroll-table">
+      <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+
+  <div class="ui-view-controls">
+    <button disabled>&#x2B05;</button>
+    <button type="button">&#x27A1;</button>
+  </div>
+</div>

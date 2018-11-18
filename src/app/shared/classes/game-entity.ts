@@ -11,9 +11,9 @@ export class GameEntity {
   critChance; // Critical hit chance based on dexterity
 
   constructor(
-    public name,
-    public portrait,
-    public st,
+    public name: string,
+    public portrait: string,
+    public st: Object,
     public armour = 0,
     public magicResistance = 0
   ) {

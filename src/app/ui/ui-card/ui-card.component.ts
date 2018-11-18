@@ -10,23 +10,19 @@ import { NavigationService } from '../../shared/services/navigation.service';
 })
 export class UiCardComponent implements OnInit {
 
-  cardFace = 'back'; // Card state for animation
-  backFace = 'hidden'; // Back face state
-  frontFace = 'character-create'; // Front face state
+  cardFace = 'back'; // Which side is showing?
+  backFace = 'hidden'; // What view is on the front
+  frontFace = 'character-create'; // What view is on the back
 
   constructor(private nav: NavigationService) { }
 
   ngOnInit() {
     // Change view when data received
     this.nav.uiCard.subscribe(nav => {
-      switch (nav['face']) {
-        case 'front':
-          this.frontFace = nav['view'];
-          break;
-
-        case 'back':
-          this.backFace = nav['view'];
-          break;
+      if (nav['face'] === 'front') {
+        this.frontFace = nav['view'];
+      } else if (nav['face'] === 'back') {
+        this.backFace = nav['view'];
       }
 
       if (nav['flip']) {
