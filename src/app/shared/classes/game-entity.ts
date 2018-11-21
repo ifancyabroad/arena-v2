@@ -8,6 +8,7 @@ export class GameEntity {
   maxHealth; // Maximum health based on constitution
   currentHealth; // Current health of entity
   dead; // Is entity dead
+  hitChance; // Hit chance based on dexterity
   critChance; // Critical hit chance based on dexterity
 
   constructor(
@@ -20,55 +21,58 @@ export class GameEntity {
     this.stats = {
       'strength': {
         name: 'Strength',
-        value: st.strength,
+        value: st['strength'],
         modifier: 0,
         description: 'How much damage your physical attacks do.'
       },
       'dexterity': {
         name: 'Dexterity',
-        value: st.dexterity,
+        value: st['dexterity'],
         modifier: 0,
         description: 'The chance your physical attacks hit and critical hit.'
       },
       'constitution': {
         name: 'Constitution',
-        value: st.constitution,
+        value: st['constitution'],
         modifier: 0,
         description: 'Determines your maximum health.'
       },
       'intelligence': {
         name: 'Intelligence',
-        value: st.intelligence,
+        value: st['intelligence'],
         modifier: 0,
         description: 'How much damage your magical attacks do.'
       },
       'initiative': {
         name: 'Initiative',
-        value: st.initiative,
+        value: st['initiative'],
         modifier: 0,
         description: 'Determines who strikes first.'
       }
     };
 
-    this.maxHealth = function () {
+    this.maxHealth = function() {
       return this.stats.constitution.value * 10;
     };
 
     this.currentHealth = this.maxHealth();
 
-    this.dead = function () {
+    this.dead = function() {
       return this.currentHealth <= 0;
     };
 
-    this.critChance = function () {
+    this.hitChance = function() {
+      return (this.stats.dexterity.value + this.stats.dexterity.modifier) * 5;
+    }
+
+    this.critChance = function() {
       return (this.stats.dexterity.value + this.stats.dexterity.modifier) * 0.75;
     };
   }
 
   // Use stats to check whether or not attack hits and crits
   checkHit() {
-    const dex = this.stats.dexterity.value + this.stats.dexterity.modifier;
-    return dex >= this.dice.roll(1, 20) ? true : false;
+    return this.hitChance() >= this.dice.roll(1, 100) ? true : false;
   }
 
   checkCrit() {

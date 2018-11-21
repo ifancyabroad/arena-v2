@@ -1,53 +1,46 @@
 {
-  "portraits": [{
-      "active": true,
-      "path": "images/portraits/female-warrior.jpg"
-    },
-    {
-      "active": false,
-      "path": "images/portraits/male-mage.jpg"
-    },
-    {
-      "active": false,
-      "path": "images/portraits/female-mage.jpg"
-    },
-    {
-      "active": false,
-      "path": "images/portraits/male-knight.jpg"
-    },
-    {
-      "active": false,
-      "path": "images/portraits/female-knight.jpg"
-    },
-    {
-      "active": false,
-      "path": "images/portraits/male-thief.png"
-    },
-    {
-      "active": false,
-      "path": "images/portraits/female-thief.jpg"
-    },
-    {
-      "active": false,
-      "path": "images/portraits/male-warrior.jpg"
-    }],
+  "portraits": [
+      "images/portraits/female-warrior.jpg",
+      "images/portraits/male-mage.jpg",
+      "images/portraits/female-mage.jpg",
+      "images/portraits/male-knight.jpg",
+      "images/portraits/female-knight.jpg",
+      "images/portraits/male-thief.png",
+      "images/portraits/female-thief.jpg",
+      "images/portraits/male-warrior.jpg"
+    ],
   "classes": [{
-      "active": true,
       "name": "Warrior",
       "description": "Some text describing the warrior class",
-      "maxStats": [15, 10, 13, 6, 10]
+      "maxStats": {
+        "strength": 15,
+        "dexterity": 10,
+        "constitution": 13,
+        "intelligence": 6,
+        "initiative": 10
+      }
     },
     {
-      "active": false,
       "name": "Mage",
       "description": "Some text describing the mage class",
-      "maxStats": [6, 9, 8, 15, 12]
+      "maxStats": {
+        "strength": 6,
+        "dexterity": 9,
+        "constitution": 8,
+        "intelligence": 15,
+        "initiative": 12
+      }
     },
     {
-      "active": false,
       "name": "Rogue",
       "description": "Some text describing the rogue class",
-      "maxStats": [9, 15, 11, 8, 12]
+      "maxStats": {
+        "strength": 9,
+        "dexterity": 15,
+        "constitution": 11,
+        "intelligence": 8,
+        "initiative": 12
+      }
     }
   ]
 }

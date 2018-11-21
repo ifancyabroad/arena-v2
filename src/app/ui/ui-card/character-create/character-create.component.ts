@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationService } from '../../../shared/services/navigation.service';
+import { CharacterCreateService } from '../character-create/character-create.service';
 import { PlayerService } from '../../../shared/services/player.service';
 import { Player } from '../../../shared/classes/player';
+import { UtilitiesService } from '../../../shared/services/utilities.service';
 
 @Component({
   selector: 'app-character-create',
@@ -11,23 +13,43 @@ import { Player } from '../../../shared/classes/player';
 export class CharacterCreateComponent implements OnInit {
 
   nameInput: string;
-  portraitInput: string = 'An image';
-  classInput: string = 'A class';
+  portraitInput: string;
+  classInput: any;
+
+  portraits;
+  classes;
 
   constructor(
     private nav: NavigationService,
-    private ps: PlayerService
+    private cc: CharacterCreateService,
+    private ps: PlayerService,
+    private dice: UtilitiesService
   ) { }
 
   ngOnInit() {
+    this.cc.getCharacterDetail().subscribe(data => {
+      this.portraits = data['portraits'];
+      this.classes = data['classes'];
+    });
+  }
+
+  setStats(maxStats) {
+    const stats: Object = {};
+    for (let stat of Object.keys(maxStats)) {
+      stats[stat] = this.dice.roll(maxStats[stat] - 5, maxStats[stat]);
+    }
+    return stats;
   }
 
   createPlayer() {
+    this.portraitInput = this.portraits[0];
+    this.classInput = this.classes[0];
+
     this.ps.player = new Player(
       this.nameInput,
       this.portraitInput,
       this.classInput,
-      { strength: 1, dexterity: 1, constitution: 1, intelligence: 1, initiative: 1 }
+      this.setStats(this.classInput['maxStats'])
     );
     this.nav.uiCard.next({ face: 'front', view: 'roll-stats', flip: false });
   }
