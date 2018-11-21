@@ -18,7 +18,7 @@
 
   <div class="ui-view-controls">
     <button disabled>&#x2B05;</button>
-    <button type="submit" form="character-create">&#x27A1;</button>
+    <button type="submit" form="character-create" [disabled]="!characterForm.form.valid">&#x27A1;</button>
   </div>
 </div>
 

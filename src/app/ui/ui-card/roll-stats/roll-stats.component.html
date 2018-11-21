@@ -3,15 +3,15 @@
 
   <form #statsForm="ngForm" id="roll-stats" class="ui-view-content" (ngSubmit)="rollStats()">
     <div class="controls">
-      <h4>Rerolls: </h4>
+      <h4>Rerolls: {{ player.rerolls }}</h4>
       <button type="submit">Reroll</button>
     </div>
 
     <table class="reroll-table">
       <tbody>
-        <tr>
-          <td></td>
-          <td></td>
+        <tr *ngFor="let stat of keys(player.stats)">
+          <td>{{ player.stats[stat].name }}</td>
+          <td>{{ player.stats[stat].value }}</td>
         </tr>
       </tbody>
     </table>
@@ -19,6 +19,6 @@
 
   <div class="ui-view-controls">
     <button disabled>&#x2B05;</button>
-    <button type="button">&#x27A1;</button>
+    <button type="button" (click)="proceed()">&#x27A1;</button>
   </div>
 </div>

@@ -11,4 +11,8 @@ export class NavigationService {
   enemyCard: Subject<Object> = new Subject<Object>();
 
   constructor() { }
+
+  // proceed(card: Subject<Object>, settings: Object) {
+  //   card.next(settings);
+  // }
 }
