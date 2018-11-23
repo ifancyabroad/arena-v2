@@ -1,3 +1,34 @@
-<p>
-  player-details works!
-</p>
+<div *ngIf="player">
+  <!-- <i class="fa fa-arrow-circle-up levelup-icon" aria-hidden="true" data-bind="visible: skillPoints() > 0"></i> -->
+  <h2>{{ player.name }}</h2>
+  <h3>Level {{ player.level }} {{ player.cl.name }}</h3>
+  <figure class="portrait-container">
+    <img class="player-portrait" src="/assets/img/portraits/{{ player.portrait }}">
+  </figure>
+  <h4>{{ player.currentHealth }} / {{ player.maxHealth() }}</h4>
+  <table>
+    <tbody>
+      <tr *ngFor="let stat of player.stats | keyvalue">
+        <td>{{ stat.value.name }}</td>
+        <td>{{ stat.value.value }} + {{ stat.value.modifier }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <div>
+      <p>Armour</p>
+      <img class="player-stat-icon" src="/assets/img/icons/armour.png">
+      <span>{{ player.armour }}</span>
+    </div>
+    <div>
+      <p>Magic Resistance</p>
+      <img class="player-stat-icon" src="/assets/img/icons/magic-resistance.png">
+      <span>{{ player.magicResistance }}</span>
+    </div>
+    <div>
+      <p>Critical Strike Chance</p>
+        <img class="player-stat-icon" src="/assets/img/icons/crit-chance.png">
+        <span>{{ player.critChance() }}%</span>
+    </div>
+  </div>
+</div>

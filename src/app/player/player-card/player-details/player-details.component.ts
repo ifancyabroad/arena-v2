@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayerService } from 'src/app/shared/services/player.service';
 
 @Component({
   selector: 'app-player-details',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayerDetailsComponent implements OnInit {
 
-  constructor() { }
+  player;
+
+  constructor(private ps: PlayerService) {
+  }
 
   ngOnInit() {
+    this.ps.characterCreated.subscribe(created => {
+      if (created) {
+        this.player = this.ps.player;
+      }
+    });
   }
 
 }

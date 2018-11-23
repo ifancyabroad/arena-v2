@@ -51,6 +51,8 @@ export class CharacterCreateComponent implements OnInit {
       this.classInput,
       this.setStats(this.classInput['maxStats'])
     );
+
+    this.ps.characterCreated.next(true);
     this.nav.uiCard.next({ face: 'front', view: 'roll-stats', flip: false });
   }
 }

@@ -1,13 +1,13 @@
 {
   "portraits": [
-      "images/portraits/female-warrior.jpg",
-      "images/portraits/male-mage.jpg",
-      "images/portraits/female-mage.jpg",
-      "images/portraits/male-knight.jpg",
-      "images/portraits/female-knight.jpg",
-      "images/portraits/male-thief.png",
-      "images/portraits/female-thief.jpg",
-      "images/portraits/male-warrior.jpg"
+      "female-warrior.jpg",
+      "male-mage.jpg",
+      "female-mage.jpg",
+      "male-knight.jpg",
+      "female-knight.jpg",
+      "male-thief.png",
+      "female-thief.jpg",
+      "male-warrior.jpg"
     ],
   "classes": [{
       "name": "Warrior",
