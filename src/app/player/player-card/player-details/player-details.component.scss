@@ -11,11 +11,12 @@
   .stats-table {
     border-collapse: collapse;
     width: 80%;
-    margin: 8px 0;
+    margin: 8px 0 12px;
   
     td {
       border: 1px solid grey;
-      padding: 8px;
+      padding: 6px;
+      font-size: 0.9em;
     }
   
     td:last-child {
