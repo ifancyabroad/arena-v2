@@ -1,3 +1,10 @@
-.town-btn-icon {
-  max-width: 25px;
+.town {
+	background-image: url('/assets/img/backgrounds/town.jpg');
+	background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+  
+  .town-btn-icon {
+    max-width: 25px;
+  }
 }

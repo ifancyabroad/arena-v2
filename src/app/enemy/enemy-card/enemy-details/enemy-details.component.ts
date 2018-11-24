@@ -27,7 +27,7 @@ export class EnemyDetailsComponent implements OnInit {
   }
 
   createEnemy() {
-    const enemy = this.enemiesList[this.dice.roll(0, this.enemiesList.length)];
+    const enemy = this.enemiesList[this.dice.roll(0, this.enemiesList.length - 1)];
 
     this.es.enemy = new Enemy(
       enemy.name,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationService } from 'src/app/shared/services/navigation.service';
 
 @Component({
   selector: 'app-arena',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArenaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private nav: NavigationService) { }
 
   ngOnInit() {
+  }
+
+  proceed() {
+    this.nav.uiCard.next({ face: 'back', view: 'town', flip: true });
+    this.nav.enemyCard.next({ flip: true });
   }
 
 }
