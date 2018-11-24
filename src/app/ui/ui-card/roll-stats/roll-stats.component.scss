@@ -1,0 +1,26 @@
+.controls {
+  display: flex;
+  margin: 12px 0;
+
+  h4 {
+    margin-right: 10px;
+  }
+}
+
+.reroll-table {
+  border-collapse: collapse;
+  width: 80%;
+
+  td {
+    border: 1px solid grey;
+    padding: 8px;
+  }
+
+  td:last-child {
+    text-align: center;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+}

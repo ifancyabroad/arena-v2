@@ -1,3 +1,5 @@
+@import '~src/variables';
+
 * {
 	margin: 0;
   padding: 0;
@@ -6,6 +8,10 @@
 
 body {
   font-family: Arial, sans-serif;
+}
+
+img {
+  max-width: 100%;
 }
 
 .centered {
@@ -36,8 +42,8 @@ body {
     .card-hidden {
       height: 100%;
       width: 100%;
-      background-color: #8e1717;
-      border: 15px solid #421d1d;
+      background-color: $primary-color;
+      border: 15px solid $secondary-color;
     }
   }
   
@@ -58,7 +64,18 @@ body {
 
 .card-entity {
 	height: 100%;
-	width: 100%;
+  width: 100%;
+  
+  .entity-view {
+    height: 100%;
+    padding: 10px;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 14px;
+  }
 }
 
 .card-ui {
@@ -76,6 +93,7 @@ body {
     }
 
     .ui-view-content {
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       align-items: center;

@@ -29,8 +29,19 @@ export class CharacterCreateComponent implements OnInit {
   ngOnInit() {
     this.cc.getCharacterDetail().subscribe(data => {
       this.portraits = data['portraits'];
+      this.portraitInput = this.portraits[0];
       this.classes = data['classes'];
+      this.classInput = this.classes[0];
     });
+  }
+
+  changeSelection(type, direction) {
+    direction = direction > type.length - 1 ? 0 : direction < 0 ? type.length - 1 : direction;
+    if (type === this.classes) {
+      this.classInput = this.classes[direction];
+    } else if (type === this.portraits) {
+      this.portraitInput = this.portraits[direction];
+    }
   }
 
   setStats(maxStats) {
@@ -42,9 +53,6 @@ export class CharacterCreateComponent implements OnInit {
   }
 
   createPlayer() {
-    this.portraitInput = this.portraits[0];
-    this.classInput = this.classes[0];
-
     this.ps.player = new Player(
       this.nameInput,
       this.portraitInput,
