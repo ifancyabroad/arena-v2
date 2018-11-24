@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationService } from '../../../shared/services/navigation.service';
+import { EnemyService } from 'src/app/shared/services/enemy.service';
 
 @Component({
   selector: 'app-town',
@@ -8,7 +9,7 @@ import { NavigationService } from '../../../shared/services/navigation.service';
 })
 export class TownComponent implements OnInit {
 
-  constructor(private nav: NavigationService) { }
+  constructor(private nav: NavigationService, private es: EnemyService) { }
 
   ngOnInit() {
   }
@@ -16,6 +17,7 @@ export class TownComponent implements OnInit {
   proceed(selection) {
     switch (selection) {
       case 'arena':
+        this.es.enemyCreated.next(true);
         this.nav.uiCard.next({ face: 'front', view: 'arena', flip: true });
         this.nav.enemyCard.next({ flip: true });
         break;

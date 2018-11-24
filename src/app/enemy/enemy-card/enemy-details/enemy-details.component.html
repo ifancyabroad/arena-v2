@@ -1,3 +1,7 @@
-<p>
-  enemy-details works!
-</p>
+<div class="entity-view" *ngIf="enemy">
+  <h2>{{ enemy.name }}</h2>
+  <h4>{{ enemy.currentHealth }} / {{ enemy.maxHealth() }}</h4>
+  <figure>
+    <img class="enemy-portrait" src="/assets/img/monsters/{{ enemy.portrait }}">
+  </figure>
+</div>
