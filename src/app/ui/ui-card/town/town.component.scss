@@ -3,8 +3,13 @@
 	background-position: center;
   background-size: cover;
   border-radius: 20px;
-  
-  .town-btn-icon {
-    max-width: 25px;
+
+  .town-controls {
+    display: flex;
+    align-items: center;
+
+    .town-btn-icon {
+      max-width: 25px;
+    }
   }
 }

@@ -13,4 +13,11 @@ export class Enemy extends GameEntity {
   ) {
     super(name, portrait, st, armour, magicResistance);
   }
+
+  getAction() {
+    let action;
+    const physical = this.getPhysicalDamage();
+    const magical = this.getMagicalDamage();
+    return action = physical >= magical ? 'physical' : 'magical';
+  }
 }

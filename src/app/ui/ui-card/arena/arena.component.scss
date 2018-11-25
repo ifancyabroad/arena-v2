@@ -3,8 +3,32 @@
 	background-position: center;
   background-size: cover;
   border-radius: 20px;
-  
-  .arena-btn-icon {
-    max-width: 25px;
+
+  .arena-controls {
+    display: flex;
+    align-items: center;
+
+    .arena-btn-icon {
+      max-width: 25px;
+    }
+  }
+
+  .log-container {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 20%;
+    width: 80%;
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: left;
+    font-size: 0.8em;
+    padding: 5px;
+    border-top: 1px solid #9c9c9c;
+    border-left: 1px solid #9c9c9c;
+    border-right: 1px solid #9c9c9c;
+    background-color: white;
+    overflow: auto;
   }
 }

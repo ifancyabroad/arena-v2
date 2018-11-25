@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationService } from '../../../shared/services/navigation.service';
 import { EnemyService } from 'src/app/shared/services/enemy.service';
+import { BattleService } from 'src/app/shared/services/battle.service';
 
 @Component({
   selector: 'app-town',
@@ -9,15 +10,21 @@ import { EnemyService } from 'src/app/shared/services/enemy.service';
 })
 export class TownComponent implements OnInit {
 
-  constructor(private nav: NavigationService, private es: EnemyService) { }
+  constructor(
+    private nav: NavigationService,
+    private es: EnemyService,
+    private bs: BattleService
+  ) { }
 
   ngOnInit() {
   }
 
+  // Navigate based on user input
   proceed(selection) {
     switch (selection) {
       case 'arena':
         this.es.enemyCreated.next(true);
+        this.bs.state.next('battle');
         this.nav.uiCard.next({ face: 'front', view: 'arena', flip: true });
         this.nav.enemyCard.next({ flip: true });
         break;
