@@ -3,11 +3,13 @@ import { NavigationService } from 'src/app/shared/services/navigation.service';
 import { BattleService } from 'src/app/shared/services/battle.service';
 import { PlayerService } from 'src/app/shared/services/player.service';
 import { EnemyService } from 'src/app/shared/services/enemy.service';
+import { fadein } from 'src/app/animations/fadein';
 
 @Component({
   selector: 'app-arena',
   templateUrl: './arena.component.html',
-  styleUrls: ['./arena.component.scss']
+  styleUrls: ['./arena.component.scss'],
+  animations: [fadein]
 })
 export class ArenaComponent implements OnInit {
 
