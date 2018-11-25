@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationService } from '../../../shared/services/navigation.service';
 import { EnemyService } from 'src/app/shared/services/enemy.service';
 import { BattleService } from 'src/app/shared/services/battle.service';
+import { PlayerService } from 'src/app/shared/services/player.service';
 
 @Component({
   selector: 'app-town',
@@ -10,11 +11,16 @@ import { BattleService } from 'src/app/shared/services/battle.service';
 })
 export class TownComponent implements OnInit {
 
+  player;
+
   constructor(
     private nav: NavigationService,
+    private ps: PlayerService,
     private es: EnemyService,
     private bs: BattleService
-  ) { }
+  ) {
+    this.player = this.ps.player;
+  }
 
   ngOnInit() {
   }
@@ -24,7 +30,7 @@ export class TownComponent implements OnInit {
     switch (selection) {
       case 'arena':
         this.es.enemyCreated.next(true);
-        this.bs.state.next('battle');
+        this.bs.state.next('start');
         this.nav.uiCard.next({ face: 'front', view: 'arena', flip: true });
         this.nav.enemyCard.next({ flip: true });
         break;

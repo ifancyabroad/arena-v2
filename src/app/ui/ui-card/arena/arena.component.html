@@ -1,13 +1,13 @@
 <div class="ui-view arena">
   <h1>Arena</h1>
   <div class="arena-controls centered">
-    <button class="btn btn-large" type="button" (click)="startRound('physical')">Attack
+    <button class="btn btn-large" type="button" [disabled]="battleState === 'won'" (click)="startRound('physical')">Attack
       <img class="arena-btn-icon" src="/assets/img/icons/sword.png" alt="Crossed swords icon">
     </button>
-    <button class="btn btn-large" type="button" (click)="startRound('magical')">Spell
+    <button class="btn btn-large" type="button" [disabled]="battleState === 'won'" (click)="startRound('magical')">Spell
       <img class="arena-btn-icon" src="/assets/img/icons/wand.png" alt="Crossed swords icon">
     </button>
-    <button class="btn btn-large" type="button" (click)="proceed()">Home
+    <button class="btn btn-large" type="button" [disabled]="battleState !== 'won'" (click)="proceed()">Home
       <img class="arena-btn-icon" src="/assets/img/icons/home.png" alt="Crossed swords icon">
     </button>
   </div>

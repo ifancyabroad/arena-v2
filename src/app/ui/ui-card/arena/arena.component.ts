@@ -11,7 +11,7 @@ import { EnemyService } from 'src/app/shared/services/enemy.service';
 })
 export class ArenaComponent implements OnInit {
 
-  battleState: string; // State of the fight
+  battleState = 'start'; // State of the fight
   combatLog: Object[] = []; // Store text in the combat log
 
   player; // Player object
@@ -36,7 +36,7 @@ export class ArenaComponent implements OnInit {
 
     this.bs.state.subscribe(state => {
       this.battleState = state;
-      if (this.battleState === 'battle') {
+      if (this.battleState === 'start') {
         this.resetArena();
       }
     });
@@ -60,6 +60,9 @@ export class ArenaComponent implements OnInit {
     } else if (action === 'magical') {
       this.getMagicalAttack('player', this.player, this.enemy);
     }
+    if (this.checkDead(this.enemy)) {
+      this.enemySlain();
+    }
   }
 
   // Calculate magical or physical attack and proceed accordingly
@@ -69,6 +72,9 @@ export class ArenaComponent implements OnInit {
       this.getPhysicalAttack('enemy', this.enemy, this.player);
     } else if (action === 'magical') {
       this.getMagicalAttack('enemy', this.enemy, this.player);
+    }
+    if (this.checkDead(this.player)) {
+      this.checkDead(this.player);
     }
   }
 
@@ -98,6 +104,27 @@ export class ArenaComponent implements OnInit {
     this.logAction(entity, action, damage);
   }
 
+  // Check if dead
+  checkDead(entity) {
+    return entity.dead();
+  }
+
+  // Enemy defeated
+  enemySlain() {
+    this.player.kills++;
+    this.player.gold += this.enemy.goldValue;
+    this.player.experienceGain(this.enemy.expValue);
+    this.logAction('player', 'victory');
+    this.logAction('player', 'exp');
+    this.logAction('player', 'gold');
+    this.bs.state.next('won');
+  }
+
+  // Player defeated
+  playerSlain() {
+
+  }
+
   // Populate the combat log
   logAction(entity, action, damage = 0) {
     const log = {
@@ -105,7 +132,10 @@ export class ArenaComponent implements OnInit {
         attack: `You attack the ${this.enemy.name} for ${damage} damage`,
         crit: `CRITICAL HIT on the ${this.enemy.name} for ${damage} damage`,
         spell: `Your spell hits the ${this.enemy.name} for ${damage} damage`,
-        miss: `You miss the ${this.enemy.name}`
+        miss: `You miss the ${this.enemy.name}`,
+        victory: `You have slain the ${this.enemy.name}!`,
+        exp: `You gain ${this.enemy.expValue} experience`,
+        gold: `${this.enemy.goldValue} gold earned`
       },
       enemy: {
         attack: `${this.enemy.name} attacks you for ${damage} damage`,

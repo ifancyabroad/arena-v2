@@ -4,6 +4,14 @@
   background-size: cover;
   border-radius: 20px;
 
+  .town-stats {
+    text-align: center;
+
+    .town-icon {
+      width: 25px;
+    }  
+  }
+
   .town-controls {
     display: flex;
     align-items: center;
