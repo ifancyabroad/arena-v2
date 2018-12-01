@@ -4,6 +4,7 @@ import { CharacterCreateService } from '../character-create/character-create.ser
 import { PlayerService } from '../../../shared/services/player.service';
 import { Player } from '../../../shared/classes/player';
 import { UtilitiesService } from '../../../shared/services/utilities.service';
+import { AbilitiesService } from 'src/app/shared/services/abilities.service';
 
 @Component({
   selector: 'app-character-create',
@@ -18,10 +19,12 @@ export class CharacterCreateComponent implements OnInit {
 
   portraits;
   classes;
+  abilities;
 
   constructor(
     private nav: NavigationService,
     private cc: CharacterCreateService,
+    private as: AbilitiesService,
     private ps: PlayerService,
     private dice: UtilitiesService
   ) { }
@@ -32,6 +35,10 @@ export class CharacterCreateComponent implements OnInit {
       this.portraitInput = this.portraits[0];
       this.classes = data['classes'];
       this.classInput = this.classes[0];
+    });
+
+    this.as.getAbilities().subscribe(data => {
+      this.abilities = data['basic'];
     });
   }
 
@@ -57,7 +64,8 @@ export class CharacterCreateComponent implements OnInit {
       this.nameInput,
       this.portraitInput,
       this.classInput,
-      this.setStats(this.classInput['maxStats'])
+      this.setStats(this.classInput['maxStats']),
+      this.abilities
     );
 
     this.ps.characterCreated.next(true);

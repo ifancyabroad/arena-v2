@@ -3,6 +3,7 @@ import { EnemyService } from 'src/app/shared/services/enemy.service';
 import { Enemy } from 'src/app/shared/classes/enemy';
 import { UtilitiesService } from 'src/app/shared/services/utilities.service';
 import { PlayerService } from 'src/app/shared/services/player.service';
+import { AbilitiesService } from 'src/app/shared/services/abilities.service';
 
 @Component({
   selector: 'app-enemy-details',
@@ -14,15 +15,18 @@ export class EnemyDetailsComponent implements OnInit {
   player;
   enemy;
   enemiesList;
+  abilityList;
 
   constructor(
     private es: EnemyService,
     private ps: PlayerService,
+    private as: AbilitiesService,
     private dice: UtilitiesService
   ) { }
 
   ngOnInit() {
     this.es.getEnemies().subscribe(enemies => this.enemiesList = enemies);
+    this.as.getAbilities().subscribe(abilities => this.abilityList = abilities);
 
     this.es.enemyCreated.subscribe(created => {
       if (created) {
@@ -35,7 +39,7 @@ export class EnemyDetailsComponent implements OnInit {
       if (created) {
         this.player = this.ps.player;
       }
-    })
+    });
   }
 
   createEnemy() {
@@ -46,6 +50,7 @@ export class EnemyDetailsComponent implements OnInit {
       enemy.name,
       enemy.portrait,
       enemy.stats,
+      this.abilityList.basic,
       enemy.armour,
       enemy.magicResistance,
       enemy.expValue,

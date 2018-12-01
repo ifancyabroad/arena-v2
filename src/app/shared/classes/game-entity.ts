@@ -5,6 +5,7 @@ export class GameEntity {
   dice = new UtilitiesService; // Get dice
 
   stats; // Entity stats
+  abilities; // Entity abilities
   maxHealth; // Maximum health based on constitution
   currentHealth; // Current health of entity
   dead; // Is entity dead
@@ -15,6 +16,7 @@ export class GameEntity {
     public name: string,
     public portrait: string,
     public st: Object,
+    public ab: Object,
     public armour = 0,
     public magicResistance = 0
   ) {
@@ -66,6 +68,8 @@ export class GameEntity {
       }
     };
 
+    this.abilities = ab;
+
     this.maxHealth = function() {
       return this.stats.constitution.value * 10;
     };
@@ -100,8 +104,8 @@ export class GameEntity {
   }
 
   // Get damage based on stats
-  getDamage(stat) {
-    return stat.total + this.dice.roll(1, 6);
+  getDamage(ability) {
+    return this.stats[ability.modifier].total * ability.multiplier + this.dice.roll(ability.bonusMin + 1, ability.bonusMax + 6);
   }
 
   // Subtract from current health when hit

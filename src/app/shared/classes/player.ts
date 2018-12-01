@@ -48,9 +48,10 @@ export class Player extends GameEntity {
     public name: string,
     public portrait: string,
     public cl: Object,
-    public st: Object
+    public st: Object,
+    public ab: Object
   ) {
-    super(name, portrait, st);
+    super(name, portrait, st, ab);
   }
 
   // Gain exp and check if skill point is earned

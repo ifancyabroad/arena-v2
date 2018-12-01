@@ -1,0 +1,82 @@
+{
+  "basic": 
+  [
+    {
+      "name": "Attack",
+      "description": "A regular melee attack",
+      "image": "",
+      "type": "attack",
+      "plane": "physical",
+      "modifier": "strength",
+      "multiplier": 1,
+      "bonusMin": 0,
+      "bonusMax": 0,
+      "accuracy": 0,
+      "uses": 0,
+      "level": 1
+    },
+    {
+      "name": "Magic Arrow",
+      "description": "Some description for this ability",
+      "image": "",
+      "type": "attack",
+      "plane": "magical",
+      "modifier": "intelligence",
+      "multiplier": 1,
+      "bonusMin": 10,
+      "bonusMax": 10,
+      "accuracy": 0,
+      "uses": 0,
+      "level": 1
+    }
+  ],
+  "power": 
+  [
+    {
+      "name": "Whirlwind Strike",
+      "description": "Some description for this ability",
+      "image": "",
+      "type": "attack",
+      "plane": "physical",
+      "modifier": "strength",
+      "multiplier": 1.5,
+      "bonusMin": 5,
+      "bonusMax": 15,
+      "accuracy": -20,
+      "uses": 2,
+      "level": 1
+    }
+  ],
+  "finesse": 
+  [
+    {
+      "name": "Backstab",
+      "description": "Some description for this ability",
+      "image": "",
+      "type": "attack",
+      "plane": "physical",
+      "modifier": "dexterity",
+      "multiplier": 3,
+      "bonusMin": 0,
+      "bonusMax": 0,
+      "accuracy": 2,
+      "level": 1
+    }
+  ],
+  "spells": 
+  [
+    {
+      "name": "Fireball",
+      "description": "Some description for this ability",
+      "image": "",
+      "type": "attack",
+      "plane": "magical",
+      "modifier": "intelligence",
+      "multiplier": 1,
+      "bonusMin": 5,
+      "bonusMax": 10,
+      "accuracy": 3,
+      "level": 1
+    }
+  ]
+}
