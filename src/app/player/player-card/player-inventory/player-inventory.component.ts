@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayerService } from 'src/app/shared/services/player.service';
 
 @Component({
   selector: 'app-player-inventory',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayerInventoryComponent implements OnInit {
 
-  constructor() { }
+  keys = Object.keys;
+  player;
+
+  constructor(private ps: PlayerService) { }
 
   ngOnInit() {
+    this.player = this.ps.player;
   }
 
 }

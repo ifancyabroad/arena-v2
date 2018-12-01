@@ -1,3 +1,37 @@
-<p>
-  store works!
-</p>
+<div class="ui-view">
+  <h1>Item Store</h1>
+
+  <div class="ui-view-content">
+    <p class="store-log">{{ storeLog }}</p>
+    <div class="store-stats">
+      <img class="store-icon" src="/assets/img/icons/gold.png"><span>{{ player.gold }}</span>	
+    </div>
+    <div class="item-table-container">
+      <table class="item-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Effect</th>
+            <th>Type</th>
+            <th>Price</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="item" *ngFor="let item of items">
+            <td>{{ item.name }}</td>
+            <td>Increases {{ item.modifier }} by {{ item.value }}</td>
+            <td>{{ item.type }}</td>
+            <td>{{ item.price }}</td>
+            <td><button type="button" (click)="buyItem(item)">Buy</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="ui-view-controls">
+    <button type="button" (click)="back()">&#x2B05;</button>
+    <button type="button" disabled>&#x27A1;</button>
+  </div>
+</div>

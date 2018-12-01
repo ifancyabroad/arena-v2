@@ -1,3 +1,13 @@
-<p>
-  player-inventory works!
-</p>
+<div class="entity-view">
+  <div class="player-view-content">
+    <h2>Inventory</h2>
+    <table class="inventory-table" >
+      <tbody>
+        <tr *ngFor="let type of keys(player.inventory)">
+          <td ><img class="inv-icon" src="/assets/img/icons/{{ type }}.png"></td>
+          <td>{{ player.inventory[type].name }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

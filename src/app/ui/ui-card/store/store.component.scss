@@ -1,0 +1,30 @@
+.store-icon {
+  width: 25px;
+}
+
+.item-table-container {
+  overflow: auto;
+  max-height: 350px;
+
+  .item-table {
+    border-collapse: collapse;
+    width: 100%;
+  
+    td, th {
+      border: 1px solid grey;
+      padding: 8px;
+    }
+
+    td {
+      font-size: 0.8em;
+    }
+  
+    td:last-child {
+      text-align: center;
+    }
+  
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  }
+}

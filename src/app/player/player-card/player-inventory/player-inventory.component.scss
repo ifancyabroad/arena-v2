@@ -1,0 +1,26 @@
+.inventory-table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: auto;
+
+  .inv-icon {
+    width: 25px;
+  }
+  
+  td {
+    border: 1px solid grey;
+    padding: 8px;
+  }
+
+  td:first-child {
+    width: 42px;
+  }
+
+  td:last-child {
+    text-align: center;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+}
