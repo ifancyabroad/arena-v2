@@ -1,5 +1,5 @@
 <div class="entity-view" *ngIf="player">
-  <!-- <i class="fa fa-arrow-circle-up levelup-icon" aria-hidden="true" data-bind="visible: skillPoints() > 0"></i> -->
+  <span class="level-up" *ngIf="player.skillPoints > 0">&#8593;</span>
   <div class="player-view-content">
     <h2>{{ player.name }}</h2>
     <h3>Level {{ player.level }} {{ player.cl.name }}</h3>

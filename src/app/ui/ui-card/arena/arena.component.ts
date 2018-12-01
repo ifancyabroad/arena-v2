@@ -13,7 +13,7 @@ import { fadein } from 'src/app/animations/fadein';
 })
 export class ArenaComponent implements OnInit {
 
-  battleState = 'start'; // State of the fight
+  battleState = 'waiting'; // State of the fight
   combatLog: Object[] = []; // Store text in the combat log
 
   player; // Player object

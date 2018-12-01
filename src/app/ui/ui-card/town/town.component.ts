@@ -30,7 +30,7 @@ export class TownComponent implements OnInit {
     switch (selection) {
       case 'arena':
         this.es.enemyCreated.next(true);
-        this.bs.state.next('start');
+        this.bs.state.next('waiting');
         this.nav.uiCard.next({ face: 'front', view: 'arena', flip: true });
         this.nav.enemyCard.next({ flip: true });
         break;

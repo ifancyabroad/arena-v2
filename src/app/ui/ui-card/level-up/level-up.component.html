@@ -1,3 +1,25 @@
-<p>
-  level-up works!
-</p>
+<div class="ui-view">
+  <h1>Level Up</h1>
+
+  <form #statsForm="ngForm" id="level-up-stats" class="ui-view-content" (ngSubmit)="levelUp()">
+    <h4>Skill points: {{ tempPoints }}</h4>
+
+    <table class="level-up-table">
+      <tbody>
+        <tr *ngFor="let stat of keys(tempStats)">
+          <td>{{ tempStats[stat].name }}</td>
+          <td>
+            <button type="button" (click)="changeStat(tempStats[stat], -1)">&#8722;</button>
+            {{ tempStats[stat].value }}
+            <button type="button" (click)="changeStat(tempStats[stat], +1)">&#43;</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+
+  <div class="ui-view-controls">
+    <button type="button" (click)="back()">&#x2B05;</button>
+    <button type="submit" form="level-up-stats">&#x27A1;</button>
+  </div>
+</div>
