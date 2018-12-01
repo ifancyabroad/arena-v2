@@ -2,6 +2,8 @@ import { GameEntity } from './game-entity';
 
 export class Enemy extends GameEntity {
 
+  type = 'enemy';
+
   constructor(
     public name: string,
     public portrait: string,
@@ -16,8 +18,8 @@ export class Enemy extends GameEntity {
 
   getAction() {
     let action;
-    const physical = this.getPhysicalDamage();
-    const magical = this.getMagicalDamage();
+    const physical = this.getDamage(this.stats.strength);
+    const magical = this.getDamage(this.stats.intelligence);
     return action = physical >= magical ? 'physical' : 'magical';
   }
 }

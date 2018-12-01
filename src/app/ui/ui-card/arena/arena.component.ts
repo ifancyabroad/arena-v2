@@ -47,45 +47,32 @@ export class ArenaComponent implements OnInit {
   // Check turn order and begin the round once input is received
   startRound(action) {
     if (this.player.initiative >= this.enemy.initiative) {
-      this.playerTurn(action);
-      this.enemyTurn();
+      this.turn(this.player, this.enemy, action);
+      this.turn(this.enemy, this.player, action);
     } else {
-      this.enemyTurn();
-      this.playerTurn(action);
+      this.turn(this.enemy, this.player);
+      this.turn(this.player, this.enemy, action);
     }
   }
 
   // Check if magical or physical attack and proceed accordingly
-  playerTurn(action) {
+  turn(attacker, defender, action = this.enemy.getAction()) {
     if (action === 'physical') {
-      this.getPhysicalAttack('player', this.player, this.enemy);
+      this.getPhysicalAttack(attacker, defender);
     } else if (action === 'magical') {
-      this.getMagicalAttack('player', this.player, this.enemy);
+      this.getMagicalAttack(attacker, defender);
     }
-    if (this.checkDead(this.enemy)) {
+    if (this.checkDead(defender) && defender.type === 'enemy') {
       this.enemySlain();
     }
   }
 
-  // Calculate magical or physical attack and proceed accordingly
-  enemyTurn() {
-    const action = this.enemy.getAction();
-    if (action === 'physical') {
-      this.getPhysicalAttack('enemy', this.enemy, this.player);
-    } else if (action === 'magical') {
-      this.getMagicalAttack('enemy', this.enemy, this.player);
-    }
-    if (this.checkDead(this.player)) {
-      this.checkDead(this.player);
-    }
-  }
-
   // Check hit, crit and calculate damage
-  getPhysicalAttack(entity, attacker, defender) {
+  getPhysicalAttack(attacker, defender) {
     let damage;
     let action;
     if (attacker.checkHit()) {
-      damage = defender.checkArmour(attacker.getPhysicalDamage());
+      damage = defender.checkResistance(attacker.getDamage(attacker.stats.strength), defender.armour);
       action = 'attack';
       if (attacker.checkCrit()) {
         damage *= 2;
@@ -95,15 +82,15 @@ export class ArenaComponent implements OnInit {
     } else {
       action = 'miss';
     }
-    this.logAction(entity, action, damage);
+    this.logAction(attacker.type, action, damage);
   }
 
   // Calculate magical damage
-  getMagicalAttack(entity, attacker, defender) {
-    const damage = defender.checkMagicResistance(attacker.getMagicalDamage());
+  getMagicalAttack(attacker, defender) {
+    const damage = defender.checkResistance(attacker.getDamage(attacker.stats.strength), defender.magicResistance);
     const action = 'spell';
     defender.takeHit(damage);
-    this.logAction(entity, action, damage);
+    this.logAction(attacker.type, action, damage);
   }
 
   // Check if dead
@@ -128,7 +115,7 @@ export class ArenaComponent implements OnInit {
   }
 
   // Populate the combat log
-  logAction(entity, action, damage = 0) {
+  logAction(attacker, action, damage = 0) {
     const log = {
       player: {
         attack: `You attack the ${this.enemy.name} for ${damage} damage`,
@@ -146,7 +133,7 @@ export class ArenaComponent implements OnInit {
         miss: `${this.enemy.name} misses you`
       }
     };
-    this.combatLog.unshift(log[entity][action]);
+    this.combatLog.unshift(log[attacker][action]);
   }
 
   // Rest the combat log

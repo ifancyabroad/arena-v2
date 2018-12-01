@@ -4,7 +4,7 @@ export class GameEntity {
 
   dice = new UtilitiesService; // Get dice
 
-  stats;
+  stats; // Entity stats
   maxHealth; // Maximum health based on constitution
   currentHealth; // Current health of entity
   dead; // Is entity dead
@@ -21,33 +21,48 @@ export class GameEntity {
     this.stats = {
       'strength': {
         name: 'Strength',
+        description: 'How much damage your physical attacks do.',
         value: st['strength'],
         modifier: 0,
-        description: 'How much damage your physical attacks do.'
+        get total() {
+          return this.value + this.modifier;
+        }
       },
       'dexterity': {
         name: 'Dexterity',
+        description: 'The chance your physical attacks hit and critical hit.',
         value: st['dexterity'],
         modifier: 0,
-        description: 'The chance your physical attacks hit and critical hit.'
+        get total() {
+          return this.value + this.modifier;
+        }
       },
       'constitution': {
         name: 'Constitution',
+        description: 'Determines your maximum health.',
         value: st['constitution'],
         modifier: 0,
-        description: 'Determines your maximum health.'
+        get total() {
+          return this.value + this.modifier;
+        }
       },
       'intelligence': {
         name: 'Intelligence',
+        description: 'How much damage your magical attacks do.',
         value: st['intelligence'],
         modifier: 0,
-        description: 'How much damage your magical attacks do.'
+        get total() {
+          return this.value + this.modifier;
+        }
       },
       'initiative': {
         name: 'Initiative',
+        description: 'Determines who strikes first.',
         value: st['initiative'],
         modifier: 0,
-        description: 'Determines who strikes first.'
+        get total() {
+          return this.value + this.modifier;
+        }
       }
     };
 
@@ -80,23 +95,13 @@ export class GameEntity {
   }
 
   // Mitigate damage based on stats
-  checkArmour(damage) {
-    return damage - this.armour < 0 ? 0 : damage - this.armour;
-  }
-
-  checkMagicResistance(damage) {
-    return damage - this.magicResistance < 0 ? 0 : damage - this.magicResistance;
+  checkResistance(damage, stat) {
+    return damage - stat < 0 ? 0 : damage - stat;
   }
 
   // Get damage based on stats
-  getPhysicalDamage() {
-    const str = this.stats.strength.value + this.stats.strength.modifier;
-    return str + this.dice.roll(1, 6);
-  }
-
-  getMagicalDamage() {
-    const intel = this.stats.intelligence.value + this.stats.intelligence.modifier;
-    return intel + this.dice.roll(1, 6);
+  getDamage(stat) {
+    return stat.total + this.dice.roll(1, 6);
   }
 
   // Subtract from current health when hit

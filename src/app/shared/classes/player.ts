@@ -2,6 +2,7 @@ import { GameEntity } from './game-entity';
 
 export class Player extends GameEntity {
 
+  type = 'player';
   experience = 0; // Experience starts at 0
   gold = 0; // Gold starts at 0
   level = 1; // Start at level 1
