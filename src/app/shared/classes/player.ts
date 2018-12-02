@@ -10,6 +10,7 @@ export class Player extends GameEntity {
   rerolls = 10; // 10 initial rerolls allowed
   skillPoints = 0; // Skill points available for spending
 
+  // Inventory starts empty
   inventory = {
     head: { name: 'None' },
     body: { name: 'None' },
@@ -18,6 +19,25 @@ export class Player extends GameEntity {
     weapon: { name: 'None' },
     misc: { name: 'None' }
   };
+
+  constructor(
+    public name: string,
+    public portrait: string,
+    public cl: Object,
+    public st: Object,
+    public ab: Object
+  ) {
+    super(name, portrait, st, ab);
+  }
+
+  // Gain exp and check if skill point is earned
+  experienceGain(xp) {
+    const currentTier = this.levelTier();
+    this.experience += xp;
+    if (currentTier !== this.levelTier()) {
+      this.skillPoints += 1;
+    }
+  }
 
   // Find what level the player has earned through exp
   levelTier = function () {
@@ -44,30 +64,12 @@ export class Player extends GameEntity {
     }
   };
 
-  constructor(
-    public name: string,
-    public portrait: string,
-    public cl: Object,
-    public st: Object,
-    public ab: Object
-  ) {
-    super(name, portrait, st, ab);
-  }
-
-  // Gain exp and check if skill point is earned
-  experienceGain(xp) {
-    const currentTier = this.levelTier();
-    this.experience += xp;
-    if (currentTier !== this.levelTier()) {
-      this.skillPoints += 1;
+  // Update inventory with new item
+  updateInventory(item) {
+    if (this.stats[this.inventory[item.type].modifier]) {
+      this.stats[this.inventory[item.type].modifier].modifier -= this.inventory[item.type].value;
     }
+    this.inventory[item.type] = item;
+    this.stats[this.inventory[item.type].modifier].modifier += this.inventory[item.type].value;
   }
-
-  // Update stats from level up
-  // updateStats(newStats) {
-  //   for (let i = 0; i < this.stats.length; i++) {
-  //     this.stats()[i].value(newStats[i].value());
-  //   }
-  // }
-
 }

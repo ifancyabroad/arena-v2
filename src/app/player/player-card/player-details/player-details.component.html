@@ -9,7 +9,7 @@
     <h4>{{ player.currentHealth }} / {{ player.maxHealth() }}</h4>
     <table class="stats-table">
       <tbody>
-        <tr *ngFor="let stat of player.stats | keyvalue">
+        <tr *ngFor="let stat of player.getStats('main') | keyvalue">
           <td>{{ stat.value.name }}</td>
           <td>{{ stat.value.value }} <span *ngIf="stat.value.modifier"> + {{ stat.value.modifier }}</span></td>
         </tr>
@@ -19,12 +19,12 @@
       <div class="add-stat">
         <p>Armour</p>
         <img class="player-stat-icon" src="/assets/img/icons/armour.png">
-        <span>{{ player.armour }}</span>
+        <span>{{ player.stats.armour.total }}</span>
       </div>
       <div class="add-stat">
         <p>Magic Resistance</p>
         <img class="player-stat-icon" src="/assets/img/icons/magic-resistance.png">
-        <span>{{ player.magicResistance }}</span>
+        <span>{{ player.stats.magicResistance.total }}</span>
       </div>
       <div class="add-stat">
         <p>Critical Strike Chance</p>

@@ -37,7 +37,7 @@ export class LevelUpComponent implements OnInit, OnDestroy {
   initiateTempValues() {
     this.tempPoints = this.player.skillPoints;
     this.tempStats = {};
-    for (let stat of this.keys(this.player.stats)) {
+    for (let stat of this.keys(this.player.getStats('main'))) {
       this.tempStats[stat] = {};
       this.tempStats[stat]['name'] = this.player.stats[stat]['name'];
       this.tempStats[stat]['value'] = this.player.stats[stat]['value'];
@@ -54,7 +54,7 @@ export class LevelUpComponent implements OnInit, OnDestroy {
 
   levelUp() {
     this.player.skillPoints = this.tempPoints;
-    for (let stat of this.keys(this.player.stats)) {
+    for (let stat of this.keys(this.player.getStats('main'))) {
       this.player.stats[stat]['value'] = this.tempStats[stat]['value'];
     }
     this.nav.uiCard.next({ face: 'back', view: 'town', flip: true });

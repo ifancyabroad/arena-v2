@@ -4,7 +4,7 @@ export class GameEntity {
 
   dice = new UtilitiesService; // Get dice
 
-  stats; // Entity stats
+  stats; // Entity main stats
   abilities; // Entity abilities
   maxHealth; // Maximum health based on constitution
   currentHealth; // Current health of entity
@@ -24,6 +24,7 @@ export class GameEntity {
       'strength': {
         name: 'Strength',
         description: 'How much damage your physical attacks do.',
+        type: 'main',
         value: st['strength'],
         modifier: 0,
         get total() {
@@ -33,6 +34,7 @@ export class GameEntity {
       'dexterity': {
         name: 'Dexterity',
         description: 'The chance your physical attacks hit and critical hit.',
+        type: 'main',
         value: st['dexterity'],
         modifier: 0,
         get total() {
@@ -42,6 +44,7 @@ export class GameEntity {
       'constitution': {
         name: 'Constitution',
         description: 'Determines your maximum health.',
+        type: 'main',
         value: st['constitution'],
         modifier: 0,
         get total() {
@@ -51,6 +54,7 @@ export class GameEntity {
       'intelligence': {
         name: 'Intelligence',
         description: 'How much damage your magical attacks do.',
+        type: 'main',
         value: st['intelligence'],
         modifier: 0,
         get total() {
@@ -60,7 +64,28 @@ export class GameEntity {
       'initiative': {
         name: 'Initiative',
         description: 'Determines who strikes first.',
+        type: 'main',
         value: st['initiative'],
+        modifier: 0,
+        get total() {
+          return this.value + this.modifier;
+        }
+      },
+      'armour': {
+        name: 'Armour',
+        description: 'Offers protection from physical attacks',
+        type: 'defense',
+        value: armour,
+        modifier: 0,
+        get total() {
+          return this.value + this.modifier;
+        }
+      },
+      'magicResistance': {
+        name: 'Magic Resistance',
+        description: 'Offers protection from magical attacks',
+        type: 'defense',
+        value: magicResistance,
         modifier: 0,
         get total() {
           return this.value + this.modifier;
@@ -82,12 +107,23 @@ export class GameEntity {
 
     this.hitChance = function() {
       return (this.stats.dexterity.value + this.stats.dexterity.modifier) * 5;
-    }
+    };
 
     this.critChance = function() {
       return (this.stats.dexterity.value + this.stats.dexterity.modifier) * 0.75;
     };
   }
+
+  // Get specific stat types
+  getStats = function(type) {
+    const stats = {};
+    for (let stat of Object.keys(this.stats)) {
+      if (this.stats[stat].type === type) {
+        stats[stat] = this.stats[stat];
+      }
+    }
+    return stats;
+  };
 
   // Use stats to check whether or not attack hits and crits
   checkHit() {

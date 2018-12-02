@@ -72,7 +72,7 @@ export class ArenaComponent implements OnInit {
     let damage;
     let action;
     if (attacker.checkHit()) {
-      damage = defender.checkResistance(attacker.getDamage(ability), defender.armour);
+      damage = defender.checkResistance(attacker.getDamage(ability), defender.stats.armour.total);
       action = 'attack';
       if (attacker.checkCrit()) {
         damage *= 2;
@@ -87,7 +87,7 @@ export class ArenaComponent implements OnInit {
 
   // Calculate magical damage
   getMagicalAttack(attacker, defender, ability) {
-    const damage = defender.checkResistance(attacker.getDamage(ability), defender.magicResistance);
+    const damage = defender.checkResistance(attacker.getDamage(ability), defender.stats.magicResistance.total);
     const action = 'spell';
     defender.takeHit(damage);
     this.logAction(attacker.type, action, damage);

@@ -25,7 +25,7 @@
 		"type": "head",
 		"name": "Magic Helm",
 		"description": "A description of the item",
-		"modifier": "magic resistance",
+		"modifier": "magicResistance",
 		"value": 2,
 		"price": 300
 	},
@@ -95,7 +95,7 @@
 		"type": "body",
 		"name": "Armour of Protection",
 		"description": "A description of the item",
-		"modifier": "magic resistance",
+		"modifier": "magicResistance",
 		"value": 5,
 		"price": 350
 	},
@@ -105,7 +105,7 @@
 		"type": "body",
 		"name": "Adamantium Plate",
 		"description": "A description of the item",
-		"modifier": "magic resistance",
+		"modifier": "magicResistance",
 		"value": 10,
 		"price": 900
 	},
@@ -225,7 +225,7 @@
 		"type": "boots",
 		"name": "Golem\"s Boots",
 		"description": "A description of the item",
-		"modifier": "magic resistance",
+		"modifier": "magicResistance",
 		"value": 3,
 		"price": 200
 	},
@@ -325,7 +325,7 @@
 		"type": "gloves",
 		"name": "Gloves of Superior Protection",
 		"description": "A description of the item",
-		"modifier": "magic resistance",
+		"modifier": "magicResistance",
 		"value": 7,
 		"price": 800
 	},
@@ -355,7 +355,7 @@
 		"type": "misc",
 		"name": "Ring of Resistance",
 		"description": "A description of the item",
-		"modifier": "magic resistance",
+		"modifier": "magicResistance",
 		"value": 4,
 		"price": 400
 	},

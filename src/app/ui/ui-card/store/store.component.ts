@@ -38,7 +38,7 @@ export class StoreComponent implements OnInit, OnDestroy {
   buyItem(item) {
     if (this.player.gold >= item.price) {
       this.player.gold -= item.price;
-      this.player.inventory[item.type] = item;
+      this.player.updateInventory(item);
     } else {
       this.storeLog = 'You do not have enough gold for that';
     }
