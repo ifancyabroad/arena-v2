@@ -18,6 +18,6 @@ export class Enemy extends GameEntity {
   }
 
   getAction() {
-    return this.abilities[0];
+    return this.abilities[this.dice.roll(0, this.abilities.length - 1)];
   }
 }

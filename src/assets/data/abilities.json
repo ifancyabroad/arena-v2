@@ -14,24 +14,52 @@
       "accuracy": 0,
       "uses": 0,
       "level": 1
-    },
-    {
-      "name": "Magic Arrow",
-      "description": "Some description for this ability",
-      "image": "",
-      "type": "attack",
-      "plane": "magical",
-      "modifier": "intelligence",
-      "multiplier": 1,
-      "bonusMin": 10,
-      "bonusMax": 10,
-      "accuracy": 0,
-      "uses": 0,
-      "level": 1
     }
   ],
   "power": 
   [
+    {
+      "name": "Cleave",
+      "description": "Some description for this ability",
+      "image": "",
+      "type": "attack",
+      "plane": "physical",
+      "modifier": "strength",
+      "multiplier": 1.2,
+      "bonusMin": 5,
+      "bonusMax": 5,
+      "accuracy": -20,
+      "uses": 2,
+      "level": 1
+    },
+    {
+      "name": "Lunging Strike",
+      "description": "Some description for this ability",
+      "image": "",
+      "type": "attack",
+      "plane": "physical",
+      "modifier": "strength",
+      "multiplier": 1.4,
+      "bonusMin": 0,
+      "bonusMax": 0,
+      "accuracy": -20,
+      "uses": 2,
+      "level": 2
+    },
+    {
+      "name": "Precise Strike",
+      "description": "Some description for this ability",
+      "image": "",
+      "type": "attack",
+      "plane": "physical",
+      "modifier": "dexterity",
+      "multiplier": 1.2,
+      "bonusMin": 5,
+      "bonusMax": 5,
+      "accuracy": -20,
+      "uses": 2,
+      "level": 2
+    },
     {
       "name": "Whirlwind Strike",
       "description": "Some description for this ability",
@@ -39,12 +67,12 @@
       "type": "attack",
       "plane": "physical",
       "modifier": "strength",
-      "multiplier": 1.5,
-      "bonusMin": 5,
-      "bonusMax": 15,
+      "multiplier": 3,
+      "bonusMin": 0,
+      "bonusMax": 0,
       "accuracy": -20,
       "uses": 2,
-      "level": 1
+      "level": 3
     }
   ],
   "finesse": 
@@ -55,16 +83,96 @@
       "image": "",
       "type": "attack",
       "plane": "physical",
-      "modifier": "dexterity",
-      "multiplier": 3,
+      "modifier": "initiative",
+      "multiplier": 2,
       "bonusMin": 0,
       "bonusMax": 0,
       "accuracy": 2,
       "level": 1
+    },
+    {
+      "name": "Acrobatic Strike",
+      "description": "Some description for this ability",
+      "image": "",
+      "type": "attack",
+      "plane": "physical",
+      "modifier": "dexterity",
+      "multiplier": 1.2,
+      "bonusMin": 5,
+      "bonusMax": 5,
+      "accuracy": 2,
+      "level": 2
+    },
+    {
+      "name": "One-Two Punch",
+      "description": "Some description for this ability",
+      "image": "",
+      "type": "attack",
+      "plane": "physical",
+      "modifier": "strength",
+      "multiplier": 1.4,
+      "bonusMin": 4,
+      "bonusMax": 4,
+      "accuracy": 2,
+      "level": 2
+    },
+    {
+      "name": "Shadow Strike",
+      "description": "Some description for this ability",
+      "image": "",
+      "type": "attack",
+      "plane": "physical",
+      "modifier": "dexterity",
+      "multiplier": 1.8,
+      "bonusMin": 10,
+      "bonusMax": 10,
+      "accuracy": 2,
+      "level": 3
     }
   ],
   "spells": 
   [
+    {
+      "name": "Magic Arrow",
+      "description": "Some description for this ability",
+      "image": "",
+      "type": "attack",
+      "plane": "magical",
+      "modifier": "intelligence",
+      "multiplier": 1,
+      "bonusMin": 4,
+      "bonusMax": 4,
+      "accuracy": 0,
+      "uses": 0,
+      "level": 1
+    },
+    {
+      "name": "Chromatic Orb",
+      "description": "Some description for this ability",
+      "image": "",
+      "type": "attack",
+      "plane": "magical",
+      "modifier": "intelligence",
+      "multiplier": 1.4,
+      "bonusMin": 0,
+      "bonusMax": 0,
+      "accuracy": 0,
+      "uses": 0,
+      "level": 1
+    },
+    {
+      "name": "Lightning Bolt",
+      "description": "Some description for this ability",
+      "image": "",
+      "type": "attack",
+      "plane": "magical",
+      "modifier": "intelligence",
+      "multiplier": 1.2,
+      "bonusMin": 5,
+      "bonusMax": 5,
+      "accuracy": 3,
+      "level": 2
+    },
     {
       "name": "Fireball",
       "description": "Some description for this ability",
@@ -73,10 +181,10 @@
       "plane": "magical",
       "modifier": "intelligence",
       "multiplier": 1,
-      "bonusMin": 5,
-      "bonusMax": 10,
+      "bonusMin": 8,
+      "bonusMax": 8,
       "accuracy": 3,
-      "level": 1
+      "level": 2
     }
   ]
 }

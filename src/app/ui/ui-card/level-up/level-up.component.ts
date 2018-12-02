@@ -53,6 +53,7 @@ export class LevelUpComponent implements OnInit, OnDestroy {
   }
 
   levelUp() {
+    this.player.level += this.player.skillPoints - this.tempPoints;
     this.player.skillPoints = this.tempPoints;
     for (let stat of this.keys(this.player.getStats('main'))) {
       this.player.stats[stat]['value'] = this.tempStats[stat]['value'];

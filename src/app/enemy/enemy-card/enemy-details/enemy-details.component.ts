@@ -42,6 +42,14 @@ export class EnemyDetailsComponent implements OnInit {
     });
   }
 
+  getEnemyAbilities(enemy) {
+    let allAbilities = [];
+    for (let type of Object.keys(this.abilityList)) {
+      allAbilities = allAbilities.concat(this.abilityList[type]);
+    }
+    return allAbilities.filter(ability => enemy.abilities.indexOf(ability.name) !== -1);
+  }
+
   createEnemy() {
     const enemyTier = this.enemiesList.filter(e => this.player.kills >= e.challenge);
     const enemy = enemyTier[this.dice.roll(0, enemyTier.length - 1)];
@@ -50,7 +58,7 @@ export class EnemyDetailsComponent implements OnInit {
       enemy.name,
       enemy.portrait,
       enemy.stats,
-      this.abilityList.basic,
+      this.getEnemyAbilities(enemy),
       enemy.armour,
       enemy.magicResistance,
       enemy.expValue,

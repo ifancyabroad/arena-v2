@@ -141,7 +141,7 @@ export class GameEntity {
 
   // Get damage based on stats
   getDamage(ability) {
-    return this.stats[ability.modifier].total * ability.multiplier + this.dice.roll(ability.bonusMin + 1, ability.bonusMax + 6);
+    return Math.floor(this.stats[ability.modifier].total * ability.multiplier + this.dice.roll(ability.bonusMin + 1, ability.bonusMax + 6));
   }
 
   // Subtract from current health when hit

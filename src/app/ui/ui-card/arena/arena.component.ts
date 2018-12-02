@@ -82,7 +82,7 @@ export class ArenaComponent implements OnInit {
     } else {
       action = 'miss';
     }
-    this.logAction(attacker.type, action, damage);
+    this.logAction(attacker.type, action, ability, damage);
   }
 
   // Calculate magical damage
@@ -90,7 +90,7 @@ export class ArenaComponent implements OnInit {
     const damage = defender.checkResistance(attacker.getDamage(ability), defender.stats.magicResistance.total);
     const action = 'spell';
     defender.takeHit(damage);
-    this.logAction(attacker.type, action, damage);
+    this.logAction(attacker.type, action, ability, damage);
   }
 
   // Check if dead
@@ -115,24 +115,33 @@ export class ArenaComponent implements OnInit {
   }
 
   // Populate the combat log
-  logAction(attacker, action, damage = 0) {
-    const log = {
-      player: {
-        attack: `You attack the ${this.enemy.name} for ${damage} damage`,
-        crit: `CRITICAL HIT on the ${this.enemy.name} for ${damage} damage`,
-        spell: `Your spell hits the ${this.enemy.name} for ${damage} damage`,
-        miss: `You miss the ${this.enemy.name}`,
-        victory: `You have slain the ${this.enemy.name}!`,
-        exp: `You gain ${this.enemy.expValue} experience`,
-        gold: `${this.enemy.goldValue} gold earned`
-      },
-      enemy: {
-        attack: `${this.enemy.name} attacks you for ${damage} damage`,
-        crit: `${this.enemy.name} attacks you with a CRITICAL HIT for ${damage} damage`,
-        spell: `${this.enemy.name}'s spell hits you for ${damage} damage`,
-        miss: `${this.enemy.name} misses you`
-      }
-    };
+  logAction(attacker, action, ability = false, damage = false) {
+    let log;
+    if (ability) {
+      const withAbility = ability['name'] === 'Attack' ? ' ' : ` with ${ability['name']} `;
+      log = {
+        player: {
+          attack: `You attack the ${this.enemy.name}${withAbility}for ${damage} damage`,
+          crit: `CRITICAL HIT on the ${this.enemy.name}${withAbility}for ${damage} damage`,
+          spell: `You cast ${ability['name']} hitting the ${this.enemy.name} for ${damage} damage`,
+          miss: `You miss the ${this.enemy.name}`
+        },
+        enemy: {
+          attack: `${this.enemy.name} attacks you${withAbility}for ${damage} damage`,
+          crit: `${this.enemy.name} attacks you${withAbility}and a CRITICAL HIT for ${damage} damage`,
+          spell: `${this.enemy.name} casts ${ability['name']} for ${damage} damage`,
+          miss: `${this.enemy.name} misses you`
+        }
+      };
+    } else {
+      log = {
+        player: {
+          victory: `You have slain the ${this.enemy.name}!`,
+          exp: `You gain ${this.enemy.expValue} experience`,
+          gold: `${this.enemy.goldValue} gold earned`
+        }
+      };
+    }
     this.combatLog.unshift(log[attacker][action]);
   }
 
