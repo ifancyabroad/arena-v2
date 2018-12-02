@@ -57,6 +57,9 @@ export class ArenaComponent implements OnInit {
 
   // Check if magical or physical attack and proceed accordingly
   turn(attacker, defender, ability = this.enemy.getAction()) {
+    if (ability.maxUses) {
+      ability.uses--;
+    }
     if (ability.plane === 'physical') {
       this.getPhysicalAttack(attacker, defender, ability);
     } else if (ability.plane === 'magical') {

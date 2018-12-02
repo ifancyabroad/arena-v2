@@ -16,7 +16,7 @@ export class GameEntity {
     public name: string,
     public portrait: string,
     public st: Object,
-    public ab: Object,
+    public ab: Object[],
     public armour = 0,
     public magicResistance = 0
   ) {
@@ -93,7 +93,12 @@ export class GameEntity {
       }
     };
 
-    this.abilities = ab;
+    this.abilities = ab.map(ability => {
+      if (ability['maxUses']) {
+        ability['uses'] = ability['maxUses'];
+      }
+      return ability;
+    });
 
     this.maxHealth = function() {
       return this.stats.constitution.value * 10;
