@@ -25,7 +25,7 @@ export class Player extends GameEntity {
     public portrait: string,
     public cl: Object,
     public st: Object,
-    public ab: Object
+    public ab: Object[]
   ) {
     super(name, portrait, st, ab);
   }

@@ -8,7 +8,7 @@ export class Enemy extends GameEntity {
     public name: string,
     public portrait: string,
     public st: Object,
-    public ab: Object,
+    public ab: Object[],
     public armour = 0,
     public magicResistance = 0,
     public expValue: number,
