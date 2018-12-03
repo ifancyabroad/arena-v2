@@ -50,7 +50,7 @@ export class ArenaComponent implements OnInit {
   startRound(ability) {
     if (this.player['initiative'] >= this.enemy['initiative']) {
       this.turn(this.player, this.enemy, ability);
-      this.turn(this.enemy, this.player, ability);
+      this.turn(this.enemy, this.player);
     } else {
       this.turn(this.enemy, this.player);
       this.turn(this.player, this.enemy, ability);
@@ -59,43 +59,59 @@ export class ArenaComponent implements OnInit {
 
   // Check if magical or physical attack and proceed accordingly
   turn(attacker, defender, ability = this.enemy.getAction()) {
-    if (ability['maxUses']) {
-      ability['uses']--;
-    }
-    if (ability['plane'] === 'physical') {
-      this.getPhysicalAttack(attacker, defender, ability);
-    } else if (ability['plane'] === 'magical') {
-      this.getMagicalAttack(attacker, defender, ability);
-    }
-    if (this.checkDead(defender) && defender.type === 'enemy') {
-      this.enemySlain();
+    switch (ability['type']) {
+      case 'attack':
+        this.getAttack(attacker, defender, ability);
+        break;
+
+      case 'buff':
+        this.getBuff(attacker, defender, ability);
+        break;
+
+      case 'debuff':
+        this.getDebuff(attacker, defender, ability);
+        break;
+
+      default:
+        if (this.checkDead(defender) && defender.type === 'enemy') {
+          this.enemySlain();
+        }
+        break;
     }
   }
 
   // Check hit, crit and calculate damage
-  getPhysicalAttack(attacker, defender, ability) {
+  getAttack(attacker, defender, ability) {
     let damage;
     let action;
-    if (attacker.checkHit()) {
-      damage = defender.checkResistance(attacker.getDamage(ability), defender.stats.armour.total);
-      action = 'attack';
-      if (attacker.checkCrit()) {
-        damage *= 2;
-        action = 'crit';
+    if (ability['plane'] === 'physical') {
+      if (attacker.checkHit()) {
+        damage = defender.checkResistance(attacker.getDamage(ability), defender.stats.armour.total);
+        action = 'attack';
+        if (attacker.checkCrit()) {
+          damage *= 2;
+          action = 'crit';
+        }
+        defender.takeHit(damage);
+      } else {
+        action = 'miss';
       }
+    } else if (ability['plane'] === 'magical') {
+      damage = defender.checkResistance(attacker.getDamage(ability), defender.stats.magicResistance.total);
       defender.takeHit(damage);
-    } else {
-      action = 'miss';
+      action = 'spell';
     }
     this.logAction(attacker.type, action, ability, damage);
   }
 
-  // Calculate magical damage
-  getMagicalAttack(attacker, defender, ability) {
-    const damage = defender.checkResistance(attacker.getDamage(ability), defender.stats.magicResistance.total);
-    const action = 'spell';
-    defender.takeHit(damage);
-    this.logAction(attacker.type, action, ability, damage);
+  // Process buff ability
+  getBuff(attacker, defender, ability) {
+
+  }
+
+  // Process debuff ability
+  getDebuff(attacker, defender, ability) {
+
   }
 
   // Check if dead
