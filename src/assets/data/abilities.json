@@ -105,7 +105,7 @@
       "type": "debuff",
       "plane": "physical",
       "modifier": "initiative",
-      "value": 4,
+      "value": -4,
       "duration": 3,
       "maxUses": 4,
       "level": 2
@@ -117,7 +117,7 @@
       "type": "debuff",
       "plane": "physical",
       "modifier": "dexterity",
-      "value": 6,
+      "value": -6,
       "duration": 2,
       "maxUses": 2,
       "level": 2
@@ -212,7 +212,7 @@
       "type": "debuff",
       "plane": "physical",
       "modifier": "dexterity",
-      "value": 5,
+      "value": -5,
       "duration": 4,
       "maxUses": 4,
       "level": 2
@@ -224,7 +224,7 @@
       "type": "debuff",
       "plane": "physical",
       "modifier": "armour",
-      "value": 8,
+      "value": -8,
       "duration": 2,
       "maxUses": 2,
       "level": 2
@@ -319,7 +319,7 @@
       "type": "debuff",
       "plane": "magical",
       "modifier": "intelligence",
-      "value": 5,
+      "value": -5,
       "duration": 4,
       "maxUses": 4,
       "level": 2
@@ -331,7 +331,7 @@
       "type": "debuff",
       "plane": "magical",
       "modifier": "dexterity",
-      "value": 10,
+      "value": -10,
       "duration": 2,
       "maxUses": 2,
       "level": 3

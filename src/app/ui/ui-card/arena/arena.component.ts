@@ -15,6 +15,8 @@ import { Enemy } from 'src/app/shared/classes/enemy';
 })
 export class ArenaComponent implements OnInit {
 
+  roundCounter = 1; // Track how many turns have passed
+
   battleState = 'waiting'; // State of the fight
   combatLog: Object[] = []; // Store text in the combat log
 
@@ -55,6 +57,7 @@ export class ArenaComponent implements OnInit {
       this.turn(this.enemy, this.player);
       this.turn(this.player, this.enemy, ability);
     }
+    this.roundChecks();
   }
 
   // Check if magical or physical attack and proceed accordingly
@@ -65,11 +68,11 @@ export class ArenaComponent implements OnInit {
         break;
 
       case 'buff':
-        this.getBuff(attacker, defender, ability);
+        this.getEffect(attacker, ability);
         break;
 
       case 'debuff':
-        this.getDebuff(attacker, defender, ability);
+        this.getEffect(defender, ability);
         break;
 
       default:
@@ -105,13 +108,8 @@ export class ArenaComponent implements OnInit {
   }
 
   // Process buff ability
-  getBuff(attacker, defender, ability) {
-
-  }
-
-  // Process debuff ability
-  getDebuff(attacker, defender, ability) {
-
+  getEffect(entity, ability) {
+    entity.addEffect(ability);
   }
 
   // Check if dead
@@ -166,8 +164,16 @@ export class ArenaComponent implements OnInit {
     this.combatLog.unshift(log[attacker][action]);
   }
 
+  // End of round checks
+  roundChecks() {
+    this.roundCounter++;
+    this.player.updateEffects();
+    this.enemy.updateEffects();
+  }
+
   // Rest the combat log
   resetArena() {
+    this.roundCounter = 0;
     this.combatLog.splice(0);
   }
 

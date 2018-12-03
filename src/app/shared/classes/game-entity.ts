@@ -1,4 +1,5 @@
 import { UtilitiesService } from '../services/utilities.service';
+import { buffer } from 'rxjs/operators';
 
 export class GameEntity {
 
@@ -133,6 +134,27 @@ export class GameEntity {
     this.stats[ability.modifier].total * ability.multiplier +
     this.dice.roll(ability.bonusMin + 1, ability.bonusMax + 6)
   )
+
+  // Add or refresh ability effect
+  addEffect(ability) {
+    if (this.activeEffects.indexOf(ability) > -1) {
+      this.stats[ability.modifier].battle += ability.value;
+      this.activeEffects.push(ability);
+    } else {
+      this.activeEffects[this.activeEffects.indexOf(ability)]['remaining'] = ability.maxUses;
+    }
+  }
+
+  // Update active effects
+  updateEffects() {
+    for (let i = this.activeEffects.length - 1; i >= 0; i--) {
+      this.activeEffects[i]['remaining']--;
+      if (this.activeEffects[i]['remaining'] < 1) {
+        this.stats[this.activeEffects[i]['modifier']].battle -= this.activeEffects[i]['value'];
+        this.activeEffects.splice(i, 1);
+      }
+    }
+  }
 
   // Subtract from current health when hit
   takeHit(damage): void {
