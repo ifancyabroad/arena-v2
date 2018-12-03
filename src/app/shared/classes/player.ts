@@ -31,7 +31,7 @@ export class Player extends GameEntity {
   }
 
   // Gain exp and check if skill point is earned
-  experienceGain(xp) {
+  experienceGain(xp): void {
     const currentTier = this.levelTier();
     this.experience += xp;
     if (currentTier !== this.levelTier()) {
@@ -40,7 +40,7 @@ export class Player extends GameEntity {
   }
 
   // Find what level the player has earned through exp
-  levelTier = function () {
+  levelTier = function(): number {
     if (this.experience > 20000) {
       return 10;
     } else if (this.experience > 12000) {
@@ -65,7 +65,7 @@ export class Player extends GameEntity {
   };
 
   // Update inventory with new item
-  updateInventory(item) {
+  updateInventory(item): void {
     if (this.stats[this.inventory[item.type].modifier]) {
       this.stats[this.inventory[item.type].modifier].modifier -= this.inventory[item.type].value;
     }

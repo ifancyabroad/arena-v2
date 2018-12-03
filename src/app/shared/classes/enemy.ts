@@ -17,7 +17,7 @@ export class Enemy extends GameEntity {
     super(name, portrait, st, ab, armour, magicResistance);
   }
 
-  getAction() {
+  getAction(): Object {
     return this.abilities[this.dice.roll(0, this.abilities.length - 1)];
   }
 }

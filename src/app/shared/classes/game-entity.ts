@@ -4,19 +4,19 @@ export class GameEntity {
 
   dice = new UtilitiesService; // Get dice
 
-  stats; // Entity main stats
-  abilities; // Entity abilities
-  maxHealth; // Maximum health based on constitution
-  currentHealth; // Current health of entity
-  dead; // Is entity dead
-  hitChance; // Hit chance based on dexterity
-  critChance; // Critical hit chance based on dexterity
+  stats: Object; // Entity main stats
+  activeEffects: Object[] = []; // Currently active effects
+  maxHealth: Function; // Maximum health based on constitution
+  currentHealth: number; // Current health of entity
+  dead: Function; // Is entity dead
+  hitChance: Function; // Hit chance based on dexterity
+  critChance: Function; // Critical hit chance based on dexterity
 
   constructor(
     public name: string,
     public portrait: string,
     public st: Object,
-    public ab: Object[],
+    public abilities: Object[],
     public armour = 0,
     public magicResistance = 0
   ) {
@@ -27,8 +27,9 @@ export class GameEntity {
         type: 'main',
         value: st['strength'],
         modifier: 0,
-        get total() {
-          return this.value + this.modifier;
+        battle: 0,
+        get total(): number {
+          return this.value + this.modifier + this.battle;
         }
       },
       'dexterity': {
@@ -37,8 +38,9 @@ export class GameEntity {
         type: 'main',
         value: st['dexterity'],
         modifier: 0,
-        get total() {
-          return this.value + this.modifier;
+        battle: 0,
+        get total(): number {
+          return this.value + this.modifier + this.battle;
         }
       },
       'constitution': {
@@ -47,8 +49,9 @@ export class GameEntity {
         type: 'main',
         value: st['constitution'],
         modifier: 0,
-        get total() {
-          return this.value + this.modifier;
+        battle: 0,
+        get total(): number {
+          return this.value + this.modifier + this.battle;
         }
       },
       'intelligence': {
@@ -57,8 +60,9 @@ export class GameEntity {
         type: 'main',
         value: st['intelligence'],
         modifier: 0,
-        get total() {
-          return this.value + this.modifier;
+        battle: 0,
+        get total(): number {
+          return this.value + this.modifier + this.battle;
         }
       },
       'initiative': {
@@ -67,8 +71,9 @@ export class GameEntity {
         type: 'main',
         value: st['initiative'],
         modifier: 0,
-        get total() {
-          return this.value + this.modifier;
+        battle: 0,
+        get total(): number {
+          return this.value + this.modifier + this.battle;
         }
       },
       'armour': {
@@ -77,8 +82,9 @@ export class GameEntity {
         type: 'defense',
         value: armour,
         modifier: 0,
-        get total() {
-          return this.value + this.modifier;
+        battle: 0,
+        get total(): number {
+          return this.value + this.modifier + this.battle;
         }
       },
       'magicResistance': {
@@ -87,40 +93,25 @@ export class GameEntity {
         type: 'defense',
         value: magicResistance,
         modifier: 0,
-        get total() {
-          return this.value + this.modifier;
+        battle: 0,
+        get total(): number {
+          return this.value + this.modifier + this.battle;
         }
       }
     };
 
-    this.abilities = ab.map(ability => {
-      if (ability['maxUses']) {
-        ability['uses'] = ability['maxUses'];
-      }
-      return ability;
-    });
-
-    this.maxHealth = function() {
-      return this.stats.constitution.value * 10;
-    };
-
+    // Health and alive variables
+    this.maxHealth = (): number => this.stats['constitution'].value * 10;
     this.currentHealth = this.maxHealth();
+    this.dead = (): boolean => this.currentHealth <= 0;
 
-    this.dead = function() {
-      return this.currentHealth <= 0;
-    };
-
-    this.hitChance = function() {
-      return (this.stats.dexterity.value + this.stats.dexterity.modifier) * 5;
-    };
-
-    this.critChance = function() {
-      return (this.stats.dexterity.value + this.stats.dexterity.modifier) * 0.75;
-    };
+    // Hit and crit chance
+    this.hitChance = (): number => (this.stats['dexterity'].value + this.stats['dexterity'].modifier) * 5;
+    this.critChance = (): number => (this.stats['dexterity'].value + this.stats['dexterity'].modifier) * 0.75;
   }
 
   // Get specific stat types
-  getStats = function(type) {
+  getStats = function(type): Object {
     const stats = {};
     for (let stat of Object.keys(this.stats)) {
       if (this.stats[stat].type === type) {
@@ -131,26 +122,20 @@ export class GameEntity {
   };
 
   // Use stats to check whether or not attack hits and crits
-  checkHit() {
-    return this.hitChance() >= this.dice.roll(1, 100) ? true : false;
-  }
-
-  checkCrit() {
-    return this.critChance() >= this.dice.roll(1, 100) ? true : false;
-  }
+  checkHit = (): boolean => this.hitChance() >= this.dice.roll(1, 100) ? true : false;
+  checkCrit = (): boolean => this.critChance() >= this.dice.roll(1, 100) ? true : false;
 
   // Mitigate damage based on stats
-  checkResistance(damage, stat) {
-    return damage - stat < 0 ? 0 : damage - stat;
-  }
+  checkResistance = (damage, stat): number => damage - stat < 0 ? 0 : damage - stat;
 
   // Get damage based on stats
-  getDamage(ability) {
-    return Math.floor(this.stats[ability.modifier].total * ability.multiplier + this.dice.roll(ability.bonusMin + 1, ability.bonusMax + 6));
-  }
+  getDamage = (ability): number => Math.floor(
+    this.stats[ability.modifier].total * ability.multiplier +
+    this.dice.roll(ability.bonusMin + 1, ability.bonusMax + 6)
+  )
 
   // Subtract from current health when hit
-  takeHit(damage) {
+  takeHit(damage): void {
     this.currentHealth -= damage;
   }
 }
