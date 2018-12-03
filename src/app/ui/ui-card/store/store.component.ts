@@ -3,6 +3,7 @@ import { ItemService } from './item.service';
 import { PlayerService } from 'src/app/shared/services/player.service';
 import { NavigationService } from 'src/app/shared/services/navigation.service';
 import { Subscription } from 'rxjs';
+import { Player } from 'src/app/shared/classes/player';
 
 @Component({
   selector: 'app-store',
@@ -11,8 +12,8 @@ import { Subscription } from 'rxjs';
 })
 export class StoreComponent implements OnInit, OnDestroy {
 
-  items;
-  player;
+  items: Object[];
+  player: Player;
   storeLog = 'Hello and welcome to the store!';
 
   navSubscription: Subscription;
@@ -44,10 +45,12 @@ export class StoreComponent implements OnInit, OnDestroy {
     }
   }
 
+  // Reset store log to initial message
   resetLog() {
     this.storeLog = 'Hello and welcome to the store!';
   }
 
+  // Go back to town
   back() {
     this.nav.uiCard.next({ face: 'back', view: 'town', flip: true });
     this.nav.playerCard.next({ flip: true });

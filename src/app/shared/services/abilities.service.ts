@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class AbilitiesService {
 
-  abilities: any;
+  abilities: any; // List of abilities
 
   constructor(private http: HttpClient) { }
 

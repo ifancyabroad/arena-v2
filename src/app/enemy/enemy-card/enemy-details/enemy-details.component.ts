@@ -4,6 +4,7 @@ import { Enemy } from 'src/app/shared/classes/enemy';
 import { UtilitiesService } from 'src/app/shared/services/utilities.service';
 import { PlayerService } from 'src/app/shared/services/player.service';
 import { AbilitiesService } from 'src/app/shared/services/abilities.service';
+import { Player } from 'src/app/shared/classes/player';
 
 @Component({
   selector: 'app-enemy-details',
@@ -12,10 +13,10 @@ import { AbilitiesService } from 'src/app/shared/services/abilities.service';
 })
 export class EnemyDetailsComponent implements OnInit {
 
-  player;
-  enemy;
-  enemiesList;
-  abilityList;
+  player: Player;
+  enemy: Enemy;
+  enemiesList: Object[];
+  abilityList: Object[];
 
   constructor(
     private es: EnemyService,
@@ -42,6 +43,7 @@ export class EnemyDetailsComponent implements OnInit {
     });
   }
 
+  // Get enemy abilities
   getEnemyAbilities(enemy) {
     let allAbilities = [];
     for (let type of Object.keys(this.abilityList)) {
@@ -50,19 +52,20 @@ export class EnemyDetailsComponent implements OnInit {
     return allAbilities.filter(ability => enemy.abilities.indexOf(ability.name) !== -1);
   }
 
+  // Create enemy
   createEnemy() {
-    const enemyTier = this.enemiesList.filter(e => this.player.kills >= e.challenge);
+    const enemyTier = this.enemiesList.filter(e => this.player.kills >= e['challenge']);
     const enemy = enemyTier[this.dice.roll(0, enemyTier.length - 1)];
 
     this.es.enemy = new Enemy(
-      enemy.name,
-      enemy.portrait,
-      enemy.stats,
+      enemy['name'],
+      enemy['portrait'],
+      enemy['stats'],
       this.getEnemyAbilities(enemy),
-      enemy.armour,
-      enemy.magicResistance,
-      enemy.expValue,
-      enemy.goldValue
+      enemy['armour'],
+      enemy['magicResistance'],
+      enemy['expValue'],
+      enemy['goldValue']
     );
   }
 

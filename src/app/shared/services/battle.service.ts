@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
 })
 export class BattleService {
 
-  state: Subject<string> = new Subject<string>();
+  state: Subject<string> = new Subject<string>(); // State of the battle
 
   constructor() { }
 }

@@ -13,13 +13,13 @@ import { AbilitiesService } from 'src/app/shared/services/abilities.service';
 })
 export class CharacterCreateComponent implements OnInit {
 
-  nameInput: string;
-  portraitInput: string;
-  classInput: any;
+  nameInput: string; // Current selected name
+  portraitInput: string; // Current selected portrait
+  classInput: any; // Current selected class
 
-  portraits;
-  classes;
-  abilities;
+  portraits: Array<string>; // List of portraits
+  classes: Object[]; // List of classes
+  abilities: Object[]; // List of abilities
 
   constructor(
     private nav: NavigationService,
@@ -42,6 +42,7 @@ export class CharacterCreateComponent implements OnInit {
     });
   }
 
+  // Browsing portraits and classes
   changeSelection(type, direction) {
     direction = direction > type.length - 1 ? 0 : direction < 0 ? type.length - 1 : direction;
     if (type === this.classes) {
@@ -51,6 +52,7 @@ export class CharacterCreateComponent implements OnInit {
     }
   }
 
+  // Set initial stats
   setStats(maxStats) {
     const stats: Object = {};
     for (let stat of Object.keys(maxStats)) {
@@ -59,6 +61,7 @@ export class CharacterCreateComponent implements OnInit {
     return stats;
   }
 
+  // Create player
   createPlayer() {
     this.ps.player = new Player(
       this.nameInput,

@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NavigationService } from 'src/app/shared/services/navigation.service';
 import { PlayerService } from 'src/app/shared/services/player.service';
 import { Subscription } from 'rxjs';
+import { Player } from 'src/app/shared/classes/player';
 
 @Component({
   selector: 'app-level-up',
@@ -11,7 +12,7 @@ import { Subscription } from 'rxjs';
 export class LevelUpComponent implements OnInit, OnDestroy {
 
   keys = Object.keys;
-  player;
+  player: Player;
 
   tempStats: Object;
   tempPoints: number;
@@ -34,6 +35,7 @@ export class LevelUpComponent implements OnInit, OnDestroy {
     }
   }
 
+  // Get temporary stat values
   initiateTempValues() {
     this.tempPoints = this.player.skillPoints;
     this.tempStats = {};
@@ -45,6 +47,7 @@ export class LevelUpComponent implements OnInit, OnDestroy {
     }
   }
 
+  // Adjust stat value
   changeStat(stat, modifier) {
     if (stat.value + modifier >= stat.min && this.tempPoints - modifier >= 0) {
       stat.value += modifier;
@@ -52,6 +55,7 @@ export class LevelUpComponent implements OnInit, OnDestroy {
     }
   }
 
+  // Confirm level up
   levelUp() {
     this.player.level += this.player.skillPoints - this.tempPoints;
     this.player.skillPoints = this.tempPoints;
@@ -61,6 +65,7 @@ export class LevelUpComponent implements OnInit, OnDestroy {
     this.nav.uiCard.next({ face: 'back', view: 'town', flip: true });
   }
 
+  // Cancel changes, go back to town
   back() {
     this.nav.uiCard.next({ face: 'back', view: 'town', flip: true });
   }

@@ -8,10 +8,11 @@ import { map } from 'rxjs/operators';
 })
 export class ItemService {
 
-  items;
+  items: any; // List of items
 
   constructor(private http: HttpClient) { }
 
+  // Get list of items
   getItems() {
     if (this.items) {
       return of(this.items);

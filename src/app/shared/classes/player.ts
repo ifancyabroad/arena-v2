@@ -25,9 +25,9 @@ export class Player extends GameEntity {
     public portrait: string,
     public cl: Object,
     public st: Object,
-    public ab: Object[]
+    public abilities: Object[]
   ) {
-    super(name, portrait, st, ab);
+    super(name, portrait, st, abilities);
   }
 
   // Gain exp and check if skill point is earned
@@ -40,7 +40,7 @@ export class Player extends GameEntity {
   }
 
   // Find what level the player has earned through exp
-  levelTier = function(): number {
+  levelTier = (): number => {
     if (this.experience > 20000) {
       return 10;
     } else if (this.experience > 12000) {

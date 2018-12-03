@@ -8,10 +8,11 @@ import { map } from 'rxjs/operators';
 })
 export class CharacterCreateService {
 
-  characterDetails: any;
+  characterDetails: any; // Character details
 
   constructor(private http: HttpClient) { }
 
+  // Get character information
   getCharacterDetail() {
     if (this.characterDetails) {
       return of(this.characterDetails);

@@ -12,7 +12,7 @@ export class EnemyService {
 
   enemy: Enemy; // Current enemy object
   enemyCreated: Subject<boolean> = new Subject<boolean>(); // Observable for creating the character
-  enemyList: any;
+  enemyList: any; // List of enemies
 
   constructor(private http: HttpClient) { }
 

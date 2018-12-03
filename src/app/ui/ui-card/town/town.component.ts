@@ -3,6 +3,7 @@ import { NavigationService } from '../../../shared/services/navigation.service';
 import { EnemyService } from 'src/app/shared/services/enemy.service';
 import { BattleService } from 'src/app/shared/services/battle.service';
 import { PlayerService } from 'src/app/shared/services/player.service';
+import { Player } from 'src/app/shared/classes/player';
 
 @Component({
   selector: 'app-town',
@@ -11,7 +12,7 @@ import { PlayerService } from 'src/app/shared/services/player.service';
 })
 export class TownComponent implements OnInit {
 
-  player;
+  player: Player;
 
   constructor(
     private nav: NavigationService,

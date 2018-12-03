@@ -4,6 +4,8 @@ import { BattleService } from 'src/app/shared/services/battle.service';
 import { PlayerService } from 'src/app/shared/services/player.service';
 import { EnemyService } from 'src/app/shared/services/enemy.service';
 import { fadein } from 'src/app/animations/fadein';
+import { Player } from 'src/app/shared/classes/player';
+import { Enemy } from 'src/app/shared/classes/enemy';
 
 @Component({
   selector: 'app-arena',
@@ -16,8 +18,8 @@ export class ArenaComponent implements OnInit {
   battleState = 'waiting'; // State of the fight
   combatLog: Object[] = []; // Store text in the combat log
 
-  player; // Player object
-  enemy; // Enemy object
+  player: Player; // Player object
+  enemy: Enemy; // Enemy object
 
   constructor(
     private nav: NavigationService,
@@ -46,7 +48,7 @@ export class ArenaComponent implements OnInit {
 
   // Check turn order and begin the round once input is received
   startRound(ability) {
-    if (this.player.initiative >= this.enemy.initiative) {
+    if (this.player['initiative'] >= this.enemy['initiative']) {
       this.turn(this.player, this.enemy, ability);
       this.turn(this.enemy, this.player, ability);
     } else {
@@ -57,12 +59,12 @@ export class ArenaComponent implements OnInit {
 
   // Check if magical or physical attack and proceed accordingly
   turn(attacker, defender, ability = this.enemy.getAction()) {
-    if (ability.maxUses) {
-      ability.uses--;
+    if (ability['maxUses']) {
+      ability['uses']--;
     }
-    if (ability.plane === 'physical') {
+    if (ability['plane'] === 'physical') {
       this.getPhysicalAttack(attacker, defender, ability);
-    } else if (ability.plane === 'magical') {
+    } else if (ability['plane'] === 'magical') {
       this.getMagicalAttack(attacker, defender, ability);
     }
     if (this.checkDead(defender) && defender.type === 'enemy') {

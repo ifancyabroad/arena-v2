@@ -12,7 +12,4 @@ export class NavigationService {
 
   constructor() { }
 
-  // proceed(card: Subject<Object>, settings: Object) {
-  //   card.next(settings);
-  // }
 }
