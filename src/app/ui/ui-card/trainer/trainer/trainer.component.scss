@@ -1,0 +1,30 @@
+.trainer-icon {
+  width: 25px;
+}
+
+.ability-table-container {
+  overflow: auto;
+  max-height: 350px;
+
+  .ability-table {
+    border-collapse: collapse;
+    width: 100%;
+  
+    td, th {
+      border: 1px solid grey;
+      padding: 8px;
+    }
+
+    td {
+      font-size: 0.8em;
+    }
+  
+    td:last-child {
+      text-align: center;
+    }
+  
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  }
+}

@@ -72,4 +72,9 @@ export class Player extends GameEntity {
     this.inventory[item.type] = item;
     this.stats[this.inventory[item.type].modifier].modifier += this.inventory[item.type].value;
   }
+
+  // Learn a new ability
+  learnAbility(ability): void {
+    this.abilities.push(ability);
+  }
 }
