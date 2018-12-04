@@ -50,7 +50,7 @@ export class ArenaComponent implements OnInit {
 
   // Check turn order and begin the round once input is received
   startRound(ability) {
-    if (this.player['initiative'] >= this.enemy['initiative']) {
+    if (this.player['initiative'].total >= this.enemy['initiative'].total) {
       this.turn(this.player, this.enemy, ability);
       this.turn(this.enemy, this.player);
     } else {
