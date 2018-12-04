@@ -19,14 +19,6 @@ export class AbilitiesService {
       return this.http.get('./../../assets/data/abilities.json').pipe(
         map(data => {
           this.abilities = data;
-          for (let i = 0; i < this.abilities.length; i++) {
-            if (this.abilities[i]['maxUses']) {
-              this.abilities[i]['uses'] = this.abilities[i]['maxUses'];
-            }
-            if (this.abilities[i]['duration']) {
-              this.abilities[i]['remaining'] = this.abilities[i]['duration'];
-            }
-          }
           return this.abilities;
         })
       );

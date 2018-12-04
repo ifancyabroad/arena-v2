@@ -9,7 +9,7 @@
       "intelligence": 2,
       "initiative": 6
     },
-    "abilities": ["Attack", "Backstab"],
+    "abilities": ["Attack", "Backstab", "Quick Fingers"],
     "challenge": 0,
     "armour": 2,
     "magicResistance": 4,
@@ -42,7 +42,7 @@
       "intelligence": 1,
       "initiative": 7
     },
-    "abilities": ["Attack"],
+    "abilities": ["Attack", "Berserk"],
     "challenge": 0,
     "expValue": 75,
     "goldValue": 100
@@ -57,7 +57,7 @@
       "intelligence": 3,
       "initiative": 7
     },
-    "abilities": ["Attack", "Cleave", "Lunging Strike"],
+    "abilities": ["Attack", "Cleave", "Lunging Strike", "Berserk", "Intimidating Shout"],
     "challenge": 2,
     "armour": 6,
     "magicResistance": 2,		
@@ -90,7 +90,7 @@
       "intelligence": 2,
       "initiative": 6
     },
-    "abilities": ["Attack", "Cleave", "One-Two Punch"],
+    "abilities": ["Attack", "Cleave", "One-Two Punch", "Brutal Advance"],
     "challenge": 3,
     "armour": 4,
     "expValue": 100,
@@ -123,7 +123,7 @@
       "intelligence": 1,
       "initiative": 6
     },
-    "abilities": ["Attack", "Cleave", "One-Two Punch"],
+    "abilities": ["Attack", "Cleave", "One-Two Punch", "Brutal Advance", "Berserk"],
     "challenge": 8,
     "armour": 2,
     "expValue": 150,
@@ -139,7 +139,7 @@
       "intelligence": 2,
       "initiative": 5
     },
-    "abilities": ["Attack", "Cleave"],
+    "abilities": ["Attack", "Cleave", "Berserk"],
     "challenge": 10,
     "armour": 2,
     "magicResistance": 12,
@@ -156,7 +156,7 @@
       "intelligence": 12,
       "initiative": 10
     },
-    "abilities": ["Attack", "Magic Arrow", "Chromatic Orb"],
+    "abilities": ["Attack", "Magic Arrow", "Chromatic Orb", "Minor Spell Protection"],
     "challenge": 12,
     "armour": 2,
     "magicResistance": 7,
@@ -173,7 +173,7 @@
       "intelligence": 15,
       "initiative": 11
     },
-    "abilities": ["Attack", "Magic Arrow", "Fireball", "Lightning Bolt"],
+    "abilities": ["Attack", "Magic Arrow", "Fireball", "Lightning Bolt", "Iron Skin", "Confusion"],
     "challenge": 15,
     "armour": 1,
     "magicResistance": 10,
@@ -190,7 +190,7 @@
       "intelligence": 8,
       "initiative": 14
     },
-    "abilities": ["Attack", "Acrobatic Strike", "Precise Strike"],
+    "abilities": ["Attack", "Acrobatic Strike", "Precise Strike", "Agile Footwork", "Magic Arrow"],
     "challenge": 15,
     "armour": 2,
     "magicResistance": 8,
@@ -207,7 +207,7 @@
       "intelligence": 4,
       "initiative": 12
     },
-    "abilities": ["Attack", "Lunging Strike", "Acrobatic Strike"],
+    "abilities": ["Attack", "Lunging Strike", "Acrobatic Strike", "Gap In The Armour"],
     "challenge": 16,
     "armour": 4,
     "magicResistance": 4,
@@ -224,7 +224,7 @@
       "intelligence": 7,
       "initiative": 7
     },
-    "abilities": ["Attack", "Cleave", "One-Two Punch"],
+    "abilities": ["Attack", "Cleave", "One-Two Punch", "Stand Ground", "Intimidating Shout"],
     "challenge": 14,
     "armour": 8,
     "magicResistance": 7,
@@ -241,7 +241,7 @@
       "intelligence": 16,
       "initiative": 12
     },
-    "abilities": ["Attack", "Fireball", "Lightning Bolt"],
+    "abilities": ["Attack", "Fireball", "Lightning Bolt", "Iron Skin", "Confusion"],
     "challenge": 22,
     "armour": 2,
     "magicResistance":11,
@@ -258,7 +258,7 @@
       "intelligence": 2,
       "initiative": 8
     },
-    "abilities": ["Attack", "One-Two Punch"],
+    "abilities": ["Attack", "One-Two Punch", "Stand Ground", "Brutal Advance"],
     "challenge": 20,
     "armour": 12,
     "magicResistance": 15,
@@ -275,7 +275,7 @@
       "intelligence": 18,
       "initiative": 15
     },
-    "abilities": ["Attack", "Fireball", "Lightning Bolt"],
+    "abilities": ["Attack", "Fireball", "Lightning Bolt", "Paralyze", "Confusion", "Iron Skin"],
     "challenge": 25,
     "armour": 4,
     "magicResistance": 14,
@@ -292,7 +292,7 @@
       "intelligence": 13,
       "initiative": 10
     },
-    "abilities": ["Attack", "Acrobatic Strike", "Lunging Strike", "Shadow Strike", "Fireball"],
+    "abilities": ["Attack", "Acrobatic Strike", "Lunging Strike", "Shadow Strike", "Fireball", "Paralyze"],
     "challenge": 22,
     "armour": 5,
     "magicResistance": 10,
@@ -309,7 +309,7 @@
       "intelligence": 6,
       "initiative": 16
     },
-    "abilities": ["Attack", "Whirlwind Strike", "Acrobatic Strike", "Shadow Strike"],
+    "abilities": ["Attack", "Whirlwind Strike", "Acrobatic Strike", "Shadow Strike", "Press The Advantage", "Agile Footwork"],
     "challenge": 18,
     "armour": 6,
     "magicResistance": 6,
@@ -326,7 +326,7 @@
       "intelligence": 19,
       "initiative": 16
     },
-    "abilities": ["Attack", "Lunging Strike", "Fireball", "Lightning Bolt"],
+    "abilities": ["Attack", "Lunging Strike", "Fireball", "Lightning Bolt", "Paralyze", "Brutal Advance"],
     "challenge": 24,
     "armour": 14,
     "magicResistance": 14,

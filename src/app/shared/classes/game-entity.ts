@@ -101,26 +101,26 @@ export class GameEntity {
       }
     };
 
+    // Get specific stat types
+    getStats = function(type): Object {
+      const stats = {};
+      for (let stat of Object.keys(this.stats)) {
+        if (this.stats[stat].type === type) {
+          stats[stat] = this.stats[stat];
+        }
+      }
+      return stats;
+    };
+
     // Health and alive variables
-    this.maxHealth = (): number => this.stats['constitution'].value * 10;
+    this.maxHealth = (): number => this.stats['constitution'].total * 10;
     this.currentHealth = this.maxHealth();
     this.dead = (): boolean => this.currentHealth <= 0;
 
     // Hit and crit chance
-    this.hitChance = (): number => (this.stats['dexterity'].value + this.stats['dexterity'].modifier) * 5;
-    this.critChance = (): number => (this.stats['dexterity'].value + this.stats['dexterity'].modifier) * 0.75;
+    this.hitChance = (): number => this.stats['dexterity'].total * 5;
+    this.critChance = (): number => this.stats['dexterity'].total * 0.75;
   }
-
-  // Get specific stat types
-  getStats = function(type): Object {
-    const stats = {};
-    for (let stat of Object.keys(this.stats)) {
-      if (this.stats[stat].type === type) {
-        stats[stat] = this.stats[stat];
-      }
-    }
-    return stats;
-  };
 
   // Use stats to check whether or not attack hits and crits
   checkHit = (): boolean => this.hitChance() >= this.dice.roll(1, 100) ? true : false;
@@ -128,6 +128,11 @@ export class GameEntity {
 
   // Mitigate damage based on stats
   checkResistance = (damage, stat): number => damage - stat < 0 ? 0 : damage - stat;
+
+  // Subtract from current health when hit
+  takeHit(damage): void {
+    this.currentHealth -= damage;
+  }
 
   // Get damage based on stats
   getDamage = (ability): number => Math.floor(
@@ -137,11 +142,12 @@ export class GameEntity {
 
   // Add or refresh ability effect
   addEffect(ability) {
-    if (this.activeEffects.indexOf(ability) > -1) {
+    if (this.activeEffects.indexOf(ability) === -1) {
       this.stats[ability.modifier].battle += ability.value;
+      ability['remaining'] = ability['duration'];
       this.activeEffects.push(ability);
     } else {
-      this.activeEffects[this.activeEffects.indexOf(ability)]['remaining'] = ability.maxUses;
+      this.activeEffects[this.activeEffects.indexOf(ability)]['remaining'] = ability.duration;
     }
   }
 
@@ -149,15 +155,10 @@ export class GameEntity {
   updateEffects() {
     for (let i = this.activeEffects.length - 1; i >= 0; i--) {
       this.activeEffects[i]['remaining']--;
-      if (this.activeEffects[i]['remaining'] < 1) {
+      if (this.activeEffects[i]['remaining'] < 0) {
         this.stats[this.activeEffects[i]['modifier']].battle -= this.activeEffects[i]['value'];
         this.activeEffects.splice(i, 1);
       }
     }
-  }
-
-  // Subtract from current health when hit
-  takeHit(damage): void {
-    this.currentHealth -= damage;
   }
 }

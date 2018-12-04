@@ -68,18 +68,16 @@ export class ArenaComponent implements OnInit {
         break;
 
       case 'buff':
-        this.getEffect(attacker, ability);
+        this.getEffect(attacker, attacker, ability);
         break;
 
       case 'debuff':
-        this.getEffect(defender, ability);
+        this.getEffect(defender, attacker, ability);
         break;
+    }
 
-      default:
-        if (this.checkDead(defender) && defender.type === 'enemy') {
-          this.enemySlain();
-        }
-        break;
+    if (this.checkDead(defender) && defender.type === 'enemy') {
+      this.enemySlain();
     }
   }
 
@@ -108,8 +106,9 @@ export class ArenaComponent implements OnInit {
   }
 
   // Process buff ability
-  getEffect(entity, ability) {
+  getEffect(entity, attacker, ability) {
     entity.addEffect(ability);
+    this.logAction(attacker.type, ability.type, ability);
   }
 
   // Check if dead
@@ -138,18 +137,23 @@ export class ArenaComponent implements OnInit {
     let log;
     if (ability) {
       const withAbility = ability['name'] === 'Attack' ? ' ' : ` with ${ability['name']} `;
+      const verb = ability['plane'] === 'physical' ? 'use' : 'cast';
       log = {
         player: {
           attack: `You attack the ${this.enemy.name}${withAbility}for ${damage} damage`,
           crit: `CRITICAL HIT on the ${this.enemy.name}${withAbility}for ${damage} damage`,
           spell: `You cast ${ability['name']} hitting the ${this.enemy.name} for ${damage} damage`,
-          miss: `You miss the ${this.enemy.name}`
+          miss: `You miss the ${this.enemy.name}`,
+          buff: `You ${verb} ${ability['name']}, increasing ${ability['modifier']}`,
+          debuff: `You ${verb} ${ability['name']}, reducing the ${this.enemy.name}'s ${ability['modifier']}`
         },
         enemy: {
           attack: `${this.enemy.name} attacks you${withAbility}for ${damage} damage`,
           crit: `${this.enemy.name} attacks you${withAbility}and a CRITICAL HIT for ${damage} damage`,
           spell: `${this.enemy.name} casts ${ability['name']} for ${damage} damage`,
-          miss: `${this.enemy.name} misses you`
+          miss: `${this.enemy.name} misses you`,
+          buff: `${this.enemy.name} ${verb}s ${ability['name']}, increasing its ${ability['modifier']}`,
+          debuff: `${this.enemy.name} ${verb}s ${ability['name']}, reducing your ${ability['modifier']}`
         }
       };
     } else {
