@@ -5,58 +5,70 @@
       "name": "Attack",
       "description": "A regular melee attack",
       "image": "",
-      "type": "attack",
       "plane": "physical",
-      "modifier": "strength",
-      "multiplier": 1,
-      "bonusMin": 0,
-      "bonusMax": 0,
-      "accuracy": 0,
+      "effects": [
+        {
+          "type": "damage",
+          "modifier": "strength",
+          "multiplier": 1,
+          "min": 1,
+          "max": 6
+        } 
+      ],
       "maxUses": 0,
-      "level": 1
+      "level": 0
     }
   ],
-  "power": 
+  "warrior": 
   [
     {
       "name": "Cleave",
       "description": "Some description for this ability",
       "image": "",
-      "type": "attack",
       "plane": "physical",
-      "modifier": "strength",
-      "multiplier": 1.2,
-      "bonusMin": 5,
-      "bonusMax": 5,
-      "accuracy": -20,
+      "effects": [
+        {
+          "type": "damage",
+          "modifier": "strength",
+          "multiplier": 1.2,
+          "min": 5,
+          "max": 5
+        } 
+      ],
       "maxUses": 2,
-      "level": 1
+      "level": 0
     },
     {
       "name": "Lunging Strike",
       "description": "Some description for this ability",
       "image": "",
-      "type": "attack",
       "plane": "physical",
-      "modifier": "strength",
-      "multiplier": 1.4,
-      "bonusMin": 0,
-      "bonusMax": 0,
-      "accuracy": -20,
+      "effects": [
+        {
+          "type": "damage",
+          "modifier": "strength",
+          "multiplier": 1.4,
+          "min": 0,
+          "max": 0
+        } 
+      ],
       "maxUses": 2,
-      "level": 2
+      "level": 1
     },
     {
       "name": "Precise Strike",
       "description": "Some description for this ability",
       "image": "",
-      "type": "attack",
       "plane": "physical",
-      "modifier": "dexterity",
-      "multiplier": 1.2,
-      "bonusMin": 5,
-      "bonusMax": 5,
-      "accuracy": -20,
+      "effects": [
+        {
+          "type": "damage",
+          "modifier": "dexterity",
+          "multiplier": 1,
+          "min": 10,
+          "max": 10
+        } 
+      ],
       "maxUses": 2,
       "level": 2
     },
@@ -64,213 +76,313 @@
       "name": "Whirlwind Strike",
       "description": "Some description for this ability",
       "image": "",
-      "type": "attack",
       "plane": "physical",
-      "modifier": "strength",
-      "multiplier": 3,
-      "bonusMin": 0,
-      "bonusMax": 0,
-      "accuracy": -20,
+      "effects": [
+        {
+          "type": "damage",
+          "modifier": "strength",
+          "multiplier": 3,
+          "min": 1,
+          "max": 4
+        } 
+      ],
       "maxUses": 2,
-      "level": 3
+      "level": 5
     },
     {
       "name": "Berserk",
       "description": "Some description for this ability",
       "image": "",
-      "type": "buff",
       "plane": "physical",
-      "modifier": "strength",
-      "value": 5,
-      "duration": 4,
-      "maxUses": 2,
-      "level": 3
+      "effects": [
+        {
+          "type": "buff",
+          "modifiers": [
+            {"name": "strength", "power": 6},
+            {"name": "armour", "power": -4}
+          ],
+          "power": 5,
+          "accuracy": 100,
+          "duration": 4
+        } 
+      ],
+      "maxUses": 1,
+      "level": 2
     },
     {
       "name": "Stand Ground",
       "description": "Some description for this ability",
       "image": "",
-      "type": "buff",
       "plane": "physical",
-      "modifier": "armour",
-      "value": 6,
-      "duration": 2,
+      "effects": [
+        {
+          "type": "buff",
+          "modifiers": [
+            {"name": "armour", "power": 6}
+          ],
+          "accuracy": 100,
+          "duration": 2
+        } 
+      ],
       "maxUses": 2,
-      "level": 3
+      "level": 2
     },
     {
       "name": "Intimidating Shout",
       "description": "Some description for this ability",
       "image": "",
-      "type": "debuff",
       "plane": "physical",
-      "modifier": "initiative",
-      "value": -4,
-      "duration": 3,
+      "effects": [
+        {
+          "type": "debuff",
+          "modifiers": [
+            {"name": "initiative", "power": -4}
+          ],
+          "accuracy": 100,
+          "duration": 3
+        } 
+      ],
       "maxUses": 4,
-      "level": 2
+      "level": 1
     },
     {
       "name": "Brutal Advance",
       "description": "Some description for this ability",
       "image": "",
-      "type": "debuff",
       "plane": "physical",
-      "modifier": "dexterity",
-      "value": -6,
-      "duration": 2,
-      "maxUses": 2,
+      "effects": [
+        {
+          "type": "debuff",
+          "modifiers": [
+            {"name": "dexterity", "power": -6}
+          ],
+          "accuracy": 100,
+          "duration": 2
+        } 
+      ],
+      "maxUses": 3,
       "level": 2
     }
   ],
-  "finesse": 
+  "rogue": 
   [
     {
       "name": "Backstab",
       "description": "Some description for this ability",
       "image": "",
-      "type": "attack",
       "plane": "physical",
-      "modifier": "initiative",
-      "multiplier": 2,
-      "bonusMin": 0,
-      "bonusMax": 0,
-      "accuracy": 2,
-      "maxUses": 2,
-      "level": 1
+      "effects": [
+        {
+          "type": "damage",
+          "modifier": "initiative",
+          "multiplier": 1.5,
+          "min": 1,
+          "max": 12
+        } 
+      ],
+      "maxUses": 1,
+      "level": 0
     },
     {
       "name": "Acrobatic Strike",
       "description": "Some description for this ability",
       "image": "",
-      "type": "attack",
       "plane": "physical",
-      "modifier": "dexterity",
-      "multiplier": 1.2,
-      "bonusMin": 5,
-      "bonusMax": 5,
-      "accuracy": 2,
+      "effects": [
+        {
+          "type": "damage",
+          "modifier": "dexterity",
+          "multiplier": 1.2,
+          "min": 1,
+          "max": 12
+        } 
+      ],
       "maxUses": 2,
-      "level": 2
+      "level": 3
     },
     {
       "name": "One-Two Punch",
       "description": "Some description for this ability",
       "image": "",
-      "type": "attack",
       "plane": "physical",
-      "modifier": "strength",
-      "multiplier": 1.4,
-      "bonusMin": 4,
-      "bonusMax": 4,
-      "accuracy": 2,
-      "maxUses": 2,
+      "effects": [
+        {
+          "type": "damage",
+          "modifier": "strength",
+          "multiplier": 1.4,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "type": "debuff",
+          "modifiers": [
+            {"name": "dexterity", "power": 2}
+          ],
+          "accuracy": 80,
+          "duration": 2
+        }
+      ],
+      "maxUses": 6,
       "level": 2
     },
     {
       "name": "Shadow Strike",
       "description": "Some description for this ability",
       "image": "",
-      "type": "attack",
       "plane": "physical",
-      "modifier": "dexterity",
-      "multiplier": 1.8,
-      "bonusMin": 10,
-      "bonusMax": 10,
-      "accuracy": 2,
+      "effects": [
+        {
+          "type": "damage",
+          "modifier": "dexterity",
+          "multiplier": 1.8,
+          "min": 10,
+          "max": 10
+        } 
+      ],
       "maxUses": 2,
-      "level": 3
+      "level": 5
     },
     {
       "name": "Agile Footwork",
       "description": "Some description for this ability",
       "image": "",
-      "type": "buff",
       "plane": "physical",
-      "modifier": "dexterity",
-      "value": 5,
-      "duration": 3,
-      "maxUses": 2,
+      "effects": [
+        {
+          "type": "buff",
+          "modifiers": [
+            {"name": "dexterity", "power": 5}
+          ],
+          "accuracy": 100,
+          "duration": 3
+        } 
+      ],
+      "maxUses": 4,
       "level": 1
     },
     {
       "name": "Quick Fingers",
       "description": "Some description for this ability",
       "image": "",
-      "type": "buff",
       "plane": "physical",
-      "modifier": "initiative",
-      "value": 4,
-      "duration": 4,
-      "maxUses": 2,
-      "level": 3
+      "effects": [
+        {
+          "type": "buff",
+          "modifiers": [
+            {"name": "initiative", "power": 4}
+          ],
+          "accuracy": 100,
+          "duration": 3
+        } 
+      ],
+      "maxUses": 4,
+      "level": 0
     },
     {
       "name": "Press The Advantage",
       "description": "Some description for this ability",
       "image": "",
-      "type": "debuff",
       "plane": "physical",
-      "modifier": "dexterity",
-      "value": -5,
-      "duration": 4,
-      "maxUses": 4,
+      "effects": [
+        {
+          "type": "debuff",
+          "modifiers": [
+            {"name": "dexterity", "power": -5}
+          ],
+          "accuracy": 100,
+          "duration": 4
+        } 
+      ],
+      "maxUses": 3,
       "level": 2
     },
     {
       "name": "Gap In The Armour",
       "description": "Some description for this ability",
       "image": "",
-      "type": "debuff",
       "plane": "physical",
-      "modifier": "armour",
-      "value": -8,
-      "duration": 2,
+      "effects": [
+        {
+          "type": "damage",
+          "modifier": "dexterity",
+          "multiplier": 0.5,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "type": "debuff",
+          "modifiers": [
+            {"name": "armour", "power": -8}
+          ],
+          "accuracy": 50,
+          "duration": 2
+        } 
+      ],
       "maxUses": 2,
-      "level": 2
+      "level": 3
     }
   ],
-  "spells": 
+  "mage": 
   [
     {
       "name": "Magic Arrow",
       "description": "Some description for this ability",
       "image": "",
-      "type": "attack",
       "plane": "magical",
-      "modifier": "intelligence",
-      "multiplier": 1,
-      "bonusMin": 4,
-      "bonusMax": 4,
-      "accuracy": 0,
-      "maxUses": 2,
-      "level": 1
+      "effects": [
+        {
+          "type": "damage",
+          "modifier": "intelligence",
+          "multiplier": 1,
+          "min": 1,
+          "max": 6
+        } 
+      ],
+      "maxUses": 5,
+      "level": 0
     },
     {
       "name": "Chromatic Orb",
       "description": "Some description for this ability",
       "image": "",
-      "type": "attack",
       "plane": "magical",
-      "modifier": "intelligence",
-      "multiplier": 1.4,
-      "bonusMin": 0,
-      "bonusMax": 0,
-      "accuracy": 0,
-      "maxUses": 2,
+      "effects": [
+        {
+          "type": "damage",
+          "modifier": "intelligence",
+          "multiplier": 1,
+          "min": 1,
+          "max": 4
+        },
+        {
+          "type": "debuff",
+          "modifiers": [
+            {"name": "strength", "power": -2},
+            {"name": "dexterity", "power": -2},
+            {"name": "intelligence", "power": -2},
+            {"name": "initiative", "power": -2}
+          ],
+          "accuracy": 80,
+          "duration": 4
+        }
+      ],
+      "maxUses": 4,
       "level": 1
     },
     {
       "name": "Lightning Bolt",
       "description": "Some description for this ability",
       "image": "",
-      "type": "attack",
       "plane": "magical",
-      "modifier": "intelligence",
-      "multiplier": 1.2,
-      "bonusMin": 5,
-      "bonusMax": 5,
-      "accuracy": 3,
+      "effects": [
+        {
+          "type": "damage",
+          "modifier": "intelligence",
+          "multiplier": 1.3,
+          "min": 1,
+          "max": 6
+        } 
+      ],
       "maxUses": 2,
       "level": 2
     },
@@ -278,63 +390,90 @@
       "name": "Fireball",
       "description": "Some description for this ability",
       "image": "",
-      "type": "attack",
       "plane": "magical",
-      "modifier": "intelligence",
-      "multiplier": 1,
-      "bonusMin": 8,
-      "bonusMax": 8,
-      "accuracy": 3,
+      "effects": [
+        {
+          "type": "damage",
+          "modifier": "intelligence",
+          "multiplier": 1.2,
+          "min": 1,
+          "max": 12
+        } 
+      ],
       "maxUses": 2,
-      "level": 2
+      "level": 3
     },
     {
       "name": "Iron Skin",
       "description": "Some description for this ability",
       "image": "",
-      "type": "buff",
       "plane": "magical",
-      "modifier": "armour",
-      "value": 6,
-      "duration": 4,
+      "effects": [
+        {
+          "type": "buff",
+          "modifiers": [
+            {"name": "armour", "power": 6}
+          ],
+          "accuracy": 100,
+          "duration": 4
+        } 
+      ],
       "maxUses": 2,
-      "level": 1
+      "level": 3
     },
     {
       "name": "Minor Spell Protection",
       "description": "Some description for this ability",
       "image": "",
-      "type": "buff",
       "plane": "magical",
-      "modifier": "magicResistance",
-      "value": 4,
-      "duration": 6,
-      "maxUses": 2,
+      "effects": [
+        {
+          "type": "buff",
+          "modifiers": [
+            {"name": "magicResistance", "power": 4}
+          ],
+          "accuracy": 100,
+          "duration": 4
+        } 
+      ],
+      "maxUses": 3,
       "level": 1
     },
     {
       "name": "Confusion",
       "description": "Some description for this ability",
       "image": "",
-      "type": "debuff",
       "plane": "magical",
-      "modifier": "intelligence",
-      "value": -5,
-      "duration": 4,
-      "maxUses": 4,
-      "level": 2
+      "effects": [
+        {
+          "type": "debuff",
+          "modifiers": [
+            {"name": "intelligence", "power": -5}
+          ],
+          "accuracy": 100,
+          "duration": 4
+        } 
+      ],
+      "maxUses": 2,
+      "level": 3
     },
     {
       "name": "Paralyze",
       "description": "Some description for this ability",
       "image": "",
-      "type": "debuff",
       "plane": "magical",
-      "modifier": "dexterity",
-      "value": -10,
-      "duration": 2,
+      "effects": [
+        {
+          "type": "debuff",
+          "modifiers": [
+            {"name": "dexterity", "power": -10}
+          ],
+          "accuracy": 100,
+          "duration": 2
+        } 
+      ],
       "maxUses": 2,
-      "level": 3
+      "level": 5
     }
   ]
 }
