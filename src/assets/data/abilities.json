@@ -73,6 +73,73 @@
       "level": 2
     },
     {
+      "name": "Takedown Attack",
+      "description": "Some description for this ability",
+      "image": "",
+      "plane": "physical",
+      "effects": [
+        {
+          "type": "damage",
+          "modifier": "strength",
+          "multiplier": 1,
+          "min": 1,
+          "max": 6
+        },
+        {
+          "type": "debuff",
+          "modifiers": {
+            "dexterity": -8
+          },
+          "accuracy": 100,
+          "duration": 1
+        } 
+      ],
+      "maxUses": 2,
+      "level": 2
+    },
+    {
+      "name": "Crushing Blow",
+      "description": "Some description for this ability",
+      "image": "",
+      "plane": "physical",
+      "effects": [
+        {
+          "type": "damage",
+          "modifier": "strength",
+          "multiplier": 1.6,
+          "min": 1,
+          "max": 6
+        }
+      ],
+      "maxUses": 2,
+      "level": 3
+    },
+    {
+      "name": "Dizzying Blow",
+      "description": "Some description for this ability",
+      "image": "",
+      "plane": "physical",
+      "effects": [
+        {
+          "type": "damage",
+          "modifier": "strength",
+          "multiplier": 1.2,
+          "min": 1,
+          "max": 6
+        },
+        {
+          "type": "debuff",
+          "modifiers": {
+            "intelligence": -5
+          },
+          "accuracy": 100,
+          "duration": 2
+        } 
+      ],
+      "maxUses": 2,
+      "level": 4
+    },
+    {
       "name": "Whirlwind Strike",
       "description": "Some description for this ability",
       "image": "",
@@ -97,11 +164,10 @@
       "effects": [
         {
           "type": "buff",
-          "modifiers": [
-            {"name": "strength", "power": 6},
-            {"name": "armour", "power": -4}
-          ],
-          "power": 5,
+          "modifiers": {
+            "strength": 6,
+            "armour": -4
+            },
           "accuracy": 100,
           "duration": 4
         } 
@@ -117,15 +183,33 @@
       "effects": [
         {
           "type": "buff",
-          "modifiers": [
-            {"name": "armour", "power": 6}
-          ],
+          "modifiers": {
+           "armour" : 4
+          },
+          "accuracy": 100,
+          "duration": 4
+        } 
+      ],
+      "maxUses": 2,
+      "level": 2
+    },
+    {
+      "name": "Dancing Defense",
+      "description": "Some description for this ability",
+      "image": "",
+      "plane": "physical",
+      "effects": [
+        {
+          "type": "buff",
+          "modifiers": {
+            "dexterity": 9
+          },
           "accuracy": 100,
           "duration": 2
         } 
       ],
       "maxUses": 2,
-      "level": 2
+      "level": 4
     },
     {
       "name": "Intimidating Shout",
@@ -135,9 +219,9 @@
       "effects": [
         {
           "type": "debuff",
-          "modifiers": [
-            {"name": "initiative", "power": -4}
-          ],
+          "modifiers": {
+            "initiative": -4
+          },
           "accuracy": 100,
           "duration": 3
         } 
@@ -153,9 +237,9 @@
       "effects": [
         {
           "type": "debuff",
-          "modifiers": [
-            {"name": "dexterity", "power": -6}
-          ],
+          "modifiers": {
+            "dexterity": -6
+          },
           "accuracy": 100,
           "duration": 2
         } 
@@ -215,15 +299,40 @@
         },
         {
           "type": "debuff",
-          "modifiers": [
-            {"name": "dexterity", "power": 2}
-          ],
+          "modifiers": {
+            "dexterity": 2
+          },
           "accuracy": 80,
           "duration": 2
         }
       ],
       "maxUses": 6,
       "level": 2
+    },
+    {
+      "name": "Go For The Eyes",
+      "description": "Some description for this ability",
+      "image": "",
+      "plane": "physical",
+      "effects": [
+        {
+          "type": "damage",
+          "modifier": "dexterity",
+          "multiplier": 0.8,
+          "min": 1,
+          "max": 6
+        },
+        {
+          "type": "debuff",
+          "modifiers": {
+            "initiative": -10
+          },
+          "accuracy": 50,
+          "duration": 2
+        }
+      ],
+      "maxUses": 3,
+      "level": 3
     },
     {
       "name": "Shadow Strike",
@@ -250,9 +359,9 @@
       "effects": [
         {
           "type": "buff",
-          "modifiers": [
-            {"name": "dexterity", "power": 5}
-          ],
+          "modifiers": {
+            "dexterity": 5
+          },
           "accuracy": 100,
           "duration": 3
         } 
@@ -268,9 +377,9 @@
       "effects": [
         {
           "type": "buff",
-          "modifiers": [
-            {"name": "initiative", "power": 4}
-          ],
+          "modifiers": {
+            "initiative": 4
+          },
           "accuracy": 100,
           "duration": 3
         } 
@@ -286,9 +395,9 @@
       "effects": [
         {
           "type": "debuff",
-          "modifiers": [
-            {"name": "dexterity", "power": -5}
-          ],
+          "modifiers": {
+            "dexterity": -5
+          },
           "accuracy": 100,
           "duration": 4
         } 
@@ -311,15 +420,40 @@
         },
         {
           "type": "debuff",
-          "modifiers": [
-            {"name": "armour", "power": -8}
-          ],
+          "modifiers": {
+            "armour": -8
+          },
           "accuracy": 50,
           "duration": 2
         } 
       ],
       "maxUses": 2,
       "level": 3
+    },
+    {
+      "name": "Leg Breaker",
+      "description": "Some description for this ability",
+      "image": "",
+      "plane": "physical",
+      "effects": [
+        {
+          "type": "damage",
+          "modifier": "strength",
+          "multiplier": 0.7,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "type": "debuff",
+          "modifiers": {
+            "dexterity": -4
+          },
+          "accuracy": 70,
+          "duration": 4
+        } 
+      ],
+      "maxUses": 3,
+      "level": 4
     }
   ],
   "mage": 
@@ -356,14 +490,39 @@
         },
         {
           "type": "debuff",
-          "modifiers": [
-            {"name": "strength", "power": -2},
-            {"name": "dexterity", "power": -2},
-            {"name": "intelligence", "power": -2},
-            {"name": "initiative", "power": -2}
-          ],
+          "modifiers": {
+            "strength": -2,
+            "dexterity": -2,
+            "intelligence": -2,
+            "initiative": -2
+            },
           "accuracy": 80,
           "duration": 4
+        }
+      ],
+      "maxUses": 4,
+      "level": 1
+    },
+    {
+      "name": "Colour Spray",
+      "description": "Some description for this ability",
+      "image": "",
+      "plane": "magical",
+      "effects": [
+        {
+          "type": "damage",
+          "modifier": "intelligence",
+          "multiplier": 0.4,
+          "min": 1,
+          "max": 6
+        },
+        {
+          "type": "debuff",
+          "modifiers": {
+            "intelligence": -4
+          },
+          "accuracy": 50,
+          "duration": 3
         }
       ],
       "maxUses": 4,
@@ -411,9 +570,9 @@
       "effects": [
         {
           "type": "buff",
-          "modifiers": [
-            {"name": "armour", "power": 6}
-          ],
+          "modifiers": {
+            "armour": 6
+          },
           "accuracy": 100,
           "duration": 4
         } 
@@ -429,15 +588,51 @@
       "effects": [
         {
           "type": "buff",
-          "modifiers": [
-            {"name": "magicResistance", "power": 4}
-          ],
+          "modifiers": {
+            "magicResistance": 4
+          },
           "accuracy": 100,
           "duration": 4
         } 
       ],
       "maxUses": 3,
       "level": 1
+    },
+    {
+      "name": "Major Spell Protection",
+      "description": "Some description for this ability",
+      "image": "",
+      "plane": "magical",
+      "effects": [
+        {
+          "type": "buff",
+          "modifiers": {
+            "magicResistance": 8
+          },
+          "accuracy": 100,
+          "duration": 4
+        } 
+      ],
+      "maxUses": 3,
+      "level": 1
+    },
+    {
+      "name": "Destroy Armour",
+      "description": "Some description for this ability",
+      "image": "",
+      "plane": "magical",
+      "effects": [
+        {
+          "type": "debuff",
+          "modifiers": {
+            "armour": -4
+          },
+          "accuracy": 100,
+          "duration": 3
+        } 
+      ],
+      "maxUses": 2,
+      "level": 2
     },
     {
       "name": "Confusion",
@@ -447,15 +642,51 @@
       "effects": [
         {
           "type": "debuff",
-          "modifiers": [
-            {"name": "intelligence", "power": -5}
-          ],
+          "modifiers": {
+            "intelligence": -5
+          },
           "accuracy": 100,
           "duration": 4
         } 
       ],
       "maxUses": 2,
       "level": 3
+    },
+    {
+      "name": "Cripple",
+      "description": "Some description for this ability",
+      "image": "",
+      "plane": "magical",
+      "effects": [
+        {
+          "type": "debuff",
+          "modifiers": {
+            "strength": -6
+          },
+          "accuracy": 100,
+          "duration": 4
+        } 
+      ],
+      "maxUses": 3,
+      "level": 4
+    },
+    {
+      "name": "Blind",
+      "description": "Some description for this ability",
+      "image": "",
+      "plane": "magical",
+      "effects": [
+        {
+          "type": "debuff",
+          "modifiers": {
+            "initiative": -10
+          },
+          "accuracy": 80,
+          "duration": 3
+        } 
+      ],
+      "maxUses": 2,
+      "level": 4
     },
     {
       "name": "Paralyze",
@@ -465,9 +696,9 @@
       "effects": [
         {
           "type": "debuff",
-          "modifiers": [
-            {"name": "dexterity", "power": -10}
-          ],
+          "modifiers": {
+            "dexterity": -10
+          },
           "accuracy": 100,
           "duration": 2
         } 

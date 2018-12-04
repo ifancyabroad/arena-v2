@@ -1,442 +1,521 @@
 [
 	{
-		"active": false,
-		"available": true,
 		"type": "head",
 		"name": "Leather Helm",
 		"description": "A description of the item",
 		"modifier": "armour",
 		"value": 2,
-		"price": 100
+		"price": 100,
+		"requirements": {
+			"level": 1,
+			"strength": 5
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "head",
 		"name": "Plate Helm",
 		"description": "A description of the item",
 		"modifier": "armour",
 		"value": 3,
-		"price": 200
+		"price": 200,
+		"requirements": {
+			"level": 3,
+			"strength": 12
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "head",
 		"name": "Magic Helm",
 		"description": "A description of the item",
 		"modifier": "magicResistance",
 		"value": 2,
-		"price": 300
+		"price": 300,
+		"requirements": {
+			"level": 2,
+			"strength": 4
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "head",
 		"name": "Crown of Intellect",
 		"description": "A description of the item",
 		"modifier": "intelligence",
 		"value": 5,
-		"price": 650
+		"price": 650,
+		"requirements": {
+			"level": 4,
+			"strength": 4
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "head",
 		"name": "Helm of the Black Knight",
 		"description": "A description of the item",
 		"modifier": "armour",
 		"value": 6,
-		"price": 600
+		"price": 600,
+		"requirements": {
+			"level": 5,
+			"strength": 15
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "body",
 		"name": "Leather Armour",
 		"description": "A description of the item",
 		"modifier": "armour",
 		"value": 3,
-		"price": 150
+		"price": 150,
+		"requirements": {
+			"level": 1,
+			"strength": 8
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "body",
 		"name": "Chainmail",
 		"description": "A description of the item",
 		"modifier": "armour",
 		"value": 4,
-		"price": 250
+		"price": 250,
+		"requirements": {
+			"level": 2,
+			"strength": 12
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "body",
 		"name": "Plate Armour",
 		"description": "A description of the item",
 		"modifier": "armour",
 		"value": 6,
-		"price": 400
+		"price": 400,
+		"requirements": {
+			"level": 4,
+			"strength": 16
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "body",
 		"name": "Mage Robes",
 		"description": "A description of the item",
 		"modifier": "intelligence",
 		"value": 3,
-		"price": 400
+		"price": 400,
+		"requirements": {
+			"level": 1,
+			"strength": 2
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "body",
 		"name": "Armour of Protection",
 		"description": "A description of the item",
 		"modifier": "magicResistance",
 		"value": 5,
-		"price": 350
+		"price": 350,
+		"requirements": {
+			"level": 2,
+			"strength": 5
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "body",
 		"name": "Adamantium Plate",
 		"description": "A description of the item",
 		"modifier": "magicResistance",
 		"value": 10,
-		"price": 900
+		"price": 900,
+		"requirements": {
+			"level": 6,
+			"strength": 17
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "body",
 		"name": "Tunic of the Betrayer",
 		"description": "A description of the item",
 		"modifier": "dexterity",
 		"value": 9,
-		"price": 800
+		"price": 800,
+		"requirements": {
+			"level": 5,
+			"strength": 12
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "body",
 		"name": "Supreme Garb of the Burnt Sorcerer",
 		"description": "A description of the item",
 		"modifier": "intelligence",
 		"value": 10,
-		"price": 1200
+		"price": 1200,
+		"requirements": {
+			"level": 6,
+			"strength": 4
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "weapon",
 		"name": "Dagger",
 		"description": "A description of the item",
 		"modifier": "dexterity",
 		"value": 4,
-		"price": 50
+		"price": 50,
+		"requirements": {
+			"level": 1,
+			"strength": 5
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "weapon",
 		"name": "Longsword",
 		"description": "A description of the item",
 		"modifier": "strength",
 		"value": 3,
-		"price": 150
+		"price": 150,
+		"requirements": {
+			"level": 2,
+			"strength": 8
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "weapon",
 		"name": "Greataxe",
 		"description": "A description of the item",
 		"modifier": "strength",
 		"value": 5,
-		"price": 300
+		"price": 300,
+		"requirements": {
+			"level": 3,
+			"strength": 14
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "weapon",
 		"name": "Magic Staff",
 		"description": "A description of the item",
 		"modifier": "intelligence",
 		"value": 3,
-		"price": 300
+		"price": 300,
+		"requirements": {
+			"level": 2,
+			"strength": 5
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "weapon",
 		"name": "Twin Swords",
 		"description": "A description of the item",
 		"modifier": "dexterity",
 		"value": 8,
-		"price": 700
+		"price": 700,
+		"requirements": {
+			"level": 5,
+			"strength": 9,
+			"dexterity": 15
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "weapon",
 		"name": "Skull Crusher Maul",
 		"description": "A description of the item",
 		"modifier": "strength",
 		"value": 7,
-		"price": 800
+		"price": 800,
+		"requirements": {
+			"level": 4,
+			"strength": 14
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "weapon",
 		"name": "Staff of Power",
 		"description": "A description of the item",
 		"modifier": "intelligence",
 		"value": 6,
-		"price": 650
+		"price": 650,
+		"requirements": {
+			"level": 4,
+			"strength": 5
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "boots",
 		"name": "Leather Boots",
 		"description": "A description of the item",
 		"modifier": "armour",
 		"value": 1,
-		"price": 100
+		"price": 100,
+		"requirements": {
+			"level": 1,
+			"strength": 3
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "boots",
 		"name": "Plate Boots",
 		"description": "A description of the item",
 		"modifier": "armour",
 		"value": 3,
-		"price": 250
+		"price": 250,
+		"requirements": {
+			"level": 2,
+			"strength": 12
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "boots",
-		"name": "Golem\"s Boots",
+		"name": "Golem's Boots",
 		"description": "A description of the item",
 		"modifier": "magicResistance",
 		"value": 3,
-		"price": 200
+		"price": 200,
+		"requirements": {
+			"level": 2,
+			"strength": 8
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "boots",
 		"name": "Boots of Speed",
 		"description": "A description of the item",
 		"modifier": "initiative",
 		"value": 4,
-		"price": 100
+		"price": 100,
+		"requirements": {
+			"level": 2,
+			"strength": 3
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "boots",
 		"name": "Silent Shoes",
 		"description": "A description of the item",
 		"modifier": "dexterity",
 		"value": 5,
-		"price": 500
+		"price": 500,
+		"requirements": {
+			"level": 4,
+			"strength": 4
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "boots",
 		"name": "Boots of Resolve",
 		"description": "A description of the item",
 		"modifier": "constitution",
 		"value": 4,
-		"price": 750
+		"price": 750,
+		"requirements": {
+			"level": 3,
+			"strength": 12
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "boots",
 		"name": "Archmage Slippers",
 		"description": "A description of the item",
 		"modifier": "intelligence",
 		"value": 5,
-		"price": 650
+		"price": 650,
+		"requirements": {
+			"level": 4,
+			"strength": 3
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "gloves",
 		"name": "Leather Gloves",
 		"description": "A description of the item",
 		"modifier": "armour",
 		"value": 1,
-		"price": 100
+		"price": 100,
+		"requirements": {
+			"level": 1,
+			"strength": 7
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "gloves",
 		"name": "Plate Gloves",
 		"description": "A description of the item",
 		"modifier": "armour",
 		"value": 3,
-		"price": 250
+		"price": 250,
+		"requirements": {
+			"level": 2,
+			"strength": 13
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "gloves",
 		"name": "Gloves of Intelligence",
 		"description": "A description of the item",
 		"modifier": "intelligence",
 		"value": 2,
-		"price": 200
+		"price": 200,
+		"requirements": {
+			"level": 1,
+			"strength": 2
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "gloves",
 		"name": "Gloves of Accuracy",
 		"description": "A description of the item",
 		"modifier": "dexterity",
 		"value": 2,
-		"price": 200
+		"price": 200,
+		"requirements": {
+			"level": 1,
+			"strength": 4
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "gloves",
 		"name": "Adamantium Gloves",
 		"description": "A description of the item",
 		"modifier": "armour",
 		"value": 6,
-		"price": 600
+		"price": 600,
+		"requirements": {
+			"level": 4,
+			"strength": 15
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "gloves",
 		"name": "Gloves of Superior Protection",
 		"description": "A description of the item",
 		"modifier": "magicResistance",
 		"value": 7,
-		"price": 800
+		"price": 800,
+		"requirements": {
+			"level": 5,
+			"strength": 5
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "gloves",
 		"name": "Ogre Gauntlets",
 		"description": "A description of the item",
 		"modifier": "strength",
 		"value": 8,
-		"price": 1000
+		"price": 1000,
+		"requirements": {
+			"level": 6,
+			"strength": 17
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "misc",
 		"name": "Ring of Swiftness",
 		"description": "A description of the item",
 		"modifier": "initiative",
 		"value": 6,
-		"price": 200
+		"price": 200,
+		"requirements": {
+			"level": 5
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "misc",
 		"name": "Ring of Resistance",
 		"description": "A description of the item",
 		"modifier": "magicResistance",
 		"value": 4,
-		"price": 400
+		"price": 400,
+		"requirements": {
+			"level": 4
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "misc",
 		"name": "Ring of Deadly strikes",
 		"description": "A description of the item",
 		"modifier": "dexterity",
 		"value": 6,
-		"price": 500
+		"price": 500,
+		"requirements": {
+			"level": 5
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "misc",
 		"name": "Shield Ring",
 		"description": "A description of the item",
 		"modifier": "armour",
 		"value": 5,
-		"price": 400
+		"price": 400,
+		"requirements": {
+			"level": 3
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "misc",
 		"name": "Necklace of Power",
 		"description": "A description of the item",
 		"modifier": "intelligence",
 		"value": 2,
-		"price": 150
+		"price": 150,
+		"requirements": {
+			"level": 1
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "misc",
 		"name": "Amulet of Unstoppable Energy",
 		"description": "A description of the item",
 		"modifier": "intelligence",
 		"value": 12,
-		"price": 1500
+		"price": 1500,
+		"requirements": {
+			"level": 8
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "misc",
 		"name": "Necklace of Strength",
 		"description": "A description of the item",
 		"modifier": "strength",
 		"value": 5,
-		"price": 500
+		"price": 500,
+		"requirements": {
+			"level": 4
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "misc",
-		"name": "Rogue\"s Trinket",
+		"name": "Rogue's Trinket",
 		"description": "A description of the item",
 		"modifier": "dexterity",
 		"value": 3,
-		"price": 250
+		"price": 250,
+		"requirements": {
+			"level": 2
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "misc",
-		"name": "Mage\"s Trinket",
+		"name": "Mage's Trinket",
 		"description": "A description of the item",
 		"modifier": "intelligence",
 		"value": 3,
-		"price": 250
+		"price": 250,
+		"requirements": {
+			"level": 2
+		}
 	},
 	{
-		"active": false,
-		"available": true,
 		"type": "misc",
-		"name": "Warrior\"s Trinket",
+		"name": "Warrior's Trinket",
 		"description": "A description of the item",
 		"modifier": "strength",
 		"value": 3,
-		"price": 250
+		"price": 250,
+		"requirements": {
+			"level": 2
+		}
 	}
 ]
