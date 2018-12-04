@@ -495,7 +495,7 @@
             "dexterity": -2,
             "intelligence": -2,
             "initiative": -2
-            },
+          },
           "accuracy": 80,
           "duration": 4
         }
@@ -704,6 +704,51 @@
         } 
       ],
       "maxUses": 2,
+      "level": 5
+    }
+  ],
+  "cleric": 
+  [
+    {
+      "name": "Cure Minor Wounds",
+      "description": "Some description for this ability",
+      "image": "",
+      "plane": "magical",
+      "effects": [
+        {
+          "type": "heal",
+          "value": 30
+        } 
+      ],
+      "maxUses": 2,
+      "level": 1
+    },
+    {
+      "name": "Cure Major Wounds",
+      "description": "Some description for this ability",
+      "image": "",
+      "plane": "magical",
+      "effects": [
+        {
+          "type": "heal",
+          "value": 60
+        }
+      ],
+      "maxUses": 2,
+      "level": 3
+    },
+    {
+      "name": "Cure Critical Wounds",
+      "description": "Some description for this ability",
+      "image": "",
+      "plane": "magical",
+      "effects": [
+        {
+          "type": "heal",
+          "value": 90
+        }
+      ],
+      "maxUses": 4,
       "level": 5
     }
   ]
