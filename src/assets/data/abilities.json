@@ -300,7 +300,7 @@
         {
           "type": "debuff",
           "modifiers": {
-            "dexterity": 2
+            "dexterity": -2
           },
           "accuracy": 80,
           "duration": 2

@@ -19,6 +19,7 @@ import { LevelUpComponent } from './ui/ui-card/level-up/level-up.component';
 import { StoreComponent } from './ui/ui-card/store/store.component';
 import { HealerComponent } from './ui/ui-card/healer/healer.component';
 import { TownComponent } from './ui/ui-card/town/town.component';
+import { TrainerComponent } from './ui/ui-card/trainer/trainer/trainer.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { TownComponent } from './ui/ui-card/town/town.component';
     LevelUpComponent,
     StoreComponent,
     HealerComponent,
-    TownComponent
+    TownComponent,
+    TrainerComponent
   ],
   imports: [
     BrowserModule,

@@ -101,17 +101,6 @@ export class GameEntity {
       }
     };
 
-    // Get specific stat types
-    getStats = function(type): Object {
-      const stats = {};
-      for (let stat of Object.keys(this.stats)) {
-        if (this.stats[stat].type === type) {
-          stats[stat] = this.stats[stat];
-        }
-      }
-      return stats;
-    };
-
     // Health and alive variables
     this.maxHealth = (): number => this.stats['constitution'].total * 10;
     this.currentHealth = this.maxHealth();
@@ -121,6 +110,17 @@ export class GameEntity {
     this.hitChance = (): number => this.stats['dexterity'].total * 5;
     this.critChance = (): number => this.stats['dexterity'].total * 0.75;
   }
+
+  // Get specific stat types
+  getStats = function(type): Object {
+    const stats = {};
+    for (let stat of Object.keys(this.stats)) {
+      if (this.stats[stat].type === type) {
+        stats[stat] = this.stats[stat];
+      }
+    }
+    return stats;
+  };
 
   // Use stats to check whether or not attack hits and crits
   checkHit = (): boolean => this.hitChance() >= this.dice.roll(1, 100) ? true : false;
@@ -135,19 +135,22 @@ export class GameEntity {
   }
 
   // Get damage based on stats
-  getDamage = (ability): number => Math.floor(
-    this.stats[ability.modifier].total * ability.multiplier +
-    this.dice.roll(ability.bonusMin + 1, ability.bonusMax + 6)
+  getDamage = (effect): number => Math.floor(
+    this.stats[effect.modifier].total * effect.multiplier +
+    this.dice.roll(effect.min, effect.max)
   )
 
   // Add or refresh ability effect
-  addEffect(ability) {
-    if (this.activeEffects.indexOf(ability) === -1) {
-      this.stats[ability.modifier].battle += ability.value;
-      ability['remaining'] = ability['duration'];
-      this.activeEffects.push(ability);
+  addEffect(name, effect) {
+    effect.name = name;
+    if (this.activeEffects.indexOf(effect) === -1) {
+      for (let modifier of Object.keys(effect.modifiers)) {
+        this.stats[modifier].battle += effect.modifiers[modifier];
+      }
+      effect.remaining = effect.duration;
+      this.activeEffects.push(effect);
     } else {
-      this.activeEffects[this.activeEffects.indexOf(ability)]['remaining'] = ability.duration;
+      this.activeEffects[this.activeEffects.indexOf(effect)]['remaining'] = effect.duration;
     }
   }
 
@@ -156,7 +159,9 @@ export class GameEntity {
     for (let i = this.activeEffects.length - 1; i >= 0; i--) {
       this.activeEffects[i]['remaining']--;
       if (this.activeEffects[i]['remaining'] < 0) {
-        this.stats[this.activeEffects[i]['modifier']].battle -= this.activeEffects[i]['value'];
+        for (let modifier of Object.keys(this.activeEffects[i]['modifiers'])) {
+          this.stats[modifier].battle -= this.activeEffects[i]['modifiers'][modifier];
+        }
         this.activeEffects.splice(i, 1);
       }
     }

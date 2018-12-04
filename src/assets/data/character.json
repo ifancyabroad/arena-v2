@@ -13,6 +13,7 @@
       "name": "Warrior",
       "description": "Some text describing the warrior class",
       "image": "warrior.png",
+      "trainer": "High Warlord",
       "maxStats": {
         "strength": 15,
         "dexterity": 10,
@@ -25,6 +26,7 @@
       "name": "Mage",
       "description": "Some text describing the mage class",
       "image": "mage.jpg",
+      "trainer": "Arch Mage",
       "maxStats": {
         "strength": 6,
         "dexterity": 9,
@@ -37,6 +39,7 @@
       "name": "Rogue",
       "description": "Some text describing the rogue class",
       "image": "rogue.jpg",
+      "trainer": "Master Assassin",
       "maxStats": {
         "strength": 9,
         "dexterity": 15,

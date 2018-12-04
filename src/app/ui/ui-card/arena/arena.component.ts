@@ -62,19 +62,29 @@ export class ArenaComponent implements OnInit {
 
   // Check if magical or physical attack and proceed accordingly
   turn(attacker, defender, ability = this.enemy.getAction()) {
-    switch (ability['type']) {
-      case 'attack':
-        this.getAttack(attacker, defender, ability);
-        break;
+    let attack = {};
+    ability['effects'].forEach(effect => {
+      switch (effect['type']) {
+        case 'damage':
+          attack = this.getAttack(attacker, defender, ability['plane'], effect);
+          this.logAction(attacker.type, attack['state'], ability, attack['damage']);
+          break;
 
-      case 'buff':
-        this.getEffect(attacker, attacker, ability);
-        break;
+        case 'buff':
+          if (attack['state'] !== 'miss') {
+            attacker.addEffect(ability['name'], effect);
+            this.logAction(attacker.type, effect.type, ability);
+          }
+          break;
 
-      case 'debuff':
-        this.getEffect(defender, attacker, ability);
-        break;
-    }
+        case 'debuff':
+          if (attack['state'] !== 'miss') {
+            defender.addEffect(ability['name'], effect);
+            this.logAction(attacker.type, effect.type, ability);
+          }
+          break;
+      }
+    });
 
     if (this.checkDead(defender) && defender.type === 'enemy') {
       this.enemySlain();
@@ -82,12 +92,12 @@ export class ArenaComponent implements OnInit {
   }
 
   // Check hit, crit and calculate damage
-  getAttack(attacker, defender, ability) {
+  getAttack(attacker, defender, plane, effect) {
     let damage;
     let action;
-    if (ability['plane'] === 'physical') {
+    if (plane === 'physical') {
       if (attacker.checkHit()) {
-        damage = defender.checkResistance(attacker.getDamage(ability), defender.stats.armour.total);
+        damage = defender.checkResistance(attacker.getDamage(effect), defender.stats.armour.total);
         action = 'attack';
         if (attacker.checkCrit()) {
           damage *= 2;
@@ -97,18 +107,12 @@ export class ArenaComponent implements OnInit {
       } else {
         action = 'miss';
       }
-    } else if (ability['plane'] === 'magical') {
-      damage = defender.checkResistance(attacker.getDamage(ability), defender.stats.magicResistance.total);
+    } else if (plane === 'magical') {
+      damage = defender.checkResistance(attacker.getDamage(effect), defender.stats.magicResistance.total);
       defender.takeHit(damage);
       action = 'spell';
     }
-    this.logAction(attacker.type, action, ability, damage);
-  }
-
-  // Process buff ability
-  getEffect(entity, attacker, ability) {
-    entity.addEffect(ability);
-    this.logAction(attacker.type, ability.type, ability);
+    return {state: action, damage: damage};
   }
 
   // Check if dead
@@ -133,7 +137,7 @@ export class ArenaComponent implements OnInit {
   }
 
   // Populate the combat log
-  logAction(attacker, action, ability = false, damage = false) {
+  logAction(attacker, action, ability?, damage?) {
     let log;
     if (ability) {
       const withAbility = ability['name'] === 'Attack' ? ' ' : ` with ${ability['name']} `;
