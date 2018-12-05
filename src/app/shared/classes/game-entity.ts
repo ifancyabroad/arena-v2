@@ -140,18 +140,21 @@ export class GameEntity {
     this.dice.roll(effect.min, effect.max)
   )
 
-  // Add or refresh ability effect
+  effectActive(effect) {
+    return this.activeEffects.indexOf(effect) > -1;
+  }
+
   addEffect(name, effect) {
-    effect.name = name;
-    if (this.activeEffects.indexOf(effect) === -1) {
-      for (let modifier of Object.keys(effect.modifiers)) {
-        this.stats[modifier].battle += effect.modifiers[modifier];
-      }
-      effect.remaining = effect.duration;
-      this.activeEffects.push(effect);
-    } else {
-      this.activeEffects[this.activeEffects.indexOf(effect)]['remaining'] = effect.duration;
+    for (let modifier of Object.keys(effect.modifiers)) {
+      this.stats[modifier].battle += effect.modifiers[modifier];
     }
+    effect.name = name;
+    effect.remaining = effect.duration;
+    this.activeEffects.push(effect);
+  }
+
+  refreshEffect(effect) {
+    this.activeEffects[this.activeEffects.indexOf(effect)]['remaining'] = effect.duration;
   }
 
   // Update active effects

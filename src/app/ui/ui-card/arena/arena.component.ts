@@ -50,12 +50,17 @@ export class ArenaComponent implements OnInit {
 
   // Check turn order and begin the round once input is received
   startRound(ability) {
-    if (this.player['initiative'].total >= this.enemy['initiative'].total) {
+    if (this.player.stats['initiative'].total >= this.enemy.stats['initiative'].total) {
       this.turn(this.player, this.enemy, ability);
-      this.turn(this.enemy, this.player);
+      if (!this.checkDead(this.enemy)) {
+        this.turn(this.enemy, this.player);
+      }
     } else {
       this.turn(this.enemy, this.player);
       this.turn(this.player, this.enemy, ability);
+      // if (!this.checkDead(this.player)) {
+      //   this.turn(this.player, this.enemy, ability);
+      // }
     }
     this.roundChecks();
   }
@@ -63,56 +68,54 @@ export class ArenaComponent implements OnInit {
   // Check if magical or physical attack and proceed accordingly
   turn(attacker, defender, ability = this.enemy.getAction()) {
     let attack = {};
+    const turnLog = [];
+    turnLog.push(this.bs.getLog(attacker, defender, 'use', ability));
+
     ability['effects'].forEach(effect => {
       switch (effect['type']) {
         case 'damage':
-          attack = this.getAttack(attacker, defender, ability['plane'], effect);
-          this.logAction(attacker.type, attack['state'], ability, attack['damage']);
+          attack = this.bs.getAttack(attacker, defender, ability['plane'], effect);
+          turnLog.push(this.bs.getLog(attacker, defender, attack['state'], ability, attack['damage']));
           break;
 
         case 'buff':
           if (attack['state'] !== 'miss') {
-            attacker.addEffect(ability['name'], effect);
-            this.logAction(attacker.type, effect.type, ability);
+            this.bs.getEffect(attacker, effect, ability);
+            for (let modifier of Object.keys(effect.modifiers)) {
+              turnLog.push(this.bs.getLog(attacker, defender, effect.type, ability, 0, modifier, effect.modifiers[modifier]));
+            }
           }
           break;
 
         case 'debuff':
           if (attack['state'] !== 'miss') {
-            defender.addEffect(ability['name'], effect);
-            this.logAction(attacker.type, effect.type, ability);
+            this.bs.getEffect(defender, effect, ability);
+            for (let modifier of Object.keys(effect.modifiers)) {
+              turnLog.push(this.bs.getLog(attacker, defender, effect.type, ability, 0, modifier, effect.modifiers[modifier]));
+            }
           }
           break;
       }
     });
 
-    if (this.checkDead(defender) && defender.type === 'enemy') {
-      this.enemySlain();
+    if (this.checkDead(defender)) {
+      if (defender.type === 'enemy') {
+        turnLog.push(this.bs.getLog(attacker, defender, 'victory'));
+        turnLog.push(this.bs.getLog(attacker, defender, 'exp'));
+        turnLog.push(this.bs.getLog(attacker, defender, 'gold'));
+        this.enemySlain();
+      } else {
+        this.playerSlain();
+      }
     }
+
+    this.logTurn(turnLog);
   }
 
-  // Check hit, crit and calculate damage
-  getAttack(attacker, defender, plane, effect) {
-    let damage;
-    let action;
-    if (plane === 'physical') {
-      if (attacker.checkHit()) {
-        damage = defender.checkResistance(attacker.getDamage(effect), defender.stats.armour.total);
-        action = 'attack';
-        if (attacker.checkCrit()) {
-          damage *= 2;
-          action = 'crit';
-        }
-        defender.takeHit(damage);
-      } else {
-        action = 'miss';
-      }
-    } else if (plane === 'magical') {
-      damage = defender.checkResistance(attacker.getDamage(effect), defender.stats.magicResistance.total);
-      defender.takeHit(damage);
-      action = 'spell';
-    }
-    return {state: action, damage: damage};
+  // Log text from the turn
+  logTurn(turn) {
+    turn.reverse();
+    this.combatLog.unshift(...turn);
   }
 
   // Check if dead
@@ -125,51 +128,12 @@ export class ArenaComponent implements OnInit {
     this.player.kills++;
     this.player.gold += this.enemy.goldValue;
     this.player.experienceGain(this.enemy.expValue);
-    this.logAction('player', 'victory');
-    this.logAction('player', 'exp');
-    this.logAction('player', 'gold');
     this.bs.state.next('won');
   }
 
   // Player defeated
   playerSlain() {
-
-  }
-
-  // Populate the combat log
-  logAction(attacker, action, ability?, damage?) {
-    let log;
-    if (ability) {
-      const withAbility = ability['name'] === 'Attack' ? ' ' : ` with ${ability['name']} `;
-      const verb = ability['plane'] === 'physical' ? 'use' : 'cast';
-      log = {
-        player: {
-          attack: `You attack the ${this.enemy.name}${withAbility}for ${damage} damage`,
-          crit: `CRITICAL HIT on the ${this.enemy.name}${withAbility}for ${damage} damage`,
-          spell: `You cast ${ability['name']} hitting the ${this.enemy.name} for ${damage} damage`,
-          miss: `You miss the ${this.enemy.name}`,
-          buff: `You ${verb} ${ability['name']}, increasing ${ability['modifier']}`,
-          debuff: `You ${verb} ${ability['name']}, reducing the ${this.enemy.name}'s ${ability['modifier']}`
-        },
-        enemy: {
-          attack: `${this.enemy.name} attacks you${withAbility}for ${damage} damage`,
-          crit: `${this.enemy.name} attacks you${withAbility}and a CRITICAL HIT for ${damage} damage`,
-          spell: `${this.enemy.name} casts ${ability['name']} for ${damage} damage`,
-          miss: `${this.enemy.name} misses you`,
-          buff: `${this.enemy.name} ${verb}s ${ability['name']}, increasing its ${ability['modifier']}`,
-          debuff: `${this.enemy.name} ${verb}s ${ability['name']}, reducing your ${ability['modifier']}`
-        }
-      };
-    } else {
-      log = {
-        player: {
-          victory: `You have slain the ${this.enemy.name}!`,
-          exp: `You gain ${this.enemy.expValue} experience`,
-          gold: `${this.enemy.goldValue} gold earned`
-        }
-      };
-    }
-    this.combatLog.unshift(log[attacker][action]);
+    console.log('You died :(');
   }
 
   // End of round checks
