@@ -21,6 +21,7 @@ export class GameEntity {
     public armour = 0,
     public magicResistance = 0
   ) {
+    // All stats for entity
     this.stats = {
       'strength': {
         name: 'Strength',
@@ -129,6 +130,16 @@ export class GameEntity {
   // Mitigate damage based on stats
   checkResistance = (damage, stat): number => damage - stat < 0 ? 0 : damage - stat;
 
+  // Set health to max health
+  setFullHealth(): void {
+    this.currentHealth = this.maxHealth();
+  }
+
+  // Heal
+  heal(health): void {
+    this.currentHealth = this.currentHealth + health > this.maxHealth() ? this.maxHealth() : this.currentHealth + health;
+  }
+
   // Subtract from current health when hit
   takeHit(damage): void {
     this.currentHealth -= damage;
@@ -140,11 +151,19 @@ export class GameEntity {
     this.dice.roll(effect.min, effect.max)
   )
 
-  effectActive(effect) {
-    return this.activeEffects.indexOf(effect) > -1;
+  // Use ability
+  useAbility(ability): void {
+    if (ability.uses) {
+      ability.uses--;
+    }
   }
 
-  addEffect(name, effect) {
+  // Check if an effect is already active or not and check if it hits
+  effectActive = (effect): boolean => this.activeEffects.indexOf(effect) > -1;
+  effectHit = (effect): boolean => effect.accuracy >= this.dice.roll(1, 100);
+
+  // Add a new effect
+  addEffect(name, effect): void {
     for (let modifier of Object.keys(effect.modifiers)) {
       this.stats[modifier].battle += effect.modifiers[modifier];
     }
@@ -153,12 +172,13 @@ export class GameEntity {
     this.activeEffects.push(effect);
   }
 
-  refreshEffect(effect) {
+  // Refresh an active effect
+  refreshEffect(effect): void {
     this.activeEffects[this.activeEffects.indexOf(effect)]['remaining'] = effect.duration;
   }
 
   // Update active effects
-  updateEffects() {
+  updateEffects(): void {
     for (let i = this.activeEffects.length - 1; i >= 0; i--) {
       this.activeEffects[i]['remaining']--;
       if (this.activeEffects[i]['remaining'] < 0) {

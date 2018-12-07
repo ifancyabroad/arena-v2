@@ -69,29 +69,37 @@ export class ArenaComponent implements OnInit {
   turn(attacker, defender, ability = this.enemy.getAction()) {
     let attack = {};
     const turnLog = [];
-    turnLog.push(this.bs.getLog(attacker, defender, 'use', ability));
+    attacker.useAbility(ability);
+    turnLog.unshift(this.bs.getLog(attacker, defender, 'use', ability));
 
     ability['effects'].forEach(effect => {
       switch (effect['type']) {
         case 'damage':
           attack = this.bs.getAttack(attacker, defender, ability['plane'], effect);
-          turnLog.push(this.bs.getLog(attacker, defender, attack['state'], ability, attack['damage']));
+          turnLog.unshift(this.bs.getLog(attacker, defender, attack['state'], ability, attack['damage']));
+          break;
+
+        case 'heal':
+          if (attack['state'] !== 'miss') {
+            this.bs.getHeal(attacker, effect);
+            turnLog.unshift(this.bs.getLog(attacker, defender, effect.type, ability, effect.value));
+          }
           break;
 
         case 'buff':
-          if (attack['state'] !== 'miss') {
+          if (attack['state'] !== 'miss' && attacker.effectHit(effect)) {
             this.bs.getEffect(attacker, effect, ability);
             for (let modifier of Object.keys(effect.modifiers)) {
-              turnLog.push(this.bs.getLog(attacker, defender, effect.type, ability, 0, modifier, effect.modifiers[modifier]));
+              turnLog.unshift(this.bs.getLog(attacker, defender, effect.type, ability, 0, modifier, effect.modifiers[modifier]));
             }
           }
           break;
 
         case 'debuff':
-          if (attack['state'] !== 'miss') {
+          if (attack['state'] !== 'miss' && attacker.effectHit(effect)) {
             this.bs.getEffect(defender, effect, ability);
             for (let modifier of Object.keys(effect.modifiers)) {
-              turnLog.push(this.bs.getLog(attacker, defender, effect.type, ability, 0, modifier, effect.modifiers[modifier]));
+              turnLog.unshift(this.bs.getLog(attacker, defender, effect.type, ability, 0, modifier, effect.modifiers[modifier]));
             }
           }
           break;
@@ -100,9 +108,9 @@ export class ArenaComponent implements OnInit {
 
     if (this.checkDead(defender)) {
       if (defender.type === 'enemy') {
-        turnLog.push(this.bs.getLog(attacker, defender, 'victory'));
-        turnLog.push(this.bs.getLog(attacker, defender, 'exp'));
-        turnLog.push(this.bs.getLog(attacker, defender, 'gold'));
+        turnLog.unshift(this.bs.getLog(attacker, defender, 'victory'));
+        turnLog.unshift(this.bs.getLog(attacker, defender, 'exp'));
+        turnLog.unshift(this.bs.getLog(attacker, defender, 'gold'));
         this.enemySlain();
       } else {
         this.playerSlain();
@@ -114,7 +122,6 @@ export class ArenaComponent implements OnInit {
 
   // Log text from the turn
   logTurn(turn) {
-    turn.reverse();
     this.combatLog.unshift(...turn);
   }
 

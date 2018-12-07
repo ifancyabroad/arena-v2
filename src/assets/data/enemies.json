@@ -9,7 +9,7 @@
       "intelligence": 2,
       "initiative": 6
     },
-    "abilities": ["Attack", "Backstab", "Quick Fingers"],
+    "abilities": ["Attack", "Cure Minor Wounds", "Quick Fingers"],
     "challenge": 0,
     "armour": 2,
     "magicResistance": 4,

@@ -25,7 +25,8 @@ export class BattleService {
           crit: `${ability.name} hits ${defender.name} for ${damage} damage, a CRITICAL HIT`,
           miss: `You miss the ${defender.name}`,
           buff: `Your ${stat} ${moves} by ${modifier}`,
-          debuff: `${defender.name}'s ${stat} ${moves} by ${modifier}`
+          debuff: `${defender.name}'s ${stat} ${moves} by ${modifier}`,
+          heal: `You heal ${damage} points of damage`
         },
         enemy: {
           attackHit: `${attacker.name} attacks you for ${damage} damage`,
@@ -35,7 +36,8 @@ export class BattleService {
           crit: `${ability.name} hits you for ${damage} damage, a CRITICAL HIT`,
           miss: `${attacker.name} misses you`,
           buff: `${attacker.name}'s ${stat} ${moves} by ${modifier}`,
-          debuff: `Your ${stat} ${moves} by ${modifier}`
+          debuff: `Your ${stat} ${moves} by ${modifier}`,
+          heal: `${attacker.name} heals ${damage} points of damage`
         }
       };
     } else {
@@ -74,9 +76,14 @@ export class BattleService {
     return {state: action, damage: damage};
   }
 
+  // Get heal
+  getHeal(entity, effect) {
+    entity.heal(effect.value);
+  }
+
   // Add or refresh buff/debuff effect
   getEffect(entity, effect, ability) {
-    if (entity.effectActive()) {
+    if (entity.effectActive(effect)) {
       entity.refreshEffect(effect);
     } else {
       entity.addEffect(ability['name'], effect);

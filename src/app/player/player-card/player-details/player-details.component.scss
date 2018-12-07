@@ -32,8 +32,9 @@
       font-size: 0.9em;
     }
   
-    td:last-child {
+    td:not(:first-child) {
       text-align: center;
+      width: 40px;
     }
   
     tr:nth-child(even) {
@@ -43,9 +44,10 @@
   
   .add-stats {
     display: flex;
+    justify-content: space-between;
+    width: 70%;
   
     .add-stat {
-      width: 80px;
       position: relative;
   
       p {

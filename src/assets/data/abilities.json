@@ -155,10 +155,24 @@
         {
           "type": "damage",
           "modifier": "strength",
-          "multiplier": 3,
+          "multiplier": 1,
           "min": 1,
           "max": 4
-        } 
+        },
+        {
+          "type": "damage",
+          "modifier": "strength",
+          "multiplier": 1,
+          "min": 1,
+          "max": 4
+        },
+        {
+          "type": "damage",
+          "modifier": "strength",
+          "multiplier": 1,
+          "min": 1,
+          "max": 4
+        }
       ],
       "price": 0,
       "maxUses": 2,

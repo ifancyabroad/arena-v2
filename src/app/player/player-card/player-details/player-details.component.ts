@@ -9,6 +9,7 @@ import { Player } from 'src/app/shared/classes/player';
 })
 export class PlayerDetailsComponent implements OnInit {
 
+  keys = Object.keys;
   player: Player;
 
   constructor(private ps: PlayerService) {

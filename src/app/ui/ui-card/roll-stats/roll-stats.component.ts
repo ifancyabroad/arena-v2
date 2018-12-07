@@ -33,6 +33,7 @@ export class RollStatsComponent implements OnInit {
       for (let stat of Object.keys(maxStats)) {
         this.player.stats[stat].value = this.dice.roll(maxStats[stat] - 5, maxStats[stat]);
       }
+      this.player.setFullHealth();
     }
   }
 

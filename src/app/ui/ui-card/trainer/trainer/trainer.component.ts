@@ -39,6 +39,9 @@ export class TrainerComponent implements OnInit, OnDestroy {
   learnAbility(ability) {
     if (this.player.gold >= ability.price) {
       this.player.gold -= ability.price;
+      if (ability.maxUses) {
+        ability.uses = ability.maxUses;
+      }
       this.player.learnAbility(ability);
     } else {
       this.trainerLog = 'You do not have enough gold for that';
