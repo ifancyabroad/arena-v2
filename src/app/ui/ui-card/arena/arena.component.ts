@@ -16,12 +16,15 @@ import { Enemy } from 'src/app/shared/classes/enemy';
 export class ArenaComponent implements OnInit {
 
   roundCounter = 1; // Track how many turns have passed
+  turnCounter = 1; // Track which turn it is
 
   battleState = 'waiting'; // State of the fight
-  combatLog: Object[] = []; // Store text in the combat log
+  combatLog: Array<string> = []; // Store text in the combat log
 
   player: Player; // Player object
+  playerAbility: any; // Current ability
   enemy: Enemy; // Enemy object
+  enemyAbility: any; // Current ability
 
   constructor(
     private nav: NavigationService,
@@ -40,33 +43,55 @@ export class ArenaComponent implements OnInit {
       }
     });
 
-    this.bs.state.subscribe(state => {
-      this.battleState = state;
-      if (this.battleState === 'waiting') {
+    this.bs.state.subscribe(state => this.handleState(state));
+  }
+
+  handleState(state) {
+    this.battleState = state;
+    switch (this.battleState) {
+      case 'start':
         this.resetArena();
-      }
-    });
+        break;
+
+      case 'waiting':
+        this.roundChecks();
+        break;
+
+      case 'player-turn':
+        if (!this.checkDead(this.player)) {
+          this.turn(this.player, this.enemy, this.playerAbility);
+        }
+        break;
+
+      case 'enemy-turn':
+        if (!this.checkDead(this.enemy)) {
+          this.turn(this.enemy, this.player, this.enemyAbility);
+        }
+        break;
+
+      case 'victory':
+        this.enemySlain();
+        break;
+
+      case 'defeat':
+        this.playerSlain();
+        break;
+    }
   }
 
   // Check turn order and begin the round once input is received
-  startRound(ability) {
+  startTurn(ability) {
+    this.playerAbility = ability;
+    this.enemyAbility = this.enemy.getAction();
     if (this.player.stats['initiative'].total >= this.enemy.stats['initiative'].total) {
-      this.turn(this.player, this.enemy, ability);
-      if (!this.checkDead(this.enemy)) {
-        this.turn(this.enemy, this.player);
-      }
+      this.bs.state.next('player-turn');
     } else {
-      this.turn(this.enemy, this.player);
-      this.turn(this.player, this.enemy, ability);
-      // if (!this.checkDead(this.player)) {
-      //   this.turn(this.player, this.enemy, ability);
-      // }
+      this.bs.state.next('enemy-turn');
     }
-    this.roundChecks();
   }
 
   // Check if magical or physical attack and proceed accordingly
-  turn(attacker, defender, ability = this.enemy.getAction()) {
+  turn(attacker, defender, ability) {
     let attack = {};
     const turnLog = [];
     attacker.useAbility(ability);
@@ -107,22 +132,44 @@ export class ArenaComponent implements OnInit {
     });
 
     if (this.checkDead(defender)) {
+      this.turnCounter = 0; // Stop the turn cycle
       if (defender.type === 'enemy') {
         turnLog.unshift(this.bs.getLog(attacker, defender, 'victory'));
         turnLog.unshift(this.bs.getLog(attacker, defender, 'exp'));
         turnLog.unshift(this.bs.getLog(attacker, defender, 'gold'));
-        this.enemySlain();
+        this.bs.state.next('victory');
       } else {
-        this.playerSlain();
+        this.bs.state.next('defeat');
       }
     }
 
-    this.logTurn(turnLog);
+    this.endTurn(turnLog);
   }
 
   // Log text from the turn
-  logTurn(turn) {
-    this.combatLog.unshift(...turn);
+  endTurn(turn) {
+    let i = turn.length - 1;
+    let timer = setInterval(() => {
+      if (i >= 0) {
+        this.combatLog.unshift(turn[i]);
+        i--;
+      } else {
+        clearInterval(timer);
+        this.toggleTurn();
+      }
+    }, 1000);
+  }
+
+  // Turn toggle
+  toggleTurn() {
+    if (this.turnCounter === 1) {
+      const state = this.battleState === 'player-turn' ? 'enemy-turn' : 'player-turn';
+      this.turnCounter++;
+      this.bs.state.next(state);
+    } else if (this.turnCounter === 2) {
+      this.turnCounter--;
+      this.bs.state.next('waiting');
+    }
   }
 
   // Check if dead
@@ -135,7 +182,6 @@ export class ArenaComponent implements OnInit {
     this.player.kills++;
     this.player.gold += this.enemy.goldValue;
     this.player.experienceGain(this.enemy.expValue);
-    this.bs.state.next('won');
   }
 
   // Player defeated
@@ -152,8 +198,12 @@ export class ArenaComponent implements OnInit {
 
   // Rest the combat log
   resetArena() {
-    this.roundCounter = 0;
+    this.playerAbility = {};
+    this.enemyAbility = {};
+    this.roundCounter = 1;
+    this.turnCounter = 1;
     this.combatLog.splice(0);
+    this.bs.state.next('waiting');
   }
 
   proceed() {

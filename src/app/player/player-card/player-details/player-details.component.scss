@@ -21,6 +21,30 @@
     margin: 8px 0;
   }
 
+  .health-bar {
+    position: relative;
+    padding: 2px;
+    height: 30px;
+    width: 80%;
+    background-color: #212121;
+
+    .health {
+      height: 100%;
+      width: 100%;
+      background-color: #055805;
+      transition: width 0.4s;
+    }
+
+    h4 {
+      font-weight: 400;
+      color: white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
   .stats-table {
     border-collapse: collapse;
     width: 80%;

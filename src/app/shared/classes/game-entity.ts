@@ -142,7 +142,7 @@ export class GameEntity {
 
   // Subtract from current health when hit
   takeHit(damage): void {
-    this.currentHealth -= damage;
+    this.currentHealth = this.currentHealth - damage > 0 ? this.currentHealth - damage : 0;
   }
 
   // Get damage based on stats

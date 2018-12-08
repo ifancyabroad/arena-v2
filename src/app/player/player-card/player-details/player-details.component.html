@@ -6,7 +6,11 @@
     <figure class="portrait-container">
       <img class="player-portrait" src="/assets/img/portraits/{{ player.portrait }}">
     </figure>
-    <h4>{{ player.currentHealth }} / {{ player.maxHealth() }}</h4>
+    <div class="health-bar">
+      <div class="health" [style.width.%]="(player.currentHealth / player.maxHealth()) * 100">
+        <h4>{{ player.currentHealth }} / {{ player.maxHealth() }}</h4>
+      </div>
+    </div>
     <table class="stats-table">
       <tbody>
         <tr *ngFor="let stat of keys(player.getStats('main'))">
