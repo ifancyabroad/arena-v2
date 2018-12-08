@@ -103,9 +103,32 @@ img {
       margin-bottom: 14px;
     }
 
+    .btn {
+      position: relative;
+      margin: 5px;
+      padding: 5px;
+      border: none;
+      border-radius: 10px;
+      background-color: rgba(235, 235, 235, 0.8);
+      transition: 0.4s;
+      font-family: $regular-font;
+    }
+
     .btn-large {
-      height: 60px;
-      width: 60px;
+      height: 50px;
+      width: 150px;
+      font-size: 1em;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .btn:hover {
+      cursor: pointer;
+      background-color: rgba(235, 235, 235, 1);
+    }
+
+    .btn:active {
+      top: 2px;
     }
 
     .ui-view-content {

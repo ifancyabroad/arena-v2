@@ -1,11 +1,13 @@
 <div class="ui-view arena">
   <h1>Arena</h1>
   <div class="arena-controls centered">
-    <button *ngFor="let ability of player.abilities" class="btn btn-large" type="button" [disabled]="battleState !== 'waiting' || ability.uses < 1" (click)="startTurn(ability)">{{ ability.name }}
-      <img class="arena-btn-icon" src="/assets/img/icons/weapon.png" alt="Crossed swords icon">
+    <button *ngFor="let ability of player.abilities" class="btn" type="button" [disabled]="battleState !== 'waiting' || ability.uses < 1" (click)="startTurn(ability)">
+      <p>{{ ability.name }}</p>
+      <p *ngIf="ability.maxUses">Uses: {{ ability.uses }}</p>
+      <img class="arena-btn-icon" [ngClass]="{'disabled': battleState !== 'waiting' || ability.uses < 1}" src="/assets/img/icons/weapon.png" alt="Crossed swords icon">
     </button>
     <button class="btn btn-large" type="button" [disabled]="battleState !== 'victory'" (click)="proceed()">Home
-      <img class="arena-btn-icon" src="/assets/img/icons/home.png" alt="Crossed swords icon">
+      <img class="arena-btn-icon" [ngClass]="{'disabled': battleState !== 'victory'}" src="/assets/img/icons/home.png" alt="Crossed swords icon">
     </button>
   </div>
   <div class="log-container">

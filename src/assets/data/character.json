@@ -11,7 +11,7 @@
     ],
   "classes": [{
       "name": "Warrior",
-      "description": "Some text describing the warrior class",
+      "description": "Proud and honorable, specialising in brute strength. Primary stats are strength and constitution.",
       "image": "warrior.png",
       "trainer": "High Warlord",
       "maxStats": {
@@ -24,7 +24,7 @@
     },
     {
       "name": "Mage",
-      "description": "Some text describing the mage class",
+      "description": "Trained in the arcane arts and proficient with all forms of magic. Primary stat is intelligence.",
       "image": "mage.jpg",
       "trainer": "Arch Mage",
       "maxStats": {
@@ -37,7 +37,7 @@
     },
     {
       "name": "Rogue",
-      "description": "Some text describing the rogue class",
+      "description": "Unscrupulous and underhanded, strikes from the shadows. Primary stats are dexterity and initiative.",
       "image": "rogue.jpg",
       "trainer": "Master Assassin",
       "maxStats": {

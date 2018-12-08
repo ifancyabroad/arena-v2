@@ -1,6 +1,23 @@
+@import '~src/variables';
+
 .name-select,
 .character-details {
   margin: 12px 0;
+}
+
+.name-select {
+
+  input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: 0.5s;
+    outline: none;
+  }
+
+  input:focus {
+    border-color: $primary-color;
+  }
 }
 
 .character-details {
@@ -45,5 +62,9 @@
 
   .class-icon {
     width: 100px;
+  }
+
+  p {
+    font-size: 0.8em;
   }
 }

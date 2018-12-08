@@ -14,10 +14,17 @@
 
   .town-controls {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    margin: 24px 0;
 
     .town-btn-icon {
-      max-width: 25px;
+      max-width: 30px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0.4;
     }
   }
 }

@@ -10,7 +10,10 @@
     <table class="reroll-table">
       <tbody>
         <tr *ngFor="let stat of keys(player.getStats('main'))">
-          <td>{{ player.stats[stat].name }}</td>
+          <td>
+            <h4>{{ player.stats[stat].name }}</h4>
+            <p>{{ player.stats[stat].description }}</p>
+          </td>
           <td>{{ player.stats[stat].value }}</td>
         </tr>
       </tbody>

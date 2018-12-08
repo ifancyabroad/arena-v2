@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NavigationService } from 'src/app/shared/services/navigation.service';
 import { BattleService } from 'src/app/shared/services/battle.service';
 import { PlayerService } from 'src/app/shared/services/player.service';
@@ -6,6 +6,7 @@ import { EnemyService } from 'src/app/shared/services/enemy.service';
 import { fadein } from 'src/app/animations/fadein';
 import { Player } from 'src/app/shared/classes/player';
 import { Enemy } from 'src/app/shared/classes/enemy';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-arena',
@@ -13,12 +14,13 @@ import { Enemy } from 'src/app/shared/classes/enemy';
   styleUrls: ['./arena.component.scss'],
   animations: [fadein]
 })
-export class ArenaComponent implements OnInit {
+export class ArenaComponent implements OnInit, OnDestroy {
 
   roundCounter = 1; // Track how many turns have passed
   turnCounter = 1; // Track which turn it is
 
-  battleState = 'waiting'; // State of the fight
+  battleState: string; // State of the fight
+  stateSubscription: Subscription; // Subscription to battle state
   combatLog: Array<string> = []; // Store text in the combat log
 
   player: Player; // Player object
@@ -43,9 +45,11 @@ export class ArenaComponent implements OnInit {
       }
     });
 
-    this.bs.state.subscribe(state => this.handleState(state));
+    this.stateSubscription = this.bs.state.subscribe(state => this.handleState(state));
+    this.handleState('start');
   }
 
+  // Handle the different battle states
   handleState(state) {
     this.battleState = state;
     switch (this.battleState) {
@@ -58,15 +62,11 @@ export class ArenaComponent implements OnInit {
         break;
 
       case 'player-turn':
-        if (!this.checkDead(this.player)) {
-          this.turn(this.player, this.enemy, this.playerAbility);
-        }
+        this.turn(this.player, this.enemy, this.playerAbility);
         break;
 
       case 'enemy-turn':
-        if (!this.checkDead(this.enemy)) {
-          this.turn(this.enemy, this.player, this.enemyAbility);
-        }
+        this.turn(this.enemy, this.player, this.enemyAbility);
         break;
 
       case 'victory':
@@ -132,14 +132,13 @@ export class ArenaComponent implements OnInit {
     });
 
     if (this.checkDead(defender)) {
-      this.turnCounter = 0; // Stop the turn cycle
       if (defender.type === 'enemy') {
+        this.turnCounter = 3; // Stop the turn cycle
         turnLog.unshift(this.bs.getLog(attacker, defender, 'victory'));
         turnLog.unshift(this.bs.getLog(attacker, defender, 'exp'));
         turnLog.unshift(this.bs.getLog(attacker, defender, 'gold'));
-        this.bs.state.next('victory');
       } else {
-        this.bs.state.next('defeat');
+        this.turnCounter = 4; // Stop the turn cycle
       }
     }
 
@@ -163,12 +162,15 @@ export class ArenaComponent implements OnInit {
   // Turn toggle
   toggleTurn() {
     if (this.turnCounter === 1) {
-      const state = this.battleState === 'player-turn' ? 'enemy-turn' : 'player-turn';
       this.turnCounter++;
-      this.bs.state.next(state);
+      this.bs.state.next(this.battleState === 'player-turn' ? 'enemy-turn' : 'player-turn');
     } else if (this.turnCounter === 2) {
       this.turnCounter--;
       this.bs.state.next('waiting');
+    } else if (this.turnCounter === 3) {
+      this.bs.state.next('victory');
+    } else if (this.turnCounter === 4) {
+      this.bs.state.next('defeat');
     }
   }
 
@@ -209,6 +211,10 @@ export class ArenaComponent implements OnInit {
   proceed() {
     this.nav.uiCard.next({ face: 'back', view: 'town', flip: true });
     this.nav.enemyCard.next({ flip: true });
+  }
+
+  ngOnDestroy() {
+    this.stateSubscription.unsubscribe();
   }
 
 }
