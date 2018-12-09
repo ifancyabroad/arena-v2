@@ -4,7 +4,7 @@
   <form #statsForm="ngForm" id="roll-stats" class="ui-view-content" (ngSubmit)="rollStats()">
     <div class="controls">
       <h4>Rerolls: {{ player.rerolls }}</h4>
-      <button type="submit">Reroll</button>
+      <button class="btn" type="submit">Reroll</button>
     </div>
 
     <table class="reroll-table">
@@ -21,7 +21,7 @@
   </form>
 
   <div class="ui-view-controls">
-    <button disabled>&#x2B05;</button>
-    <button type="button" (click)="proceed()">&#x27A1;</button>
+    <button class="btn" disabled>&#x2B05;</button>
+    <button class="btn" type="button" (click)="proceed()">&#x27A1;</button>
   </div>
 </div>

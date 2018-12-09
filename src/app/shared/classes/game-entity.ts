@@ -189,4 +189,12 @@ export class GameEntity {
       }
     }
   }
+
+  // Remove active effects
+  removeEffects(): void {
+    for (let stat of Object.keys(this.stats)) {
+      this.stats[stat].battle = 0;
+    }
+    this.activeEffects.splice(0);
+  }
 }

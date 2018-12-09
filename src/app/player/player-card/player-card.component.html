@@ -8,5 +8,6 @@
   <div class="card-back" [ngSwitch]="backFace">
     <div class="card-hidden" *ngSwitchCase="'hidden'"></div>
     <app-player-inventory *ngSwitchCase="'inventory'"></app-player-inventory>
+    <app-player-abilities *ngSwitchCase="'abilities'"></app-player-abilities>
   </div>
 </section>

@@ -9,6 +9,7 @@ export class Player extends GameEntity {
   kills = 0; // Kills starts at 0;
   rerolls = 10; // 10 initial rerolls allowed
   skillPoints = 0; // Skill points available for spending
+  maxAbilities = 6; // Maximum abilities that can be learnt
 
   // Inventory starts empty
   inventory = {
@@ -76,5 +77,10 @@ export class Player extends GameEntity {
   // Learn a new ability
   learnAbility(ability): void {
     this.abilities.push(ability);
+  }
+
+  // Forget an ability
+  forgetAbility(ability): void {
+    this.abilities.splice(this.abilities.indexOf(ability), 1);
   }
 }

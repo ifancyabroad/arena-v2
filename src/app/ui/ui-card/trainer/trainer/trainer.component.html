@@ -10,10 +10,11 @@
       <table class="ability-table">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Uses</th>
-            <th>Price</th>
+            <th (click)="sortAbilities('name')">Name</th>
+            <th (click)="sortAbilities('description')">Description</th>
+            <th (click)="sortAbilities('maxUses')">Uses</th>
+            <th (click)="sortAbilities('level')">Level</th>
+            <th (click)="sortAbilities('price')">Price</th>
             <th></th>
           </tr>
         </thead>
@@ -22,8 +23,9 @@
             <td>{{ ability.name }}</td>
             <td>{{ ability.description }}</td>
             <td>{{ ability.maxUses }}</td>
+            <td>{{ ability.level }}</td>
             <td>{{ ability.price }}</td>
-            <td><button type="button" [disabled]="player.abilities.indexOf(ability) > -1" (click)="learnAbility(ability)">Learn</button></td>
+            <td><button class="btn" type="button" [disabled]="player.abilities.indexOf(ability) > -1" (click)="learnAbility(ability)">Learn</button></td>
           </tr>
         </tbody>
       </table>
@@ -31,7 +33,7 @@
   </div>
 
   <div class="ui-view-controls">
-    <button type="button" (click)="back()">&#x2B05;</button>
-    <button type="button" disabled>&#x27A1;</button>
+    <button class="btn" type="button" (click)="back()">&#x2B05;</button>
+    <button class="btn" type="button" disabled>&#x27A1;</button>
   </div>
 </div>

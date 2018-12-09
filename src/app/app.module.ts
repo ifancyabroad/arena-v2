@@ -20,6 +20,7 @@ import { StoreComponent } from './ui/ui-card/store/store.component';
 import { HealerComponent } from './ui/ui-card/healer/healer.component';
 import { TownComponent } from './ui/ui-card/town/town.component';
 import { TrainerComponent } from './ui/ui-card/trainer/trainer/trainer.component';
+import { PlayerAbilitiesComponent } from './player/player-card/player-abilities/player-abilities.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { TrainerComponent } from './ui/ui-card/trainer/trainer/trainer.component
     StoreComponent,
     HealerComponent,
     TownComponent,
-    TrainerComponent
+    TrainerComponent,
+    PlayerAbilitiesComponent
   ],
   imports: [
     BrowserModule,

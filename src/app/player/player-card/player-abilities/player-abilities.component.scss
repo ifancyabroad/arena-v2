@@ -1,0 +1,21 @@
+@import '~src/variables';
+
+.ability {
+  position: relative;
+  box-shadow: 2px 2px 4px grey;
+  margin: 6px 0;
+  padding: 6px;
+
+  .remove {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: none;
+    background-color: transparent;
+  }
+
+  h3 {
+    font-family: $regular-font;
+    font-weight: 700;
+  }
+}

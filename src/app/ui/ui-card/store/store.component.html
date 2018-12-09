@@ -10,20 +10,22 @@
       <table class="item-table">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Effect</th>
-            <th>Type</th>
-            <th>Price</th>
+            <th (click)="sortAbilities('name')">Name</th>
+            <th (click)="sortAbilities('modifier')">Effect</th>
+            <th (click)="sortAbilities('value')">Power</th>
+            <th (click)="sortAbilities('type')">Type</th>
+            <th (click)="sortAbilities('price')">Price</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
           <tr class="item" *ngFor="let item of items">
             <td>{{ item.name }}</td>
-            <td>Increases {{ item.modifier }} by {{ item.value }}</td>
+            <td>Increases {{ item.modifier }}</td>
+            <td>{{ item.value }}</td>
             <td>{{ item.type }}</td>
             <td>{{ item.price }}</td>
-            <td><button type="button" (click)="buyItem(item)">Buy</button></td>
+            <td><button class="btn" type="button" (click)="buyItem(item)">Buy</button></td>
           </tr>
         </tbody>
       </table>
@@ -31,7 +33,7 @@
   </div>
 
   <div class="ui-view-controls">
-    <button type="button" (click)="back()">&#x2B05;</button>
-    <button type="button" disabled>&#x27A1;</button>
+    <button class="btn" type="button" (click)="back()">&#x2B05;</button>
+    <button class="btn" type="button" disabled>&#x27A1;</button>
   </div>
 </div>

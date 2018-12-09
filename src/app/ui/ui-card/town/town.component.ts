@@ -43,6 +43,7 @@ export class TownComponent implements OnInit {
 
       case 'trainer':
         this.nav.uiCard.next({ face: 'front', view: 'trainer', flip: true });
+        this.nav.playerCard.next({ face: 'back', view: 'abilities', flip: true });
         break;
 
       case 'healer':

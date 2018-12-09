@@ -1,0 +1,14 @@
+<div class="entity-view">
+    <div class="player-view-content">
+      <h2>Abilities</h2>
+      <div>
+        <div class="ability" *ngFor="let ability of player.abilities" [@slideinout]>
+          <button class="remove" type="button" (click)="removeAbility(ability)" *ngIf="ability.level > 0">&#x2716;</button>
+          <h3>{{ ability.name }}</h3>
+          <p>{{ ability.description }}</p>
+          <p *ngIf="ability.maxUses">Max uses: {{ ability.maxUses }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

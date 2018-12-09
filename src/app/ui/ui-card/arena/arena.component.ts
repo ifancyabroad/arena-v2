@@ -175,9 +175,7 @@ export class ArenaComponent implements OnInit, OnDestroy {
   }
 
   // Check if dead
-  checkDead(entity) {
-    return entity.dead();
-  }
+  checkDead = (entity) => entity.dead();
 
   // Enemy defeated
   enemySlain() {
@@ -209,6 +207,7 @@ export class ArenaComponent implements OnInit, OnDestroy {
   }
 
   proceed() {
+    this.player.removeEffects(); // Remove current player active effects
     this.nav.uiCard.next({ face: 'back', view: 'town', flip: true });
     this.nav.enemyCard.next({ flip: true });
   }

@@ -26,11 +26,27 @@ export class StoreComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.player = this.ps.player;
-    this.is.getItems().subscribe(items => this.items = items);
+    this.is.getItems().subscribe(items => {
+      this.items = items;
+      this.sortAbilities('type');
+    });
 
     this.navSubscription = this.nav.uiCard.subscribe(nav => {
       if (nav['view'] === 'store') {
         this.resetLog();
+      }
+    });
+  }
+
+  // Sort abilities by clicked parameter
+  sortAbilities(parameter) {
+    this.items.sort((a, b) => {
+      if (a[parameter] > b[parameter]) {
+        return 1;
+      } else if (a[parameter] < b[parameter]) {
+        return -1;
+      } else {
+        return 0;
       }
     });
   }

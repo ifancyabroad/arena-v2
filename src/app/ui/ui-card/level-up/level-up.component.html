@@ -9,9 +9,9 @@
         <tr *ngFor="let stat of keys(tempStats)">
           <td>{{ tempStats[stat].name }}</td>
           <td>
-            <button type="button" (click)="changeStat(tempStats[stat], -1)">&#8722;</button>
+            <button class="btn" type="button" (click)="changeStat(tempStats[stat], -1)">&#8722;</button>
             {{ tempStats[stat].value }}
-            <button type="button" (click)="changeStat(tempStats[stat], +1)">&#43;</button>
+            <button class="btn" type="button" (click)="changeStat(tempStats[stat], +1)">&#43;</button>
           </td>
         </tr>
       </tbody>
@@ -19,7 +19,7 @@
   </form>
 
   <div class="ui-view-controls">
-    <button type="button" (click)="back()">&#x2B05;</button>
-    <button type="submit" form="level-up-stats">&#x27A1;</button>
+    <button class="btn" type="button" (click)="back()">&#x2B05;</button>
+    <button class="btn" type="submit" form="level-up-stats">&#x27A1;</button>
   </div>
 </div>

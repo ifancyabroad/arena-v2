@@ -19,7 +19,7 @@ export class CharacterCreateComponent implements OnInit {
 
   portraits: Array<string>; // List of portraits
   classes: Object[]; // List of classes
-  abilities: Object[]; // List of abilities
+  abilities: any; // List of abilities
 
   constructor(
     private nav: NavigationService,
@@ -37,9 +37,7 @@ export class CharacterCreateComponent implements OnInit {
       this.classInput = this.classes[0];
     });
 
-    this.as.getAbilities().subscribe(data => {
-      this.abilities = data['basic'];
-    });
+    this.as.getAbilities().subscribe(data => this.abilities = data);
   }
 
   // Browsing portraits and classes
@@ -61,6 +59,9 @@ export class CharacterCreateComponent implements OnInit {
     return stats;
   }
 
+  // Set initial abilities
+  setAbilities = (className) => this.abilities['basic'].concat(this.abilities[className].filter(ability => ability.level < 1));
+
   // Create player
   createPlayer() {
     this.ps.player = new Player(
@@ -68,7 +69,7 @@ export class CharacterCreateComponent implements OnInit {
       this.portraitInput,
       this.classInput,
       this.setStats(this.classInput['maxStats']),
-      this.abilities
+      this.setAbilities(this.classInput['name'].toLowerCase())
     );
 
     this.ps.characterCreated.next(true);

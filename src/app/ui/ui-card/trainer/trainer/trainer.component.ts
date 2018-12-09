@@ -26,7 +26,10 @@ export class TrainerComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.player = this.ps.player;
-    this.as.getAbilities().subscribe(abilities => this.abilities = abilities[this.player.cl['name'].toLowerCase()]);
+    this.as.getAbilities().subscribe(abilities => {
+      this.abilities = abilities[this.player.cl['name'].toLowerCase()].filter(ability => ability.level > 0);
+      this.sortAbilities('level');
+    });
 
     this.navSubscription = this.nav.uiCard.subscribe(nav => {
       if (nav['view'] === 'trainer') {
@@ -35,16 +38,33 @@ export class TrainerComponent implements OnInit, OnDestroy {
     });
   }
 
+  // Sort abilities by clicked parameter
+  sortAbilities(parameter) {
+    this.abilities.sort((a, b) => {
+      if (a[parameter] > b[parameter]) {
+        return 1;
+      } else if (a[parameter] < b[parameter]) {
+        return -1;
+      } else {
+        return 0;
+      }
+    });
+  }
+
   // Purchase selected ability
   learnAbility(ability) {
-    if (this.player.gold >= ability.price) {
+    if (this.player.gold < ability.price) {
+      this.trainerLog = 'You do not have enough gold for that';
+    } else if (this.player.abilities.length >= this.player.maxAbilities) {
+      this.trainerLog = 'I\'m afraid you do not have the capacity to learn anymore abilities';
+    } else if (this.player.level < ability.level) {
+      this.trainerLog = 'Sorry you do not have the required skill for that';
+    } else {
       this.player.gold -= ability.price;
       if (ability.maxUses) {
         ability.uses = ability.maxUses;
       }
       this.player.learnAbility(ability);
-    } else {
-      this.trainerLog = 'You do not have enough gold for that';
     }
   }
 
@@ -56,6 +76,7 @@ export class TrainerComponent implements OnInit, OnDestroy {
   // Go back to town
   back() {
     this.nav.uiCard.next({ face: 'back', view: 'town', flip: true });
+    this.nav.playerCard.next({ flip: true });
   }
 
   ngOnDestroy() {

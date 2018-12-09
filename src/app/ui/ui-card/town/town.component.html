@@ -5,19 +5,19 @@
     <img class="town-icon" src="/assets/img/icons/gold.png"><span>{{ player.gold }}</span>
   </div>
   <div class="town-controls">
-    <button class="btn btn-large" type="button" (click)="proceed('arena')">Battle
+    <button class="btn btn-town" type="button" (click)="proceed('arena')">Battle
       <img class="town-btn-icon" src="/assets/img/icons/battle.png" alt="Crossed swords icon">
     </button>
-    <button class="btn btn-large" type="button" (click)="proceed('store')">Store
+    <button class="btn btn-town" type="button" (click)="proceed('store')">Store
       <img class="town-btn-icon" src="/assets/img/icons/store.png" alt="Store icon">
     </button>
-    <button class="btn btn-large" type="button" (click)="proceed('trainer')">{{ player.cl.trainer }}
+    <button class="btn btn-town" type="button" (click)="proceed('trainer')">{{ player.cl.trainer }}
       <img class="town-btn-icon" src="/assets/img/icons/trainer.png" alt="Store icon">
     </button>
-    <button class="btn btn-large" type="button" (click)="proceed('healer')">Healer
+    <button class="btn btn-town" type="button" (click)="proceed('healer')">Healer
       <img class="town-btn-icon" src="/assets/img/icons/cross.png" alt="Cross icon">
     </button>
-    <button class="btn btn-large" type="button" [disabled]="player.skillPoints < 1" (click)="proceed('level-up')">Level Up
+    <button class="btn btn-town" type="button" [disabled]="player.skillPoints < 1" (click)="proceed('level-up')">Level Up
       <img class="town-btn-icon" src="/assets/img/icons/levelup.png" alt="Up arrow icon">
     </button>
   </div>
