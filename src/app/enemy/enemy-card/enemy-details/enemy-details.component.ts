@@ -67,6 +67,8 @@ export class EnemyDetailsComponent implements OnInit {
       enemy['expValue'],
       enemy['goldValue']
     );
+
+    this.es.enemy.rest(); // Set uses for abilities
   }
 
 }

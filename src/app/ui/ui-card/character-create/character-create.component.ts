@@ -72,6 +72,8 @@ export class CharacterCreateComponent implements OnInit {
       this.setAbilities(this.classInput['name'].toLowerCase())
     );
 
+    this.ps.player.rest(); // Set uses of starting abilities
+
     this.ps.characterCreated.next(true);
     this.nav.uiCard.next({ face: 'front', view: 'roll-stats', flip: false });
   }

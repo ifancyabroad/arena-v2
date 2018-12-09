@@ -18,6 +18,7 @@ export class Enemy extends GameEntity {
   }
 
   getAction(): Object {
-    return this.abilities[this.dice.roll(0, this.abilities.length - 1)];
+    const options = this.abilities.filter(ability => !ability['maxUses'] || ability['uses'] > 0);
+    return options[this.dice.roll(0, options.length - 1)];
   }
 }

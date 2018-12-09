@@ -158,6 +158,15 @@ export class GameEntity {
     }
   }
 
+  // Rest
+  rest(): void {
+    this.abilities.forEach(ability => {
+      if (ability['maxUses']) {
+        ability['uses'] = ability['maxUses'];
+      }
+    });
+  }
+
   // Check if an effect is already active or not and check if it hits
   effectActive = (effect): boolean => this.activeEffects.indexOf(effect) > -1;
   effectHit = (effect): boolean => effect.accuracy >= this.dice.roll(1, 100);

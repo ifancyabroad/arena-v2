@@ -63,7 +63,7 @@ export class Player extends GameEntity {
     } else {
       return 1;
     }
-  };
+  }
 
   // Update inventory with new item
   updateInventory(item): void {
