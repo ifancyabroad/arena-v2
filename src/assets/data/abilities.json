@@ -32,12 +32,12 @@
           "type": "damage",
           "modifier": "strength",
           "multiplier": 1.2,
-          "min": 5,
-          "max": 5
+          "min": 1,
+          "max": 6
         } 
       ],
       "price": 0,
-      "maxUses": 2,
+      "maxUses": 5,
       "level": 0
     },
     {
@@ -50,12 +50,12 @@
           "type": "damage",
           "modifier": "strength",
           "multiplier": 1.4,
-          "min": 0,
-          "max": 0
+          "min": 1,
+          "max": 4
         } 
       ],
-      "price": 0,
-      "maxUses": 2,
+      "price": 150,
+      "maxUses": 4,
       "level": 1
     },
     {
@@ -67,13 +67,13 @@
         {
           "type": "damage",
           "modifier": "dexterity",
-          "multiplier": 1,
-          "min": 10,
-          "max": 10
+          "multiplier": 0.5,
+          "min": 15,
+          "max": 15
         } 
       ],
-      "price": 0,
-      "maxUses": 2,
+      "price": 150,
+      "maxUses": 4,
       "level": 2
     },
     {
@@ -85,9 +85,9 @@
         {
           "type": "damage",
           "modifier": "strength",
-          "multiplier": 1,
+          "multiplier": 0.8,
           "min": 1,
-          "max": 6
+          "max": 4
         },
         {
           "type": "debuff",
@@ -98,9 +98,9 @@
           "duration": 1
         } 
       ],
-      "price": 0,
+      "price": 250,
       "maxUses": 2,
-      "level": 2
+      "level": 3
     },
     {
       "name": "Crushing Blow",
@@ -116,9 +116,9 @@
           "max": 6
         }
       ],
-      "price": 0,
-      "maxUses": 2,
-      "level": 3
+      "price": 450,
+      "maxUses": 4,
+      "level": 4
     },
     {
       "name": "Dizzying Blow",
@@ -129,7 +129,7 @@
         {
           "type": "damage",
           "modifier": "strength",
-          "multiplier": 1.2,
+          "multiplier": 1,
           "min": 1,
           "max": 6
         },
@@ -142,9 +142,9 @@
           "duration": 2
         } 
       ],
-      "price": 0,
-      "maxUses": 2,
-      "level": 4
+      "price": 200,
+      "maxUses": 5,
+      "level": 3
     },
     {
       "name": "Whirlwind Strike",
@@ -174,7 +174,7 @@
           "max": 4
         }
       ],
-      "price": 0,
+      "price": 600,
       "maxUses": 2,
       "level": 5
     },
@@ -187,16 +187,16 @@
         {
           "type": "buff",
           "modifiers": {
-            "strength": 6,
-            "armour": -4
+            "strength": 8,
+            "armour": -6
             },
           "accuracy": 100,
-          "duration": 4
+          "duration": 6
         } 
       ],
-      "price": 0,
+      "price": 300,
       "maxUses": 1,
-      "level": 2
+      "level": 3
     },
     {
       "name": "Stand Ground",
@@ -213,8 +213,8 @@
           "duration": 4
         } 
       ],
-      "price": 0,
-      "maxUses": 2,
+      "price": 150,
+      "maxUses": 4,
       "level": 2
     },
     {
@@ -226,13 +226,14 @@
         {
           "type": "buff",
           "modifiers": {
+            "armour": 6,
             "dexterity": 9
           },
           "accuracy": 100,
           "duration": 2
         } 
       ],
-      "price": 0,
+      "price": 450,
       "maxUses": 2,
       "level": 4
     },
@@ -248,11 +249,11 @@
             "initiative": -4
           },
           "accuracy": 100,
-          "duration": 3
+          "duration": 4
         } 
       ],
-      "price": 0,
-      "maxUses": 4,
+      "price": 50,
+      "maxUses": 5,
       "level": 1
     },
     {
@@ -264,13 +265,13 @@
         {
           "type": "debuff",
           "modifiers": {
-            "dexterity": -6
+            "dexterity": -4
           },
           "accuracy": 100,
           "duration": 2
         } 
       ],
-      "price": 0,
+      "price": 150,
       "maxUses": 3,
       "level": 2
     }
@@ -286,7 +287,7 @@
         {
           "type": "damage",
           "modifier": "initiative",
-          "multiplier": 1.5,
+          "multiplier": 2,
           "min": 1,
           "max": 12
         } 
@@ -309,9 +310,9 @@
           "max": 12
         } 
       ],
-      "price": 0,
-      "maxUses": 2,
-      "level": 3
+      "price": 150,
+      "maxUses": 4,
+      "level": 2
     },
     {
       "name": "One-Two Punch",
@@ -322,7 +323,14 @@
         {
           "type": "damage",
           "modifier": "strength",
-          "multiplier": 1.4,
+          "multiplier": 0.8,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "type": "damage",
+          "modifier": "strength",
+          "multiplier": 0.8,
           "min": 0,
           "max": 0
         },
@@ -335,9 +343,9 @@
           "duration": 2
         }
       ],
-      "price": 0,
+      "price": 50,
       "maxUses": 6,
-      "level": 2
+      "level": 1
     },
     {
       "name": "Go For The Eyes",
@@ -361,9 +369,9 @@
           "duration": 2
         }
       ],
-      "price": 0,
-      "maxUses": 3,
-      "level": 3
+      "price": 150,
+      "maxUses": 4,
+      "level": 2
     },
     {
       "name": "Shadow Strike",
@@ -379,7 +387,7 @@
           "max": 10
         } 
       ],
-      "price": 0,
+      "price": 500,
       "maxUses": 2,
       "level": 5
     },
@@ -395,12 +403,12 @@
             "dexterity": 5
           },
           "accuracy": 100,
-          "duration": 3
+          "duration": 4
         } 
       ],
-      "price": 0,
+      "price": 200,
       "maxUses": 4,
-      "level": 1
+      "level": 2
     },
     {
       "name": "Quick Fingers",
@@ -411,15 +419,15 @@
         {
           "type": "buff",
           "modifiers": {
-            "initiative": 4
+            "initiative": 5
           },
           "accuracy": 100,
-          "duration": 3
+          "duration": 4
         } 
       ],
-      "price": 0,
+      "price": 100,
       "maxUses": 4,
-      "level": 0
+      "level": 1
     },
     {
       "name": "Press The Advantage",
@@ -430,13 +438,13 @@
         {
           "type": "debuff",
           "modifiers": {
-            "dexterity": -5
+            "dexterity": -4
           },
           "accuracy": 100,
-          "duration": 4
+          "duration": 3
         } 
       ],
-      "price": 0,
+      "price": 250,
       "maxUses": 3,
       "level": 2
     },
@@ -450,8 +458,8 @@
           "type": "damage",
           "modifier": "dexterity",
           "multiplier": 0.5,
-          "min": 0,
-          "max": 0
+          "min": 1,
+          "max": 4
         },
         {
           "type": "debuff",
@@ -462,8 +470,8 @@
           "duration": 2
         } 
       ],
-      "price": 0,
-      "maxUses": 2,
+      "price": 300,
+      "maxUses": 4,
       "level": 3
     },
     {
@@ -476,20 +484,20 @@
           "type": "damage",
           "modifier": "strength",
           "multiplier": 0.7,
-          "min": 0,
-          "max": 0
+          "min": 1,
+          "max": 4
         },
         {
           "type": "debuff",
           "modifiers": {
-            "dexterity": -4
+            "dexterity": -5
           },
           "accuracy": 70,
           "duration": 4
         } 
       ],
-      "price": 0,
-      "maxUses": 3,
+      "price": 350,
+      "maxUses": 4,
       "level": 4
     }
   ],
@@ -510,7 +518,7 @@
         } 
       ],
       "price": 0,
-      "maxUses": 5,
+      "maxUses": 6,
       "level": 0
     },
     {
@@ -538,8 +546,8 @@
           "duration": 4
         }
       ],
-      "price": 0,
-      "maxUses": 4,
+      "price": 50,
+      "maxUses": 5,
       "level": 1
     },
     {
@@ -564,8 +572,8 @@
           "duration": 3
         }
       ],
-      "price": 0,
-      "maxUses": 4,
+      "price": 100,
+      "maxUses": 5,
       "level": 1
     },
     {
@@ -582,8 +590,8 @@
           "max": 6
         } 
       ],
-      "price": 0,
-      "maxUses": 2,
+      "price": 200,
+      "maxUses": 4,
       "level": 2
     },
     {
@@ -600,9 +608,9 @@
           "max": 12
         } 
       ],
-      "price": 0,
-      "maxUses": 2,
-      "level": 3
+      "price": 200,
+      "maxUses": 4,
+      "level": 2
     },
     {
       "name": "Iron Skin",
@@ -619,8 +627,8 @@
           "duration": 4
         } 
       ],
-      "price": 0,
-      "maxUses": 2,
+      "price": 250,
+      "maxUses": 3,
       "level": 3
     },
     {
@@ -638,8 +646,8 @@
           "duration": 4
         } 
       ],
-      "price": 0,
-      "maxUses": 3,
+      "price": 50,
+      "maxUses": 5,
       "level": 1
     },
     {
@@ -657,9 +665,9 @@
           "duration": 4
         } 
       ],
-      "price": 0,
-      "maxUses": 3,
-      "level": 1
+      "price": 150,
+      "maxUses": 5,
+      "level": 2
     },
     {
       "name": "Destroy Armour",
@@ -673,12 +681,12 @@
             "armour": -4
           },
           "accuracy": 100,
-          "duration": 3
+          "duration": 4
         } 
       ],
-      "price": 0,
-      "maxUses": 2,
-      "level": 2
+      "price": 250,
+      "maxUses": 3,
+      "level": 3
     },
     {
       "name": "Confusion",
@@ -695,9 +703,9 @@
           "duration": 4
         } 
       ],
-      "price": 0,
-      "maxUses": 2,
-      "level": 3
+      "price": 200,
+      "maxUses": 4,
+      "level": 2
     },
     {
       "name": "Cripple",
@@ -714,7 +722,7 @@
           "duration": 4
         } 
       ],
-      "price": 0,
+      "price": 350,
       "maxUses": 3,
       "level": 4
     },
@@ -730,10 +738,10 @@
             "initiative": -10
           },
           "accuracy": 80,
-          "duration": 3
+          "duration": 4
         } 
       ],
-      "price": 0,
+      "price": 350,
       "maxUses": 2,
       "level": 4
     },
@@ -749,10 +757,10 @@
             "dexterity": -10
           },
           "accuracy": 100,
-          "duration": 2
+          "duration": 3
         } 
       ],
-      "price": 0,
+      "price": 500,
       "maxUses": 2,
       "level": 5
     }
@@ -801,7 +809,7 @@
         }
       ],
       "price": 0,
-      "maxUses": 4,
+      "maxUses": 2,
       "level": 5
     }
   ]

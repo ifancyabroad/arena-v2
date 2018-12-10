@@ -58,7 +58,7 @@
       "initiative": 7
     },
     "abilities": ["Attack", "Cleave", "Berserk", "Intimidating Shout"],
-    "challenge": 2,
+    "challenge": 1,
     "armour": 6,
     "magicResistance": 2,		
     "expValue": 150,
@@ -114,6 +114,40 @@
     "goldValue": 100
   },
   {
+    "name": "Hobgoblin",
+    "portrait": "hobgoblin.jpg",
+    "stats": {
+      "strength": 6,
+      "dexterity": 12,
+      "constitution": 8,
+      "intelligence": 4,
+      "initiative": 10
+    },
+    "abilities": ["Attack", "Gap In The Armour", "Press The Advantage"],
+    "challenge": 5,
+    "armour": 3,
+    "magicResistance": 4,
+    "expValue": 80,
+    "goldValue": 120
+  },
+  {
+    "name": "Bear",
+    "portrait": "bear.jpg",
+    "stats": {
+      "strength": 9,
+      "dexterity": 8,
+      "constitution": 10,
+      "intelligence": 1,
+      "initiative": 4
+    },
+    "abilities": ["Attack", "Takedown Attack", "Lunging Strike", "Berserk", "Stand Ground"],
+    "challenge": 6,
+    "armour": 2,
+    "magicResistance": 0,
+    "expValue": 80,
+    "goldValue": 150
+  },
+  {
     "name": "Ogre",
     "portrait": "ogre.jpg",
     "stats": {
@@ -147,6 +181,23 @@
     "goldValue": 200
   },
   {
+    "name": "Gelatinous Cube",
+    "portrait": "cube.jpg",
+    "stats": {
+      "strength": 10,
+      "dexterity": 4,
+      "constitution": 16,
+      "intelligence": 1,
+      "initiative": 1
+    },
+    "abilities": ["Attack", "Takedown Attack", "Stand Ground"],
+    "challenge": 11,
+    "armour": 6,
+    "magicResistance": 12,
+    "expValue": 200,
+    "goldValue": 180
+  },
+  {
     "name": "Gauth",
     "portrait": "gauth.png",
     "stats": {
@@ -174,7 +225,7 @@
       "initiative": 11
     },
     "abilities": ["Attack", "Magic Arrow", "Fireball", "Lightning Bolt", "Iron Skin", "Confusion"],
-    "challenge": 15,
+    "challenge": 14,
     "armour": 1,
     "magicResistance": 10,
     "expValue": 200,
@@ -225,7 +276,7 @@
       "initiative": 7
     },
     "abilities": ["Attack", "Cleave", "One-Two Punch", "Stand Ground", "Intimidating Shout", "Leg Breaker"],
-    "challenge": 14,
+    "challenge": 12,
     "armour": 8,
     "magicResistance": 7,
     "expValue": 200,
@@ -242,7 +293,7 @@
       "initiative": 12
     },
     "abilities": ["Attack", "Fireball", "Lightning Bolt", "Iron Skin", "Confusion", "Cripple", "Blind"],
-    "challenge": 22,
+    "challenge": 18,
     "armour": 2,
     "magicResistance":11,
     "expValue": 400,
@@ -259,7 +310,7 @@
       "initiative": 8
     },
     "abilities": ["Attack", "One-Two Punch", "Stand Ground", "Brutal Advance"],
-    "challenge": 20,
+    "challenge": 19,
     "armour": 12,
     "magicResistance": 15,
     "expValue": 750,
@@ -276,7 +327,7 @@
       "initiative": 15
     },
     "abilities": ["Attack", "Fireball", "Lightning Bolt", "Paralyze", "Confusion", "Iron Skin", "Destroy Armour", "Blind"],
-    "challenge": 25,
+    "challenge": 17,
     "armour": 4,
     "magicResistance": 14,
     "expValue": 1000,
@@ -293,7 +344,7 @@
       "initiative": 10
     },
     "abilities": ["Attack", "Acrobatic Strike", "Lunging Strike", "Shadow Strike", "Fireball", "Paralyze"],
-    "challenge": 22,
+    "challenge": 16,
     "armour": 5,
     "magicResistance": 10,
     "expValue": 750,
@@ -310,7 +361,7 @@
       "initiative": 16
     },
     "abilities": ["Attack", "Whirlwind Strike", "Acrobatic Strike", "Shadow Strike", "Press The Advantage", "Agile Footwork"],
-    "challenge": 18,
+    "challenge": 15,
     "armour": 6,
     "magicResistance": 6,
     "expValue": 500,
@@ -327,7 +378,7 @@
       "initiative": 16
     },
     "abilities": ["Attack", "Lunging Strike", "Takedown Attack", "Whirlwind Strike", "Fireball", "Lightning Bolt", "Paralyze", "Cure Major Wounds"],
-    "challenge": 24,
+    "challenge": 20,
     "armour": 14,
     "magicResistance": 14,
     "expValue": 2000,
