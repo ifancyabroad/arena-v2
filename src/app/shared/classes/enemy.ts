@@ -52,15 +52,11 @@ export class Enemy extends GameEntity {
 
   // Mid priority
   getMidPriority(options) {
-    return options.filter(option => {
-      let priority;
-      option['effects'].forEach(effect => {
-        if (option.name !== 'Attack' && effect.type === 'damage') {
-          priority = true;
-        }
-      });
-      return priority;
-    });
+    const damageAttacks = options.filter(option => {
+      return option['effects'].filter(effect => effect.type === 'damage');
+    }).length;
+
+    return damageAttacks > 1 ? options.filter(option => option.name !== 'Attack') : options;
   }
 
   // Highest priority
