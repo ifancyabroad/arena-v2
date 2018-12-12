@@ -21,7 +21,9 @@
         <tbody>
           <tr class="ability" *ngFor="let ability of abilities">
             <td>{{ ability.name }}</td>
-            <td>{{ ability.description }}</td>
+            <td>
+              <p *ngFor="let desc of ability.effectDescriptions">{{ desc }}</p>
+            </td>
             <td>{{ ability.maxUses }}</td>
             <td>{{ ability.level }}</td>
             <td>{{ ability.price }}</td>

@@ -3,7 +3,6 @@ import { NavigationService } from 'src/app/shared/services/navigation.service';
 import { BattleService } from 'src/app/shared/services/battle.service';
 import { PlayerService } from 'src/app/shared/services/player.service';
 import { EnemyService } from 'src/app/shared/services/enemy.service';
-import { fadein } from 'src/app/animations/fadein';
 import { Player } from 'src/app/shared/classes/player';
 import { Enemy } from 'src/app/shared/classes/enemy';
 import { Subscription } from 'rxjs';
@@ -11,8 +10,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-arena',
   templateUrl: './arena.component.html',
-  styleUrls: ['./arena.component.scss'],
-  animations: [fadein]
+  styleUrls: ['./arena.component.scss']
 })
 export class ArenaComponent implements OnInit, OnDestroy {
 
@@ -82,7 +80,7 @@ export class ArenaComponent implements OnInit, OnDestroy {
   // Check turn order and begin the round once input is received
   startTurn(ability) {
     this.playerAbility = ability;
-    this.enemyAbility = this.enemy.getAction();
+    this.enemyAbility = this.enemy.getAction(this.player);
     if (this.player.stats['initiative'].total >= this.enemy.stats['initiative'].total) {
       this.bs.state.next('player-turn');
     } else {
@@ -186,7 +184,7 @@ export class ArenaComponent implements OnInit, OnDestroy {
 
   // Player defeated
   playerSlain() {
-    console.log('You died :(');
+    alert('You died :(');
   }
 
   // End of round checks

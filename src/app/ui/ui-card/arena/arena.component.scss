@@ -6,15 +6,30 @@
 
   .arena-controls {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
 
-    .arena-btn-icon {
-      max-width: 25px;
+    .btn-arena {
+      width: 45%;
     }
+  }
 
-    .disabled {
-      opacity: 0.4;
-    }
+  .btn-home {
+    display: block;
+    margin: 20px auto;
+    height: 50px;
+    width: 60px;
+  }
+
+  .arena-btn-icon {
+    max-width: 25px;
+  }
+
+  .disabled {
+    opacity: 0.4;
   }
 
   .log-container {

@@ -16,7 +16,7 @@
 		"name": "Plate Helm",
 		"description": "A description of the item",
 		"modifier": "armour",
-		"value": 3,
+		"value": 4,
 		"price": 200,
 		"requirements": {
 			"level": 3,
@@ -28,7 +28,7 @@
 		"name": "Magic Helm",
 		"description": "A description of the item",
 		"modifier": "magicResistance",
-		"value": 2,
+		"value": 3,
 		"price": 300,
 		"requirements": {
 			"level": 2,
@@ -40,7 +40,7 @@
 		"name": "Crown of Intellect",
 		"description": "A description of the item",
 		"modifier": "intelligence",
-		"value": 5,
+		"value": 4,
 		"price": 650,
 		"requirements": {
 			"level": 4,
@@ -52,7 +52,7 @@
 		"name": "Helm of the Black Knight",
 		"description": "A description of the item",
 		"modifier": "armour",
-		"value": 6,
+		"value": 5,
 		"price": 600,
 		"requirements": {
 			"level": 5,
@@ -88,7 +88,7 @@
 		"name": "Plate Armour",
 		"description": "A description of the item",
 		"modifier": "armour",
-		"value": 6,
+		"value": 5,
 		"price": 400,
 		"requirements": {
 			"level": 4,
@@ -112,7 +112,7 @@
 		"name": "Armour of Protection",
 		"description": "A description of the item",
 		"modifier": "magicResistance",
-		"value": 5,
+		"value": 4,
 		"price": 350,
 		"requirements": {
 			"level": 2,
@@ -124,7 +124,7 @@
 		"name": "Adamantium Plate",
 		"description": "A description of the item",
 		"modifier": "magicResistance",
-		"value": 10,
+		"value": 6,
 		"price": 900,
 		"requirements": {
 			"level": 6,
@@ -136,7 +136,7 @@
 		"name": "Tunic of the Betrayer",
 		"description": "A description of the item",
 		"modifier": "dexterity",
-		"value": 9,
+		"value": 5,
 		"price": 800,
 		"requirements": {
 			"level": 5,
@@ -148,7 +148,7 @@
 		"name": "Supreme Garb of the Burnt Sorcerer",
 		"description": "A description of the item",
 		"modifier": "intelligence",
-		"value": 10,
+		"value": 6,
 		"price": 1200,
 		"requirements": {
 			"level": 6,
@@ -160,7 +160,7 @@
 		"name": "Dagger",
 		"description": "A description of the item",
 		"modifier": "dexterity",
-		"value": 4,
+		"value": 2,
 		"price": 50,
 		"requirements": {
 			"level": 1,
@@ -184,7 +184,7 @@
 		"name": "Greataxe",
 		"description": "A description of the item",
 		"modifier": "strength",
-		"value": 5,
+		"value": 4,
 		"price": 300,
 		"requirements": {
 			"level": 3,
@@ -208,7 +208,7 @@
 		"name": "Twin Swords",
 		"description": "A description of the item",
 		"modifier": "dexterity",
-		"value": 8,
+		"value": 4,
 		"price": 700,
 		"requirements": {
 			"level": 5,
@@ -221,7 +221,7 @@
 		"name": "Skull Crusher Maul",
 		"description": "A description of the item",
 		"modifier": "strength",
-		"value": 7,
+		"value": 6,
 		"price": 800,
 		"requirements": {
 			"level": 4,
@@ -245,7 +245,7 @@
 		"name": "Leather Boots",
 		"description": "A description of the item",
 		"modifier": "armour",
-		"value": 1,
+		"value": 2,
 		"price": 100,
 		"requirements": {
 			"level": 1,
@@ -257,7 +257,7 @@
 		"name": "Plate Boots",
 		"description": "A description of the item",
 		"modifier": "armour",
-		"value": 3,
+		"value": 4,
 		"price": 250,
 		"requirements": {
 			"level": 2,
@@ -293,7 +293,7 @@
 		"name": "Silent Shoes",
 		"description": "A description of the item",
 		"modifier": "dexterity",
-		"value": 5,
+		"value": 4,
 		"price": 500,
 		"requirements": {
 			"level": 4,
@@ -317,7 +317,7 @@
 		"name": "Archmage Slippers",
 		"description": "A description of the item",
 		"modifier": "intelligence",
-		"value": 5,
+		"value": 4,
 		"price": 650,
 		"requirements": {
 			"level": 4,
@@ -377,7 +377,7 @@
 		"name": "Adamantium Gloves",
 		"description": "A description of the item",
 		"modifier": "armour",
-		"value": 6,
+		"value": 4,
 		"price": 600,
 		"requirements": {
 			"level": 4,
@@ -389,7 +389,7 @@
 		"name": "Gloves of Superior Protection",
 		"description": "A description of the item",
 		"modifier": "magicResistance",
-		"value": 7,
+		"value": 4,
 		"price": 800,
 		"requirements": {
 			"level": 5,
@@ -401,7 +401,7 @@
 		"name": "Ogre Gauntlets",
 		"description": "A description of the item",
 		"modifier": "strength",
-		"value": 8,
+		"value": 5,
 		"price": 1000,
 		"requirements": {
 			"level": 6,
@@ -424,7 +424,7 @@
 		"name": "Ring of Resistance",
 		"description": "A description of the item",
 		"modifier": "magicResistance",
-		"value": 4,
+		"value": 3,
 		"price": 400,
 		"requirements": {
 			"level": 4
@@ -435,7 +435,7 @@
 		"name": "Ring of Deadly strikes",
 		"description": "A description of the item",
 		"modifier": "dexterity",
-		"value": 6,
+		"value": 4,
 		"price": 500,
 		"requirements": {
 			"level": 5
@@ -446,7 +446,7 @@
 		"name": "Shield Ring",
 		"description": "A description of the item",
 		"modifier": "armour",
-		"value": 5,
+		"value": 4,
 		"price": 400,
 		"requirements": {
 			"level": 3
@@ -468,7 +468,7 @@
 		"name": "Amulet of Unstoppable Energy",
 		"description": "A description of the item",
 		"modifier": "intelligence",
-		"value": 12,
+		"value": 6,
 		"price": 1500,
 		"requirements": {
 			"level": 8
@@ -479,7 +479,7 @@
 		"name": "Necklace of Strength",
 		"description": "A description of the item",
 		"modifier": "strength",
-		"value": 5,
+		"value": 4,
 		"price": 500,
 		"requirements": {
 			"level": 4
