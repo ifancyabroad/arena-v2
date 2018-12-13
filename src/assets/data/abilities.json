@@ -297,6 +297,24 @@
       "level": 0
     },
     {
+      "name": "Surprising Assault",
+      "description": "Some description for this ability",
+      "image": "",
+      "plane": "physical",
+      "effects": [
+        {
+          "type": "damage",
+          "modifier": "initiative",
+          "multiplier": 1.6,
+          "min": 1,
+          "max": 6
+        }
+      ],
+      "price": 100,
+      "maxUses": 2,
+      "level": 1
+    },
+    {
       "name": "Acrobatic Strike",
       "description": "Some description for this ability",
       "image": "",
@@ -499,6 +517,32 @@
       "price": 350,
       "maxUses": 4,
       "level": 4
+    },
+    {
+      "name": "Mocking Strike",
+      "description": "Some description for this ability",
+      "image": "",
+      "plane": "physical",
+      "effects": [
+        {
+          "type": "damage",
+          "modifier": "dexterity",
+          "multiplier": 0.8,
+          "min": 1,
+          "max": 4
+        },
+        {
+          "type": "debuff",
+          "modifiers": {
+            "intelligence": -4
+          },
+          "accuracy": 90,
+          "duration": 4
+        } 
+      ],
+      "price": 320,
+      "maxUses": 4,
+      "level": 3
     }
   ],
   "mage": 
@@ -520,6 +564,38 @@
       "price": 0,
       "maxUses": 6,
       "level": 0
+    },
+    {
+      "name": "Magic Missiles",
+      "description": "Some description for this ability",
+      "image": "",
+      "plane": "magical",
+      "effects": [
+        {
+          "type": "damage",
+          "modifier": "intelligence",
+          "multiplier": 0.3,
+          "min": 1,
+          "max": 4
+        },
+        {
+          "type": "damage",
+          "modifier": "intelligence",
+          "multiplier": 0.3,
+          "min": 1,
+          "max": 4
+        },
+        {
+          "type": "damage",
+          "modifier": "intelligence",
+          "multiplier": 0.3,
+          "min": 1,
+          "max": 4
+        }
+      ],
+      "price": 100,
+      "maxUses": 6,
+      "level": 1
     },
     {
       "name": "Chromatic Orb",
@@ -595,6 +671,31 @@
       "level": 2
     },
     {
+      "name": "Chain Lightning",
+      "description": "Some description for this ability",
+      "image": "",
+      "plane": "magical",
+      "effects": [
+        {
+          "type": "damage",
+          "modifier": "intelligence",
+          "multiplier": 1.2,
+          "min": 1,
+          "max": 6
+        },
+        {
+          "type": "damage",
+          "modifier": "intelligence",
+          "multiplier": 1.2,
+          "min": 1,
+          "max": 6
+        }
+      ],
+      "price": 650,
+      "maxUses": 3,
+      "level": 4
+    },
+    {
       "name": "Fireball",
       "description": "Some description for this ability",
       "image": "",
@@ -610,6 +711,25 @@
       ],
       "price": 200,
       "maxUses": 4,
+      "level": 2
+    },
+    {
+      "name": "Stone Skin",
+      "description": "Some description for this ability",
+      "image": "",
+      "plane": "magical",
+      "effects": [
+        {
+          "type": "buff",
+          "modifiers": {
+            "armour": 4
+          },
+          "accuracy": 100,
+          "duration": 4
+        } 
+      ],
+      "price": 250,
+      "maxUses": 3,
       "level": 2
     },
     {
@@ -741,9 +861,9 @@
           "duration": 4
         } 
       ],
-      "price": 350,
+      "price": 450,
       "maxUses": 2,
-      "level": 4
+      "level": 3
     },
     {
       "name": "Paralyze",
@@ -760,7 +880,7 @@
           "duration": 3
         } 
       ],
-      "price": 500,
+      "price": 700,
       "maxUses": 2,
       "level": 5
     }

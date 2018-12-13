@@ -1,387 +1,586 @@
 [
-  {
-    "name": "Goblin",
-    "portrait": "goblin.jpg",
-    "stats": {
-      "strength": 5,
-      "dexterity": 7,
-      "constitution": 5,
-      "intelligence": 2,
-      "initiative": 6
-    },
-    "abilities": ["Attack", "Quick Fingers"],
-    "challenge": 0,
-    "armour": 2,
-    "magicResistance": 4,
-    "expValue": 75,
-    "goldValue": 200
+	{
+		"name": "Goblin",
+		"portrait": "goblin.jpg",
+		"stats": {
+			"strength": 5,
+			"dexterity": 7,
+			"constitution": 5,
+			"intelligence": 2,
+			"initiative": 6
+		},
+		"abilities": [
+			"Attack",
+      "Quick Fingers",
+      "Go For The Eyes"
+		],
+		"challenge": 0,
+		"armour": 2,
+		"magicResistance": 4,
+		"expValue": 75,
+		"goldValue": 200
+	},
+	{
+		"name": "Kobold",
+		"portrait": "kobold.jpg",
+		"stats": {
+			"strength": 4,
+			"dexterity": 8,
+			"constitution": 4,
+			"intelligence": 2,
+			"initiative": 6
+		},
+		"abilities": [
+			"Attack",
+      "Acrobatic Strike",
+      "Agile Footwork"
+		],
+		"challenge": 0,
+		"armour": 3,
+		"expValue": 75,
+		"goldValue": 200
+	},
+	{
+		"name": "Wolf",
+		"portrait": "wolf.jpg",
+		"stats": {
+			"strength": 8,
+			"dexterity": 9,
+			"constitution": 4,
+			"intelligence": 1,
+			"initiative": 7
+		},
+		"abilities": [
+			"Attack",
+			"Takedown Attack"
+		],
+		"challenge": 0,
+		"expValue": 100,
+		"goldValue": 250
+	},
+	{
+		"name": "Imp",
+		"portrait": "imp.jpg",
+		"stats": {
+			"strength": 2,
+			"dexterity": 5,
+			"constitution": 4,
+			"intelligence": 11,
+			"initiative": 8
+		},
+		"abilities": [
+			"Attack",
+      "Colour Spray",
+      "Magic Missiles",
+      "Stone Skin",
+      "Cure Minor Wounds"
+		],
+		"challenge": 1,
+		"magicResistance": 8,
+		"expValue": 75,
+		"goldValue": 200
+	},
+	{
+		"name": "Skeleton",
+		"portrait": "skeleton.jpg",
+		"stats": {
+			"strength": 7,
+			"dexterity": 8,
+			"constitution": 6,
+			"intelligence": 1,
+			"initiative": 6
+		},
+		"abilities": [
+			"Attack"
+		],
+		"challenge": 1,
+		"armour": 2,
+		"magicResistance": 6,
+		"expValue": 100,
+		"goldValue": 200
+	},
+	{
+		"name": "Hobgoblin",
+		"portrait": "hobgoblin.jpg",
+		"stats": {
+			"strength": 10,
+			"dexterity": 12,
+			"constitution": 8,
+			"intelligence": 4,
+			"initiative": 10
+		},
+		"abilities": [
+			"Attack",
+			"Gap In The Armour",
+      "Press The Advantage",
+      "Surprising Assault"
+		],
+		"challenge": 1,
+		"armour": 3,
+		"magicResistance": 4,
+		"expValue": 125,
+		"goldValue": 280
+	},
+	{
+		"name": "Orc",
+		"portrait": "orc.jpg",
+		"stats": {
+			"strength": 13,
+			"dexterity": 8,
+			"constitution": 9,
+			"intelligence": 3,
+			"initiative": 7
+		},
+		"abilities": [
+			"Attack",
+			"Cleave",
+			"Berserk",
+      "Intimidating Shout"
+		],
+		"challenge": 2,
+		"armour": 6,
+		"magicResistance": 2,
+		"expValue": 200,
+		"goldValue": 300
+	},
+	{
+		"name": "Knoll",
+		"portrait": "knoll.jpg",
+		"stats": {
+			"strength": 11,
+			"dexterity": 6,
+			"constitution": 12,
+			"intelligence": 2,
+			"initiative": 6
+		},
+		"abilities": [
+			"Attack",
+			"Crushing Blow",
+			"One-Two Punch",
+			"Brutal Advance"
+		],
+		"challenge": 2,
+		"armour": 4,
+		"expValue": 150,
+		"goldValue": 300
+	},
+	{
+		"name": "Bear",
+		"portrait": "bear.jpg",
+		"stats": {
+			"strength": 14,
+			"dexterity": 8,
+			"constitution": 11,
+			"intelligence": 1,
+			"initiative": 4
+		},
+		"abilities": [
+			"Attack",
+			"Takedown Attack",
+			"Lunging Strike",
+			"Berserk",
+			"Stand Ground"
+		],
+		"challenge": 2,
+		"armour": 2,
+		"magicResistance": 0,
+		"expValue": 150,
+		"goldValue": 300
   },
   {
-    "name": "Kobold",
-    "portrait": "kobold.jpg",
-    "stats": {
-      "strength": 4,
-      "dexterity": 8,
-      "constitution": 4,
-      "intelligence": 2,
-      "initiative": 6
-    },
-    "abilities": ["Attack", "Acrobatic Strike"],
-    "challenge": 0,
+		"name": "Giant Rat",
+		"portrait": "rat.jpeg",
+		"stats": {
+			"strength": 10,
+			"dexterity": 13,
+			"constitution": 14,
+			"intelligence": 3,
+			"initiative": 12
+		},
+		"abilities": [
+			"Attack",
+			"Takedown Attack",
+      "Lunging Strike",
+      "Agile Footwork"
+		],
+		"challenge": 3,
+		"armour": 2,
+		"expValue": 175,
+		"goldValue": 320
+  },
+  {
+		"name": "Kua Toa",
+		"portrait": "kuatoa.jpg",
+		"stats": {
+			"strength": 9,
+			"dexterity": 6,
+			"constitution": 8,
+			"intelligence": 12,
+			"initiative": 8
+		},
+		"abilities": [
+      "Attack",
+      "Magic Arrow",
+			"Magic Missiles",
+			"Chromatic Orb",
+			"Cure Minor Wounds"
+		],
+		"challenge": 3,
     "armour": 3,
-    "expValue": 75,
-    "goldValue": 200
+    "magicResistance": 5,
+		"expValue": 200,
+		"goldValue": 300
   },
   {
-    "name": "Wolf",
-    "portrait": "wolf.jpg",
-    "stats": {
-      "strength": 8,
-      "dexterity": 9,
-      "constitution": 4,
-      "intelligence": 1,
-      "initiative": 7
-    },
-    "abilities": ["Attack", "Takedown Attack"],
-    "challenge": 0,
-    "expValue": 100,
-    "goldValue": 250
-  },
-  {
-    "name": "Orc",
-    "portrait": "orc.jpg",
-    "stats": {
-      "strength": 13,
-      "dexterity": 8,
-      "constitution": 9,
-      "intelligence": 3,
-      "initiative": 7
-    },
-    "abilities": ["Attack", "Cleave", "Berserk", "Intimidating Shout"],
-    "challenge": 2,
+		"name": "Wight",
+		"portrait": "wight.jpeg",
+		"stats": {
+			"strength": 10,
+			"dexterity": 14,
+			"constitution": 10,
+			"intelligence": 4,
+			"initiative": 9
+		},
+		"abilities": [
+			"Attack",
+			"Precise Strike",
+			"Gap In The Armour",
+			"Dizzying Blow"
+		],
+		"challenge": 3,
     "armour": 6,
-    "magicResistance": 2,		
-    "expValue": 200,
-    "goldValue": 300
-  },
-  {
-    "name": "Imp",
-    "portrait": "imp.jpg",
-    "stats": {
-      "strength": 2,
-      "dexterity": 5,
-      "constitution": 4,
-      "intelligence": 11,
-      "initiative": 8
-    },
-    "abilities": ["Attack", "Magic Arrow"],
-    "challenge": 1,
     "magicResistance": 8,
-    "expValue": 75,
-    "goldValue": 200
-  },
-  {
-    "name": "Knoll",
-    "portrait": "knoll.jpg",
-    "stats": {
-      "strength": 11,
-      "dexterity": 6,
-      "constitution": 12,
-      "intelligence": 2,
-      "initiative": 6
-    },
-    "abilities": ["Attack", "Crushing Blow", "One-Two Punch", "Brutal Advance"],
-    "challenge": 2,
-    "armour": 4,
-    "expValue": 150,
-    "goldValue": 300
-  },
-  {
-    "name": "Skeleton",
-    "portrait": "skeleton.jpg",
-    "stats": {
-      "strength": 7,
-      "dexterity": 8,
-      "constitution": 6,
-      "intelligence": 1,
-      "initiative": 6
-    },
-    "abilities": ["Attack"],
-    "challenge": 1,
-    "armour": 2,
-    "magicResistance": 6,
-    "expValue": 100,
-    "goldValue": 200
-  },
-  {
-    "name": "Hobgoblin",
-    "portrait": "hobgoblin.jpg",
-    "stats": {
-      "strength": 10,
-      "dexterity": 12,
-      "constitution": 8,
-      "intelligence": 4,
-      "initiative": 10
-    },
-    "abilities": ["Attack", "Gap In The Armour", "Press The Advantage"],
-    "challenge": 1,
-    "armour": 3,
-    "magicResistance": 4,
-    "expValue": 125,
-    "goldValue": 280
-  },
-  {
-    "name": "Bear",
-    "portrait": "bear.jpg",
-    "stats": {
-      "strength": 14,
-      "dexterity": 8,
-      "constitution": 11,
-      "intelligence": 1,
-      "initiative": 4
-    },
-    "abilities": ["Attack", "Takedown Attack", "Lunging Strike", "Berserk", "Stand Ground"],
-    "challenge": 2,
-    "armour": 2,
-    "magicResistance": 0,
-    "expValue": 150,
-    "goldValue": 300
-  },
-  {
-    "name": "Ogre",
-    "portrait": "ogre.jpg",
-    "stats": {
-      "strength": 18,
-      "dexterity": 8,
-      "constitution": 14,
-      "intelligence": 1,
-      "initiative": 6
-    },
-    "abilities": ["Attack", "Dizzying Blow", "One-Two Punch", "Berserk"],
-    "challenge": 8,
-    "armour": 2,
-    "expValue": 200,
-    "goldValue": 350
-  },
-  {
-    "name": "Troll",
-    "portrait": "troll.jpg",
-    "stats": {
-      "strength": 17,
-      "dexterity": 5,
-      "constitution": 13,
-      "intelligence": 2,
-      "initiative": 5
-    },
-    "abilities": ["Attack", "Crushing Blow", "Brutal Advance"],
-    "challenge": 10,
-    "armour": 2,
-    "magicResistance": 12,
-    "expValue": 250,
-    "goldValue": 380
-  },
-  {
-    "name": "Gelatinous Cube",
-    "portrait": "cube.jpeg",
-    "stats": {
-      "strength": 9,
-      "dexterity": 4,
-      "constitution": 16,
-      "intelligence": 1,
-      "initiative": 1
-    },
-    "abilities": ["Attack", "Takedown Attack", "Stand Ground"],
-    "challenge": 11,
-    "armour": 6,
-    "magicResistance": 12,
-    "expValue": 250,
-    "goldValue": 300
-  },
-  {
-    "name": "Gauth",
-    "portrait": "gauth.png",
-    "stats": {
-      "strength": 8,
-      "dexterity": 12,
-      "constitution": 8,
-      "intelligence": 14,
-      "initiative": 10
-    },
-    "abilities": ["Attack", "Magic Arrow", "Chromatic Orb", "Minor Spell Protection"],
-    "challenge": 12,
-    "armour": 2,
-    "magicResistance": 7,
-    "expValue": 250,
-    "goldValue": 350
-  },
-  {
-    "name": "Mage",
-    "portrait": "mage.jpg",
-    "stats": {
-      "strength": 3,
-      "dexterity": 5,
-      "constitution": 11,
-      "intelligence": 17,
-      "initiative": 11
-    },
-    "abilities": ["Attack", "Magic Arrow", "Fireball", "Lightning Bolt", "Iron Skin", "Confusion"],
-    "challenge": 14,
-    "armour": 1,
-    "magicResistance": 10,
-    "expValue": 300,
-    "goldValue": 420
-  },
-  {
-    "name": "Elf",
-    "portrait": "elf.png",
-    "stats": {
-      "strength": 10,
-      "dexterity": 17,
-      "constitution": 10,
-      "intelligence": 8,
-      "initiative": 14
-    },
-    "abilities": ["Attack", "Acrobatic Strike", "Precise Strike", "Agile Footwork", "Magic Arrow", "Cure Minor Wounds", "Dancing Defense"],
-    "challenge": 15,
-    "armour": 2,
-    "magicResistance": 8,
-    "expValue": 350,
-    "goldValue": 450
-  },
-  {
-    "name": "Centaur",
-    "portrait": "centaur.png",
-    "stats": {
-      "strength": 12,
-      "dexterity": 15,
-      "constitution": 12,
-      "intelligence": 4,
-      "initiative": 12
-    },
-    "abilities": ["Attack", "Lunging Strike", "Acrobatic Strike", "Gap In The Armour", "Takedown Attack"],
-    "challenge": 16,
-    "armour": 4,
-    "magicResistance": 4,
-    "expValue": 375,
-    "goldValue": 450
-  },
-  {
-    "name": "Dwarf",
-    "portrait": "dwarf.png",
-    "stats": {
-      "strength": 16,
-      "dexterity": 9,
-      "constitution": 20,
-      "intelligence": 7,
-      "initiative": 7
-    },
-    "abilities": ["Attack", "Cleave", "One-Two Punch", "Stand Ground", "Intimidating Shout", "Leg Breaker"],
-    "challenge": 12,
-    "armour": 8,
-    "magicResistance": 7,
-    "expValue": 300,
-    "goldValue": 400
-  },
-  {
-    "name": "Mind Flayer",
-    "portrait": "flayer.jpg",
-    "stats": {
-      "strength": 9,
-      "dexterity": 14,
-      "constitution": 11,
-      "intelligence": 22,
-      "initiative": 12
-    },
-    "abilities": ["Attack", "Fireball", "Lightning Bolt", "Iron Skin", "Confusion", "Cripple", "Blind"],
-    "challenge": 18,
-    "armour": 2,
-    "magicResistance":11,
-    "expValue": 450,
-    "goldValue": 520
-  },
-  {
-    "name": "Golem",
-    "portrait": "golem.jpg",
-    "stats": {
-      "strength": 21,
-      "dexterity": 10,
-      "constitution": 13,
-      "intelligence": 2,
-      "initiative": 8
-    },
-    "abilities": ["Attack", "One-Two Punch", "Stand Ground", "Brutal Advance"],
-    "challenge": 19,
-    "armour": 12,
-    "magicResistance": 15,
-    "expValue": 750,
-    "goldValue": 500
-  },
-  {
-    "name": "Lich",
-    "portrait": "lich.jpg",
-    "stats": {
-      "strength": 8,
-      "dexterity": 10,
-      "constitution": 14,
-      "intelligence": 26,
-      "initiative": 15
-    },
-    "abilities": ["Attack", "Fireball", "Lightning Bolt", "Paralyze", "Confusion", "Iron Skin", "Destroy Armour", "Blind"],
-    "challenge": 17,
-    "armour": 6,
-    "magicResistance": 14,
-    "expValue": 1000,
-    "goldValue": 720
-  },
-  {
-    "name": "Vampire",
-    "portrait": "vampire.jpg",
-    "stats": {
-      "strength": 13,
-      "dexterity": 18,
-      "constitution": 14,
-      "intelligence": 16,
-      "initiative": 10
-    },
-    "abilities": ["Attack", "Acrobatic Strike", "Lunging Strike", "Shadow Strike", "Fireball", "Paralyze"],
-    "challenge": 16,
-    "armour": 5,
-    "magicResistance": 10,
-    "expValue": 750,
-    "goldValue": 700
-  },
-  {
-    "name": "Werewolf",
-    "portrait": "werewolf.png",
-    "stats": {
-      "strength": 17,
-      "dexterity": 23,
-      "constitution": 15,
-      "intelligence": 6,
-      "initiative": 16
-    },
-    "abilities": ["Attack", "Whirlwind Strike", "Acrobatic Strike", "Shadow Strike", "Press The Advantage", "Agile Footwork"],
-    "challenge": 15,
-    "armour": 4,
-    "magicResistance": 6,
-    "expValue": 600,
-    "goldValue": 650
-  },
-  {
-    "name": "Dragon",
-    "portrait": "dragon.jpg",
-    "stats": {
-      "strength": 23,
-      "dexterity": 18,
-      "constitution": 24,
-      "intelligence": 24,
-      "initiative": 15
-    },
-    "abilities": ["Attack", "Lunging Strike", "Takedown Attack", "Whirlwind Strike", "Fireball", "Lightning Bolt", "Paralyze", "Cure Major Wounds"],
-    "challenge": 20,
-    "armour": 14,
-    "magicResistance": 14,
-    "expValue": 2000,
-    "goldValue": 2000
-  }
+		"expValue": 200,
+		"goldValue": 320
+	},
+	{
+		"name": "Ogre",
+		"portrait": "ogre.jpg",
+		"stats": {
+			"strength": 18,
+			"dexterity": 8,
+			"constitution": 14,
+			"intelligence": 1,
+			"initiative": 6
+		},
+		"abilities": [
+      "Attack",
+      "Crushing Blow",
+			"One-Two Punch",
+			"Berserk"
+		],
+		"challenge": 8,
+		"armour": 2,
+		"expValue": 240,
+		"goldValue": 350
+	},
+	{
+		"name": "Troll",
+		"portrait": "troll.jpg",
+		"stats": {
+			"strength": 17,
+			"dexterity": 5,
+			"constitution": 13,
+			"intelligence": 2,
+			"initiative": 5
+		},
+		"abilities": [
+			"Attack",
+			"Dizzying Blow",
+			"Brutal Advance"
+		],
+		"challenge": 10,
+		"armour": 2,
+		"magicResistance": 12,
+		"expValue": 250,
+		"goldValue": 380
+	},
+	{
+		"name": "Gelatinous Cube",
+		"portrait": "cube.jpeg",
+		"stats": {
+			"strength": 9,
+			"dexterity": 4,
+			"constitution": 16,
+			"intelligence": 1,
+			"initiative": 1
+		},
+		"abilities": [
+			"Attack",
+			"Takedown Attack",
+			"Stand Ground"
+		],
+		"challenge": 11,
+		"armour": 6,
+		"magicResistance": 12,
+		"expValue": 250,
+		"goldValue": 300
+	},
+	{
+		"name": "Gauth",
+		"portrait": "gauth.png",
+		"stats": {
+			"strength": 8,
+			"dexterity": 12,
+			"constitution": 8,
+			"intelligence": 14,
+			"initiative": 10
+		},
+		"abilities": [
+      "Attack",
+      "Cripple",
+			"Lightning Bolt",
+      "Chromatic Orb",
+      "Stone Skin",
+			"Minor Spell Protection"
+		],
+		"challenge": 12,
+		"armour": 2,
+		"magicResistance": 7,
+		"expValue": 250,
+		"goldValue": 350
+	},
+	{
+		"name": "Dwarf",
+		"portrait": "dwarf.png",
+		"stats": {
+			"strength": 16,
+			"dexterity": 9,
+			"constitution": 20,
+			"intelligence": 7,
+			"initiative": 7
+		},
+		"abilities": [
+			"Attack",
+			"Cleave",
+			"One-Two Punch",
+			"Stand Ground",
+      "Leg Breaker",
+      "Cure Major Wounds"
+		],
+		"challenge": 13,
+		"armour": 8,
+		"magicResistance": 7,
+		"expValue": 300,
+		"goldValue": 400
+	},
+	{
+		"name": "Mage",
+		"portrait": "mage.jpg",
+		"stats": {
+			"strength": 3,
+			"dexterity": 5,
+			"constitution": 11,
+			"intelligence": 17,
+			"initiative": 11
+		},
+		"abilities": [
+			"Attack",
+			"Magic Missiles",
+			"Fireball",
+			"Lightning Bolt",
+			"Iron Skin",
+			"Confusion"
+		],
+		"challenge": 14,
+		"armour": 1,
+		"magicResistance": 10,
+		"expValue": 300,
+		"goldValue": 420
+	},
+	{
+		"name": "Elf",
+		"portrait": "elf.png",
+		"stats": {
+			"strength": 10,
+			"dexterity": 17,
+			"constitution": 10,
+			"intelligence": 8,
+			"initiative": 14
+		},
+		"abilities": [
+			"Attack",
+			"Acrobatic Strike",
+			"Precise Strike",
+			"Agile Footwork",
+			"Magic Arrow",
+			"Cure Major Wounds",
+			"Dancing Defense"
+		],
+		"challenge": 15,
+		"armour": 2,
+		"magicResistance": 8,
+		"expValue": 350,
+		"goldValue": 450
+	},
+	{
+		"name": "Werewolf",
+		"portrait": "werewolf.png",
+		"stats": {
+			"strength": 17,
+			"dexterity": 23,
+			"constitution": 15,
+			"intelligence": 6,
+			"initiative": 16
+		},
+		"abilities": [
+			"Attack",
+			"Whirlwind Strike",
+			"Acrobatic Strike",
+			"Shadow Strike",
+			"Press The Advantage",
+			"Agile Footwork"
+		],
+		"challenge": 16,
+		"armour": 4,
+		"magicResistance": 6,
+		"expValue": 600,
+		"goldValue": 650
+	},
+	{
+		"name": "Centaur",
+		"portrait": "centaur.png",
+		"stats": {
+			"strength": 12,
+			"dexterity": 15,
+			"constitution": 12,
+			"intelligence": 4,
+			"initiative": 12
+		},
+		"abilities": [
+			"Attack",
+			"Lunging Strike",
+			"Acrobatic Strike",
+			"Gap In The Armour",
+			"Takedown Attack"
+		],
+		"challenge": 15,
+		"armour": 4,
+		"magicResistance": 4,
+		"expValue": 375,
+		"goldValue": 450
+	},
+	{
+		"name": "Vampire",
+		"portrait": "vampire.jpg",
+		"stats": {
+			"strength": 13,
+			"dexterity": 18,
+			"constitution": 14,
+			"intelligence": 16,
+			"initiative": 10
+		},
+		"abilities": [
+			"Attack",
+			"Acrobatic Strike",
+			"Lunging Strike",
+      "Shadow Strike",
+      "Cripple",
+			"Fireball",
+			"Paralyze"
+		],
+		"challenge": 16,
+		"armour": 5,
+		"magicResistance": 10,
+		"expValue": 750,
+		"goldValue": 700
+	},
+	{
+		"name": "Lich",
+		"portrait": "lich.jpg",
+		"stats": {
+			"strength": 8,
+			"dexterity": 10,
+			"constitution": 14,
+			"intelligence": 26,
+			"initiative": 15
+		},
+		"abilities": [
+			"Attack",
+			"Fireball",
+			"Chain Lightning",
+			"Paralyze",
+      "Iron Skin",
+      "Major Spell Protection"
+		],
+		"challenge": 17,
+		"armour": 6,
+		"magicResistance": 14,
+		"expValue": 1000,
+		"goldValue": 720
+	},
+	{
+		"name": "Mind Flayer",
+		"portrait": "flayer.jpg",
+		"stats": {
+			"strength": 9,
+			"dexterity": 14,
+			"constitution": 13,
+			"intelligence": 22,
+			"initiative": 15
+		},
+		"abilities": [
+			"Attack",
+			"Fireball",
+			"Chain Lightning",
+			"Iron Skin",
+			"Confusion",
+			"Cripple",
+			"Blind"
+		],
+		"challenge": 18,
+		"armour": 2,
+		"magicResistance": 11,
+		"expValue": 450,
+		"goldValue": 520
+	},
+	{
+		"name": "Golem",
+		"portrait": "golem.jpg",
+		"stats": {
+			"strength": 21,
+			"dexterity": 14,
+			"constitution": 18,
+			"intelligence": 2,
+			"initiative": 8
+		},
+		"abilities": [
+      "Attack",
+      "Crushing Blow",
+			"One-Two Punch",
+			"Stand Ground",
+			"Brutal Advance"
+		],
+		"challenge": 19,
+		"armour": 12,
+		"magicResistance": 15,
+		"expValue": 750,
+		"goldValue": 500
+	},
+	{
+		"name": "Dragon",
+		"portrait": "dragon.jpg",
+		"stats": {
+			"strength": 23,
+			"dexterity": 18,
+			"constitution": 24,
+			"intelligence": 24,
+			"initiative": 15
+		},
+		"abilities": [
+			"Attack",
+			"Lunging Strike",
+			"Takedown Attack",
+			"Whirlwind Strike",
+			"Fireball",
+			"Chain Lightning",
+			"Paralyze",
+			"Cure Critical Wounds"
+		],
+		"challenge": 20,
+		"armour": 14,
+		"magicResistance": 14,
+		"expValue": 2000,
+		"goldValue": 2000
+	}
 ]

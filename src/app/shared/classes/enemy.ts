@@ -22,8 +22,8 @@ export class Enemy extends GameEntity {
     let options = this.abilities.filter(ability => !ability['maxUses'] || ability['uses'] > 0); // Filter out abilities with 0 uses
 
     options = this.getLowPriority(options, player);
-    options = this.getMidPriority(options).length ? this.getMidPriority(options) : options;
     options = this.getHighPriority(options).length ? this.getHighPriority(options) : options;
+    options = this.getMidPriority(options, player).length ? this.getMidPriority(options, player) : options;
 
     return options[this.dice.roll(0, options.length - 1)];
   }
@@ -45,18 +45,67 @@ export class Enemy extends GameEntity {
         if ((this.currentHealth / this.maxHealth()) * 100 > 80 && effect.type === 'heal') {
           reject = true;
         }
+        // Filter out vs Warriors and Rogues
+        if (player.cl.name === 'Warrior' || player.cl.name === 'Rogue') {
+          if (effect.type === 'buff' && effect.modifiers['magicResistance'] > 0) {
+            reject = true;
+          }
+          if (effect.type === 'debuff' && effect.modifiers['intelligence'] < 0) {
+            reject = true;
+          }
+        }
+        // Filter out vs Mages
+        if (player.cl.name === 'Mage') {
+          if (effect.type === 'buff' && effect.modifiers['armour'] > 0) {
+            reject = true;
+          }
+          if (effect.type === 'debuff' &&
+            (effect.modifiers['strength'] < 0 || effect.modifiers['dexterity'] < 0)) {
+            reject = true;
+          }
+        }
       });
       return !reject;
     });
   }
 
   // Mid priority
-  getMidPriority(options) {
-    const damageAttacks = options.filter(option => {
-      return option['effects'].filter(effect => effect.type === 'damage');
-    }).length;
-
-    return damageAttacks > 1 ? options.filter(option => option.name !== 'Attack') : options;
+  getMidPriority(options, player) {
+    return options.filter(option => {
+      let priority;
+      option['effects'].forEach(effect => {
+        // Priority vs Warriors
+        if (player.cl.name === 'Warrior') {
+          if (effect.type === 'buff' && effect.modifiers['armour'] > 0) {
+            priority = true;
+          }
+          if (effect.type === 'debuff' &&
+            (effect.modifiers['strength'] < 0 || effect.modifiers['dexterity'] < 0)) {
+            priority = true;
+          }
+        }
+        // Priority vs Rogues
+        if (player.cl.name === 'Rogue') {
+          if (effect.type === 'buff' && effect.modifiers['armour'] > 0) {
+            priority = true;
+          }
+          if (effect.type === 'debuff' &&
+            (effect.modifiers['dexterity'] < 0 || effect.modifiers['initiative'] < 0)) {
+            priority = true;
+          }
+        }
+        // Priority vs Mages
+        if (player.cl.name === 'Mage') {
+          if (effect.type === 'buff' && effect.modifiers['magicResistance'] > 0) {
+            priority = true;
+          }
+          if (effect.type === 'debuff' && effect.modifiers['intelligence'] < 0) {
+            priority = true;
+          }
+        }
+      });
+      return priority;
+    });
   }
 
   // Highest priority
