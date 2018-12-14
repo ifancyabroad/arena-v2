@@ -113,7 +113,7 @@
 			"Gap In The Armour",
       "Press The Advantage"
 		],
-		"challenge": 1,
+		"challenge": 2,
 		"armour": 3,
 		"magicResistance": 2,
 		"expValue": 125,
@@ -157,7 +157,7 @@
 			"One-Two Punch",
 			"Brutal Advance"
 		],
-		"challenge": 2,
+		"challenge": 3,
 		"armour": 4,
 		"expValue": 150,
 		"goldValue": 300
@@ -179,7 +179,7 @@
 			"Berserk",
 			"Stand Ground"
 		],
-		"challenge": 2,
+		"challenge": 3,
 		"armour": 1,
 		"magicResistance": 0,
 		"expValue": 150,
@@ -201,7 +201,7 @@
       "Lunging Strike",
       "Agile Footwork"
 		],
-		"challenge": 3,
+		"challenge": 4,
 		"armour": 1,
 		"expValue": 175,
 		"goldValue": 320
@@ -224,7 +224,7 @@
       "Minor Spell Protection",
 			"Cure Minor Wounds"
 		],
-		"challenge": 3,
+		"challenge": 4,
     "armour": 2,
     "magicResistance": 5,
 		"expValue": 200,
@@ -246,7 +246,7 @@
 			"Gap In The Armour",
 			"Dizzying Blow"
 		],
-		"challenge": 3,
+		"challenge": 5,
     "armour": 4,
     "magicResistance": 5,
 		"expValue": 200,
@@ -268,7 +268,7 @@
 			"One-Two Punch",
 			"Berserk"
 		],
-		"challenge": 4,
+		"challenge": 5,
 		"armour": 2,
 		"expValue": 240,
 		"goldValue": 350
@@ -288,7 +288,7 @@
 			"Dizzying Blow",
 			"Brutal Advance"
 		],
-		"challenge": 4,
+		"challenge": 6,
 		"armour": 2,
 		"magicResistance": 12,
 		"expValue": 250,
@@ -312,7 +312,7 @@
       "Stone Skin",
 			"Minor Spell Protection"
 		],
-		"challenge": 4,
+		"challenge": 6,
 		"armour": 2,
 		"magicResistance": 7,
 		"expValue": 250,
@@ -333,7 +333,7 @@
 			"Takedown Attack",
 			"Stand Ground"
 		],
-		"challenge": 5,
+		"challenge": 7,
 		"armour": 10,
 		"magicResistance": 12,
 		"expValue": 250,
@@ -356,7 +356,7 @@
       "Leg Breaker",
       "Cure Major Wounds"
 		],
-		"challenge": 5,
+		"challenge": 7,
 		"armour": 8,
 		"magicResistance": 7,
 		"expValue": 300,
@@ -380,7 +380,7 @@
 			"Iron Skin",
 			"Confusion"
 		],
-		"challenge": 5,
+		"challenge": 8,
 		"armour": 2,
 		"magicResistance": 10,
 		"expValue": 300,
@@ -405,7 +405,7 @@
 			"Cure Major Wounds",
 			"Dancing Defense"
 		],
-		"challenge": 6,
+		"challenge": 8,
 		"armour": 4,
 		"magicResistance": 8,
 		"expValue": 350,
@@ -429,7 +429,7 @@
 			"Surprising Assault",
 			"Agile Footwork"
 		],
-		"challenge": 6,
+		"challenge": 9,
 		"armour": 8,
 		"magicResistance": 6,
 		"expValue": 600,
@@ -452,7 +452,7 @@
 			"Gap In The Armour",
 			"Takedown Attack"
 		],
-		"challenge": 6,
+		"challenge": 9,
 		"armour": 2,
 		"magicResistance": 12,
 		"expValue": 375,
@@ -477,7 +477,7 @@
 			"Fireball",
 			"Paralyze"
 		],
-		"challenge": 7,
+		"challenge": 10,
 		"armour": 9,
 		"magicResistance": 12,
 		"expValue": 750,
@@ -501,7 +501,7 @@
       "Iron Skin",
       "Major Spell Protection"
 		],
-		"challenge": 7,
+		"challenge": 10,
 		"armour": 6,
 		"magicResistance": 14,
 		"expValue": 1000,
@@ -525,7 +525,7 @@
 			"Cripple",
 			"Blind"
 		],
-		"challenge": 7,
+		"challenge": 11,
 		"armour": 2,
 		"magicResistance": 11,
 		"expValue": 450,
@@ -547,7 +547,7 @@
 			"Stand Ground",
 			"Brutal Advance"
 		],
-		"challenge": 8,
+		"challenge": 11,
 		"armour": 14,
 		"magicResistance": 15,
 		"expValue": 750,
@@ -573,7 +573,7 @@
 			"Paralyze",
 			"Cure Critical Wounds"
 		],
-		"challenge": 10,
+		"challenge": 12,
 		"armour": 14,
 		"magicResistance": 14,
 		"expValue": 2000,
