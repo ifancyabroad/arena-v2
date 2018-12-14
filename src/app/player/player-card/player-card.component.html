@@ -6,7 +6,9 @@
 
   <!--Back of card-->
   <div class="card-back" [ngSwitch]="backFace">
-    <div class="card-hidden" *ngSwitchCase="'hidden'"></div>
+    <div class="card-hidden" *ngSwitchCase="'hidden'">
+      <img class="centered" src="/assets/img/icons/dragon.png" alt="Dragon symbol">
+    </div>
     <app-player-inventory *ngSwitchCase="'inventory'"></app-player-inventory>
     <app-player-abilities *ngSwitchCase="'abilities'"></app-player-abilities>
   </div>

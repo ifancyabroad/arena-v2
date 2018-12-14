@@ -73,7 +73,7 @@
       "Colour Spray",
       "Magic Missiles",
       "Stone Skin",
-      "Cure Minor Wounds"
+      "Minor Spell Protection"
 		],
 		"challenge": 1,
 		"magicResistance": 8,
@@ -84,8 +84,8 @@
 		"name": "Skeleton",
 		"portrait": "skeleton.jpg",
 		"stats": {
-			"strength": 7,
-			"dexterity": 8,
+			"strength": 8,
+			"dexterity": 10,
 			"constitution": 6,
 			"intelligence": 1,
 			"initiative": 6
@@ -94,7 +94,6 @@
 			"Attack"
 		],
 		"challenge": 1,
-		"armour": 2,
 		"magicResistance": 6,
 		"expValue": 100,
 		"goldValue": 200
@@ -103,21 +102,20 @@
 		"name": "Hobgoblin",
 		"portrait": "hobgoblin.jpg",
 		"stats": {
-			"strength": 10,
-			"dexterity": 12,
-			"constitution": 8,
+			"strength": 7,
+			"dexterity": 11,
+			"constitution": 7,
 			"intelligence": 4,
 			"initiative": 10
 		},
 		"abilities": [
 			"Attack",
 			"Gap In The Armour",
-      "Press The Advantage",
-      "Surprising Assault"
+      "Press The Advantage"
 		],
 		"challenge": 1,
 		"armour": 3,
-		"magicResistance": 4,
+		"magicResistance": 2,
 		"expValue": 125,
 		"goldValue": 280
 	},
@@ -125,8 +123,8 @@
 		"name": "Orc",
 		"portrait": "orc.jpg",
 		"stats": {
-			"strength": 13,
-			"dexterity": 8,
+			"strength": 12,
+			"dexterity": 9,
 			"constitution": 9,
 			"intelligence": 3,
 			"initiative": 7
@@ -138,7 +136,7 @@
       "Intimidating Shout"
 		],
 		"challenge": 2,
-		"armour": 6,
+		"armour": 4,
 		"magicResistance": 2,
 		"expValue": 200,
 		"goldValue": 300
@@ -147,15 +145,15 @@
 		"name": "Knoll",
 		"portrait": "knoll.jpg",
 		"stats": {
-			"strength": 11,
-			"dexterity": 6,
-			"constitution": 12,
+			"strength": 14,
+			"dexterity": 7,
+			"constitution": 11,
 			"intelligence": 2,
-			"initiative": 6
+			"initiative": 4
 		},
 		"abilities": [
-			"Attack",
-			"Crushing Blow",
+      "Attack",
+      "Cleave",
 			"One-Two Punch",
 			"Brutal Advance"
 		],
@@ -168,7 +166,7 @@
 		"name": "Bear",
 		"portrait": "bear.jpg",
 		"stats": {
-			"strength": 14,
+			"strength": 13,
 			"dexterity": 8,
 			"constitution": 11,
 			"intelligence": 1,
@@ -182,7 +180,7 @@
 			"Stand Ground"
 		],
 		"challenge": 2,
-		"armour": 2,
+		"armour": 1,
 		"magicResistance": 0,
 		"expValue": 150,
 		"goldValue": 300
@@ -191,9 +189,9 @@
 		"name": "Giant Rat",
 		"portrait": "rat.jpeg",
 		"stats": {
-			"strength": 10,
+			"strength": 9,
 			"dexterity": 13,
-			"constitution": 14,
+			"constitution": 13,
 			"intelligence": 3,
 			"initiative": 12
 		},
@@ -204,7 +202,7 @@
       "Agile Footwork"
 		],
 		"challenge": 3,
-		"armour": 2,
+		"armour": 1,
 		"expValue": 175,
 		"goldValue": 320
   },
@@ -214,19 +212,20 @@
 		"stats": {
 			"strength": 9,
 			"dexterity": 6,
-			"constitution": 8,
-			"intelligence": 12,
+			"constitution": 9,
+			"intelligence": 14,
 			"initiative": 8
 		},
 		"abilities": [
       "Attack",
       "Magic Arrow",
 			"Magic Missiles",
-			"Chromatic Orb",
+      "Stone Skin",
+      "Minor Spell Protection",
 			"Cure Minor Wounds"
 		],
 		"challenge": 3,
-    "armour": 3,
+    "armour": 2,
     "magicResistance": 5,
 		"expValue": 200,
 		"goldValue": 300
@@ -235,9 +234,9 @@
 		"name": "Wight",
 		"portrait": "wight.jpeg",
 		"stats": {
-			"strength": 10,
+			"strength": 9,
 			"dexterity": 14,
-			"constitution": 10,
+			"constitution": 11,
 			"intelligence": 4,
 			"initiative": 9
 		},
@@ -248,8 +247,8 @@
 			"Dizzying Blow"
 		],
 		"challenge": 3,
-    "armour": 6,
-    "magicResistance": 8,
+    "armour": 4,
+    "magicResistance": 5,
 		"expValue": 200,
 		"goldValue": 320
 	},
@@ -258,7 +257,7 @@
 		"portrait": "ogre.jpg",
 		"stats": {
 			"strength": 18,
-			"dexterity": 8,
+			"dexterity": 12,
 			"constitution": 14,
 			"intelligence": 1,
 			"initiative": 6
@@ -269,7 +268,7 @@
 			"One-Two Punch",
 			"Berserk"
 		],
-		"challenge": 8,
+		"challenge": 4,
 		"armour": 2,
 		"expValue": 240,
 		"goldValue": 350
@@ -279,7 +278,7 @@
 		"portrait": "troll.jpg",
 		"stats": {
 			"strength": 17,
-			"dexterity": 5,
+			"dexterity": 10,
 			"constitution": 13,
 			"intelligence": 2,
 			"initiative": 5
@@ -289,40 +288,19 @@
 			"Dizzying Blow",
 			"Brutal Advance"
 		],
-		"challenge": 10,
+		"challenge": 4,
 		"armour": 2,
 		"magicResistance": 12,
 		"expValue": 250,
 		"goldValue": 380
-	},
-	{
-		"name": "Gelatinous Cube",
-		"portrait": "cube.jpeg",
-		"stats": {
-			"strength": 9,
-			"dexterity": 4,
-			"constitution": 16,
-			"intelligence": 1,
-			"initiative": 1
-		},
-		"abilities": [
-			"Attack",
-			"Takedown Attack",
-			"Stand Ground"
-		],
-		"challenge": 11,
-		"armour": 6,
-		"magicResistance": 12,
-		"expValue": 250,
-		"goldValue": 300
-	},
-	{
+  },
+  {
 		"name": "Gauth",
 		"portrait": "gauth.png",
 		"stats": {
 			"strength": 8,
 			"dexterity": 12,
-			"constitution": 8,
+			"constitution": 10,
 			"intelligence": 14,
 			"initiative": 10
 		},
@@ -334,18 +312,39 @@
       "Stone Skin",
 			"Minor Spell Protection"
 		],
-		"challenge": 12,
+		"challenge": 4,
 		"armour": 2,
 		"magicResistance": 7,
 		"expValue": 250,
 		"goldValue": 350
 	},
 	{
+		"name": "Gelatinous Cube",
+		"portrait": "cube.jpeg",
+		"stats": {
+			"strength": 12,
+			"dexterity": 8,
+			"constitution": 16,
+			"intelligence": 1,
+			"initiative": 1
+		},
+		"abilities": [
+			"Attack",
+			"Takedown Attack",
+			"Stand Ground"
+		],
+		"challenge": 5,
+		"armour": 10,
+		"magicResistance": 12,
+		"expValue": 250,
+		"goldValue": 300
+	},
+	{
 		"name": "Dwarf",
 		"portrait": "dwarf.png",
 		"stats": {
 			"strength": 16,
-			"dexterity": 9,
+			"dexterity": 12,
 			"constitution": 20,
 			"intelligence": 7,
 			"initiative": 7
@@ -353,12 +352,11 @@
 		"abilities": [
 			"Attack",
 			"Cleave",
-			"One-Two Punch",
 			"Stand Ground",
       "Leg Breaker",
       "Cure Major Wounds"
 		],
-		"challenge": 13,
+		"challenge": 5,
 		"armour": 8,
 		"magicResistance": 7,
 		"expValue": 300,
@@ -371,7 +369,7 @@
 			"strength": 3,
 			"dexterity": 5,
 			"constitution": 11,
-			"intelligence": 17,
+			"intelligence": 18,
 			"initiative": 11
 		},
 		"abilities": [
@@ -382,8 +380,8 @@
 			"Iron Skin",
 			"Confusion"
 		],
-		"challenge": 14,
-		"armour": 1,
+		"challenge": 5,
+		"armour": 2,
 		"magicResistance": 10,
 		"expValue": 300,
 		"goldValue": 420
@@ -393,9 +391,9 @@
 		"portrait": "elf.png",
 		"stats": {
 			"strength": 10,
-			"dexterity": 17,
-			"constitution": 10,
-			"intelligence": 8,
+			"dexterity": 19,
+			"constitution": 11,
+			"intelligence": 9,
 			"initiative": 14
 		},
 		"abilities": [
@@ -407,8 +405,8 @@
 			"Cure Major Wounds",
 			"Dancing Defense"
 		],
-		"challenge": 15,
-		"armour": 2,
+		"challenge": 6,
+		"armour": 4,
 		"magicResistance": 8,
 		"expValue": 350,
 		"goldValue": 450
@@ -417,8 +415,8 @@
 		"name": "Werewolf",
 		"portrait": "werewolf.png",
 		"stats": {
-			"strength": 17,
-			"dexterity": 23,
+			"strength": 12,
+			"dexterity": 21,
 			"constitution": 15,
 			"intelligence": 6,
 			"initiative": 16
@@ -428,11 +426,11 @@
 			"Whirlwind Strike",
 			"Acrobatic Strike",
 			"Shadow Strike",
-			"Press The Advantage",
+			"Surprising Assault",
 			"Agile Footwork"
 		],
-		"challenge": 16,
-		"armour": 4,
+		"challenge": 6,
+		"armour": 8,
 		"magicResistance": 6,
 		"expValue": 600,
 		"goldValue": 650
@@ -441,9 +439,9 @@
 		"name": "Centaur",
 		"portrait": "centaur.png",
 		"stats": {
-			"strength": 12,
-			"dexterity": 15,
-			"constitution": 12,
+			"strength": 16,
+			"dexterity": 18,
+			"constitution": 16,
 			"intelligence": 4,
 			"initiative": 12
 		},
@@ -454,9 +452,9 @@
 			"Gap In The Armour",
 			"Takedown Attack"
 		],
-		"challenge": 15,
-		"armour": 4,
-		"magicResistance": 4,
+		"challenge": 6,
+		"armour": 2,
+		"magicResistance": 12,
 		"expValue": 375,
 		"goldValue": 450
 	},
@@ -464,11 +462,11 @@
 		"name": "Vampire",
 		"portrait": "vampire.jpg",
 		"stats": {
-			"strength": 13,
-			"dexterity": 18,
-			"constitution": 14,
-			"intelligence": 16,
-			"initiative": 10
+			"strength": 16,
+			"dexterity": 21,
+			"constitution": 17,
+			"intelligence": 15,
+			"initiative": 11
 		},
 		"abilities": [
 			"Attack",
@@ -479,9 +477,9 @@
 			"Fireball",
 			"Paralyze"
 		],
-		"challenge": 16,
-		"armour": 5,
-		"magicResistance": 10,
+		"challenge": 7,
+		"armour": 9,
+		"magicResistance": 12,
 		"expValue": 750,
 		"goldValue": 700
 	},
@@ -503,7 +501,7 @@
       "Iron Skin",
       "Major Spell Protection"
 		],
-		"challenge": 17,
+		"challenge": 7,
 		"armour": 6,
 		"magicResistance": 14,
 		"expValue": 1000,
@@ -521,14 +519,13 @@
 		},
 		"abilities": [
 			"Attack",
-			"Fireball",
 			"Chain Lightning",
 			"Iron Skin",
 			"Confusion",
 			"Cripple",
 			"Blind"
 		],
-		"challenge": 18,
+		"challenge": 7,
 		"armour": 2,
 		"magicResistance": 11,
 		"expValue": 450,
@@ -538,8 +535,8 @@
 		"name": "Golem",
 		"portrait": "golem.jpg",
 		"stats": {
-			"strength": 21,
-			"dexterity": 14,
+			"strength": 24,
+			"dexterity": 15,
 			"constitution": 18,
 			"intelligence": 2,
 			"initiative": 8
@@ -547,12 +544,11 @@
 		"abilities": [
       "Attack",
       "Crushing Blow",
-			"One-Two Punch",
 			"Stand Ground",
 			"Brutal Advance"
 		],
-		"challenge": 19,
-		"armour": 12,
+		"challenge": 8,
+		"armour": 14,
 		"magicResistance": 15,
 		"expValue": 750,
 		"goldValue": 500
@@ -561,10 +557,10 @@
 		"name": "Dragon",
 		"portrait": "dragon.jpg",
 		"stats": {
-			"strength": 23,
-			"dexterity": 18,
+			"strength": 26,
+			"dexterity": 20,
 			"constitution": 24,
-			"intelligence": 24,
+			"intelligence": 23,
 			"initiative": 15
 		},
 		"abilities": [
@@ -577,7 +573,7 @@
 			"Paralyze",
 			"Cure Critical Wounds"
 		],
-		"challenge": 20,
+		"challenge": 10,
 		"armour": 14,
 		"magicResistance": 14,
 		"expValue": 2000,

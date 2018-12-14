@@ -42,8 +42,13 @@ img {
     .card-hidden {
       height: 100%;
       width: 100%;
+      background-image: linear-gradient(to bottom right, $primary-color, $secondary-color);
       background-color: $primary-color;
-      border: 25px solid $secondary-color;
+      border: 25px solid $tertiary-color;
+
+      img {
+        max-height: 80%;
+      }
     }
   }
   
