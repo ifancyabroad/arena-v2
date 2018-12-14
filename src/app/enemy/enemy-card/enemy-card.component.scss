@@ -5,6 +5,7 @@
 
 .card-hidden {
   img {
+    max-width: 60%;
     transform: translate(-50%, -50%) rotateY(180deg);
   }
 }

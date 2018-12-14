@@ -14,7 +14,10 @@
     <table class="stats-table">
       <tbody>
         <tr *ngFor="let stat of keys(player.getStats('main'))">
-          <td>{{ player.stats[stat].name }}</td>
+          <td>
+            <span class="full">{{ player.stats[stat].name }}</span>
+            <span class="part">{{ player.stats[stat].name.slice(0, 3).toUpperCase() }}</span>
+          </td>
           <td>{{ player.stats[stat].value }}</td>
           <td><span *ngIf="player.stats[stat].modifier"> +{{ player.stats[stat].modifier }}</span></td>
           <td><span *ngIf="player.stats[stat].battle"> {{ player.stats[stat].battle }}</span></td>

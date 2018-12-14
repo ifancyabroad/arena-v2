@@ -10,21 +10,15 @@
 }
 
 .reroll-table {
-  border-collapse: collapse;
   width: 80%;
 
-  td {
-    border: 1px solid grey;
-    padding: 8px;
+  p {
+    font-size: 0.9em;
   }
 
   td:last-child {
     font-weight: 700;
     text-align: center;
     color: $primary-color;
-  }
-
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
   }
 }
