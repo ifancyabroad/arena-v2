@@ -22,3 +22,10 @@
     transform: translate(-50%, -50%);
   }
 }
+
+figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 85%;
+}
