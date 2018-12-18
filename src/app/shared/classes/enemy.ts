@@ -1,4 +1,5 @@
 import { GameEntity } from './game-entity';
+import { Ability } from './ability';
 
 export class Enemy extends GameEntity {
 
@@ -8,7 +9,7 @@ export class Enemy extends GameEntity {
     public name: string,
     public portrait: string,
     public st: Object,
-    public abilities: Object[],
+    public abilities: Array<Ability>,
     public armour = 0,
     public magicResistance = 0,
     public expValue: number,

@@ -5,6 +5,7 @@ import { UtilitiesService } from 'src/app/shared/services/utilities.service';
 import { PlayerService } from 'src/app/shared/services/player.service';
 import { AbilitiesService } from 'src/app/shared/services/abilities.service';
 import { Player } from 'src/app/shared/classes/player';
+import { Ability } from 'src/app/shared/classes/ability';
 
 @Component({
   selector: 'app-enemy-details',
@@ -46,10 +47,24 @@ export class EnemyDetailsComponent implements OnInit {
   // Get enemy abilities
   getEnemyAbilities(enemy) {
     let allAbilities = [];
+    const monsterAbilities = [];
     for (let type of Object.keys(this.abilityList)) {
       allAbilities = allAbilities.concat(this.abilityList[type]);
     }
-    return allAbilities.filter(ability => enemy.abilities.indexOf(ability.name) !== -1);
+    allAbilities.filter(ability => enemy.abilities.indexOf(ability.name) !== -1).forEach(ability => {
+      monsterAbilities.push(
+        new Ability(
+          ability.name,
+          ability.description,
+          ability.plane,
+          ability.effects,
+          ability.price,
+          ability.maxUses,
+          ability.level
+        )
+      );
+    });
+    return monsterAbilities;
   }
 
   // Create enemy
@@ -67,8 +82,6 @@ export class EnemyDetailsComponent implements OnInit {
       enemy['expValue'],
       enemy['goldValue']
     );
-
-    this.es.enemy.rest(); // Set uses for abilities
   }
 
 }

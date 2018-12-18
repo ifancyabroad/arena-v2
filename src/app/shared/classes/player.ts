@@ -1,4 +1,5 @@
 import { GameEntity } from './game-entity';
+import { Ability } from './ability';
 
 export class Player extends GameEntity {
 
@@ -26,7 +27,7 @@ export class Player extends GameEntity {
     public portrait: string,
     public cl: Object,
     public st: Object,
-    public abilities: Object[]
+    public abilities: Array<Ability>
   ) {
     super(name, portrait, st, abilities);
   }

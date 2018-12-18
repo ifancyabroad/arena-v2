@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { NavigationService } from 'src/app/shared/services/navigation.service';
 import { AbilitiesService } from 'src/app/shared/services/abilities.service';
 import { PlayerService } from 'src/app/shared/services/player.service';
+import { Ability } from 'src/app/shared/classes/ability';
 
 @Component({
   selector: 'app-trainer',
@@ -61,10 +62,17 @@ export class TrainerComponent implements OnInit, OnDestroy {
       this.trainerLog = 'Sorry you do not have the required skill for that';
     } else {
       this.player.gold -= ability.price;
-      if (ability.maxUses) {
-        ability.uses = ability.maxUses;
-      }
-      this.player.learnAbility(ability);
+      this.player.learnAbility(
+        new Ability(
+          ability.name,
+          ability.description,
+          ability.plane,
+          ability.effects,
+          ability.price,
+          ability.maxUses,
+          ability.level
+        )
+      );
     }
   }
 

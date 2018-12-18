@@ -5,6 +5,7 @@ import { PlayerService } from '../../../shared/services/player.service';
 import { Player } from '../../../shared/classes/player';
 import { UtilitiesService } from '../../../shared/services/utilities.service';
 import { AbilitiesService } from 'src/app/shared/services/abilities.service';
+import { Ability } from 'src/app/shared/classes/ability';
 
 @Component({
   selector: 'app-character-create',
@@ -60,7 +61,23 @@ export class CharacterCreateComponent implements OnInit {
   }
 
   // Set initial abilities
-  setAbilities = (className) => this.abilities['basic'].concat(this.abilities[className].filter(ability => ability.level < 1));
+  setAbilities(className) {
+    const startingAbilities = [];
+    this.abilities['basic'].concat(this.abilities[className].filter(ability => ability.level < 1)).forEach(ability => {
+      startingAbilities.push(
+        new Ability(
+          ability.name,
+          ability.description,
+          ability.plane,
+          ability.effects,
+          ability.price,
+          ability.maxUses,
+          ability.level
+        )
+      );
+    });
+    return startingAbilities;
+  }
 
   // Create player
   createPlayer() {
@@ -71,8 +88,6 @@ export class CharacterCreateComponent implements OnInit {
       this.setStats(this.classInput['maxStats']),
       this.setAbilities(this.classInput['name'].toLowerCase())
     );
-
-    this.ps.player.rest(); // Set uses of starting abilities
 
     this.ps.characterCreated.next(true);
     this.nav.uiCard.next({ face: 'front', view: 'roll-stats', flip: false });

@@ -1,5 +1,5 @@
 import { UtilitiesService } from '../services/utilities.service';
-import { buffer } from 'rxjs/operators';
+import { Ability } from './ability';
 
 export class GameEntity {
 
@@ -17,7 +17,7 @@ export class GameEntity {
     public name: string,
     public portrait: string,
     public st: Object,
-    public abilities: Object[],
+    public abilities: Array<Ability>,
     public armour = 0,
     public magicResistance = 0
   ) {
@@ -153,17 +153,13 @@ export class GameEntity {
 
   // Use ability
   useAbility(ability): void {
-    if (ability.uses) {
-      ability.uses--;
-    }
+    ability.useAbility();
   }
 
   // Rest
   rest(): void {
     this.abilities.forEach(ability => {
-      if (ability['maxUses']) {
-        ability['uses'] = ability['maxUses'];
-      }
+      ability.refreshAbility();
     });
   }
 
