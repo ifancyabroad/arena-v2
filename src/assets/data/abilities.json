@@ -78,7 +78,7 @@
     },
     {
       "name": "Takedown Attack",
-      "description": "Some description for this ability",
+      "description": "Charge the enemy, taking them down to the ground.",
       "image": "",
       "plane": "physical",
       "effects": [
@@ -104,7 +104,7 @@
     },
     {
       "name": "Crushing Blow",
-      "description": "Some description for this ability",
+      "description": "Strike the enemy with huge force.",
       "image": "",
       "plane": "physical",
       "effects": [
@@ -122,7 +122,7 @@
     },
     {
       "name": "Dizzying Blow",
-      "description": "Some description for this ability",
+      "description": "Aim for the opponents head, disorienting them.",
       "image": "",
       "plane": "physical",
       "effects": [
@@ -148,7 +148,7 @@
     },
     {
       "name": "Whirlwind Strike",
-      "description": "Some description for this ability",
+      "description": "Attack three times in quick succession.",
       "image": "",
       "plane": "physical",
       "effects": [
@@ -180,7 +180,7 @@
     },
     {
       "name": "Berserk",
-      "description": "Some description for this ability",
+      "description": "Become enraged, increasing attack but lowering defense.",
       "image": "",
       "plane": "physical",
       "effects": [
@@ -200,7 +200,7 @@
     },
     {
       "name": "Stand Ground",
-      "description": "Some description for this ability",
+      "description": "Stand your ground to increase defense.",
       "image": "",
       "plane": "physical",
       "effects": [
@@ -219,7 +219,7 @@
     },
     {
       "name": "Dancing Defense",
-      "description": "Some description for this ability",
+      "description": "Greatly increase defense and mobility with rhythmic movement.",
       "image": "",
       "plane": "physical",
       "effects": [
@@ -239,7 +239,7 @@
     },
     {
       "name": "Intimidating Shout",
-      "description": "Some description for this ability",
+      "description": "Roar at the enemy to demoralise them.",
       "image": "",
       "plane": "physical",
       "effects": [
@@ -258,7 +258,7 @@
     },
     {
       "name": "Brutal Advance",
-      "description": "Some description for this ability",
+      "description": "Force the opponent back.",
       "image": "",
       "plane": "physical",
       "effects": [
@@ -280,7 +280,7 @@
   [
     {
       "name": "Backstab",
-      "description": "Some description for this ability",
+      "description": "Sneak behind the enemy to strike them in the back.",
       "image": "",
       "plane": "physical",
       "effects": [
@@ -298,7 +298,7 @@
     },
     {
       "name": "Surprising Assault",
-      "description": "Some description for this ability",
+      "description": "Launch a surprise attack.",
       "image": "",
       "plane": "physical",
       "effects": [
@@ -316,7 +316,7 @@
     },
     {
       "name": "Acrobatic Strike",
-      "description": "Some description for this ability",
+      "description": "Use your mobility to strike from above.",
       "image": "",
       "plane": "physical",
       "effects": [
@@ -334,7 +334,7 @@
     },
     {
       "name": "One-Two Punch",
-      "description": "Some description for this ability",
+      "description": "Attack once with each fist.",
       "image": "",
       "plane": "physical",
       "effects": [
@@ -367,7 +367,7 @@
     },
     {
       "name": "Go For The Eyes",
-      "description": "Some description for this ability",
+      "description": "Aim for the opponents eyes.",
       "image": "",
       "plane": "physical",
       "effects": [
@@ -393,7 +393,7 @@
     },
     {
       "name": "Shadow Strike",
-      "description": "Some description for this ability",
+      "description": "Strike from the shadows.",
       "image": "",
       "plane": "physical",
       "effects": [
@@ -411,7 +411,7 @@
     },
     {
       "name": "Agile Footwork",
-      "description": "Some description for this ability",
+      "description": "Increase your mobility.",
       "image": "",
       "plane": "physical",
       "effects": [
@@ -430,7 +430,7 @@
     },
     {
       "name": "Quick Fingers",
-      "description": "Some description for this ability",
+      "description": "Increase hand speed, ready for attack.",
       "image": "",
       "plane": "physical",
       "effects": [
@@ -449,7 +449,7 @@
     },
     {
       "name": "Press The Advantage",
-      "description": "Some description for this ability",
+      "description": "Corner the opponent limiting the movement.",
       "image": "",
       "plane": "physical",
       "effects": [
@@ -468,7 +468,7 @@
     },
     {
       "name": "Gap In The Armour",
-      "description": "Some description for this ability",
+      "description": "Aim for a weakness in the opponents armour.",
       "image": "",
       "plane": "physical",
       "effects": [
@@ -494,7 +494,7 @@
     },
     {
       "name": "Leg Breaker",
-      "description": "Some description for this ability",
+      "description": "Swing at the opponents leg to cripple them.",
       "image": "",
       "plane": "physical",
       "effects": [
@@ -520,7 +520,7 @@
     },
     {
       "name": "Mocking Strike",
-      "description": "Some description for this ability",
+      "description": "Extravagant attack to taunt the enemy.",
       "image": "",
       "plane": "physical",
       "effects": [
@@ -549,7 +549,7 @@
   [
     {
       "name": "Magic Arrow",
-      "description": "Some description for this ability",
+      "description": "Conjure an arrow.",
       "image": "",
       "plane": "magical",
       "effects": [
@@ -567,7 +567,7 @@
     },
     {
       "name": "Magic Missiles",
-      "description": "Some description for this ability",
+      "description": "Conjure three small projectiles.",
       "image": "",
       "plane": "magical",
       "effects": [
@@ -599,7 +599,7 @@
     },
     {
       "name": "Chromatic Orb",
-      "description": "Some description for this ability",
+      "description": "Conjure a magical orb to potentially weaken the enemy.",
       "image": "",
       "plane": "magical",
       "effects": [
@@ -628,7 +628,7 @@
     },
     {
       "name": "Colour Spray",
-      "description": "Some description for this ability",
+      "description": "Dazzle the enemy.",
       "image": "",
       "plane": "magical",
       "effects": [
@@ -654,7 +654,7 @@
     },
     {
       "name": "Lightning Bolt",
-      "description": "Some description for this ability",
+      "description": "Conjure a lightning bolt.",
       "image": "",
       "plane": "magical",
       "effects": [
@@ -672,7 +672,7 @@
     },
     {
       "name": "Chain Lightning",
-      "description": "Some description for this ability",
+      "description": "Conjure a lightning bolt that strikes twice.",
       "image": "",
       "plane": "magical",
       "effects": [
@@ -697,7 +697,7 @@
     },
     {
       "name": "Fireball",
-      "description": "Some description for this ability",
+      "description": "Conjure a ball of fire.",
       "image": "",
       "plane": "magical",
       "effects": [
@@ -715,7 +715,7 @@
     },
     {
       "name": "Stone Skin",
-      "description": "Some description for this ability",
+      "description": "Harden the skin to increase defense.",
       "image": "",
       "plane": "magical",
       "effects": [
@@ -734,7 +734,7 @@
     },
     {
       "name": "Iron Skin",
-      "description": "Some description for this ability",
+      "description": "Harden the skin to greatly increase defense.",
       "image": "",
       "plane": "magical",
       "effects": [
@@ -753,7 +753,7 @@
     },
     {
       "name": "Minor Spell Protection",
-      "description": "Some description for this ability",
+      "description": "Protect against basic magic.",
       "image": "",
       "plane": "magical",
       "effects": [
@@ -772,7 +772,7 @@
     },
     {
       "name": "Major Spell Protection",
-      "description": "Some description for this ability",
+      "description": "Protect against powerful magic.",
       "image": "",
       "plane": "magical",
       "effects": [
@@ -791,7 +791,7 @@
     },
     {
       "name": "Destroy Armour",
-      "description": "Some description for this ability",
+      "description": "Deteriorate opponents armour.",
       "image": "",
       "plane": "magical",
       "effects": [
@@ -810,7 +810,7 @@
     },
     {
       "name": "Confusion",
-      "description": "Some description for this ability",
+      "description": "Confuse the enemy.",
       "image": "",
       "plane": "magical",
       "effects": [
@@ -829,7 +829,7 @@
     },
     {
       "name": "Cripple",
-      "description": "Some description for this ability",
+      "description": "Reduce enemies physical strength.",
       "image": "",
       "plane": "magical",
       "effects": [
@@ -848,7 +848,7 @@
     },
     {
       "name": "Blind",
-      "description": "Some description for this ability",
+      "description": "Temporarily blind the opponent.",
       "image": "",
       "plane": "magical",
       "effects": [
@@ -867,7 +867,7 @@
     },
     {
       "name": "Paralyze",
-      "description": "Some description for this ability",
+      "description": "Target the opponent with paralysis.",
       "image": "",
       "plane": "magical",
       "effects": [
@@ -889,7 +889,7 @@
   [
     {
       "name": "Cure Minor Wounds",
-      "description": "Some description for this ability",
+      "description": "Heal basic injuries.",
       "image": "",
       "plane": "magical",
       "effects": [
@@ -904,7 +904,7 @@
     },
     {
       "name": "Cure Major Wounds",
-      "description": "Some description for this ability",
+      "description": "Heal moderate injuries.",
       "image": "",
       "plane": "magical",
       "effects": [
@@ -919,7 +919,7 @@
     },
     {
       "name": "Cure Critical Wounds",
-      "description": "Some description for this ability",
+      "description": "Heal critical injuries.",
       "image": "",
       "plane": "magical",
       "effects": [
