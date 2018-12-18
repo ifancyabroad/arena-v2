@@ -11,7 +11,7 @@ export class Ability {
     public maxUses: number,
     public level: number
   ) {
-    this.uses = this.maxUses; // Get starting uses
+    this.refreshAbility(); // Get starting uses
   }
 
   // Refresh ability
