@@ -12,8 +12,8 @@
           <tr>
             <th (click)="sortAbilities('name')">Name</th>
             <th (click)="sortAbilities('modifier')">Effect</th>
-            <th (click)="sortAbilities('value')">Power</th>
             <th (click)="sortAbilities('type')">Type</th>
+            <th>Requires</th>
             <th (click)="sortAbilities('price')">Price</th>
             <th></th>
           </tr>
@@ -21,9 +21,11 @@
         <tbody>
           <tr class="item" *ngFor="let item of items">
             <td>{{ item.name }}</td>
-            <td>Increases {{ item.modifier }}</td>
-            <td>{{ item.value }}</td>
-            <td>{{ item.type }}</td>
+            <td>Increases {{ item.modifier }} by {{ item.value }}</td>
+            <td><img class="store-icon" src="/assets/img/icons/{{ item.type }}.png" alt="Inventory icon"></td>
+            <td>
+              <p *ngFor="let req of keys(item.requirements)">{{ item.requirements[req] }} {{ req }}</p>
+            </td>
             <td>{{ item.price }}</td>
             <td><button class="btn" type="button" (click)="buyItem(item)">Buy</button></td>
           </tr>

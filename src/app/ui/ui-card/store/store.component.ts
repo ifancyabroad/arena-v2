@@ -12,6 +12,8 @@ import { Player } from 'src/app/shared/classes/player';
 })
 export class StoreComponent implements OnInit, OnDestroy {
 
+  keys = Object.keys;
+
   items: Object[];
   player: Player;
   storeLog = 'Hello and welcome to the store!';
@@ -51,13 +53,24 @@ export class StoreComponent implements OnInit, OnDestroy {
     });
   }
 
+  // Check if player meets the requirements
+  checkRequirements(item) {
+    for (let req of this.keys(item.requirements)) {
+      if (item.requirements[req] > this.player.stats[req].value) {
+        return false;
+      }
+    }
+  }
+
   // Purchase selected item
   buyItem(item) {
-    if (this.player.gold >= item.price) {
+    if (this.player.gold < item.price) {
+      this.storeLog = 'You do not have enough gold for that';
+    } else if (!this.checkRequirements(item)) {
+      this.storeLog = 'Sorry you do not meet the requirements for that';
+    } else {
       this.player.gold -= item.price;
       this.player.updateInventory(item);
-    } else {
-      this.storeLog = 'You do not have enough gold for that';
     }
   }
 

@@ -7,8 +7,7 @@
 		"value": 2,
 		"price": 100,
 		"requirements": {
-			"level": 1,
-			"strength": 5
+			"strength": 6
 		}
 	},
 	{
@@ -19,8 +18,7 @@
 		"value": 4,
 		"price": 200,
 		"requirements": {
-			"level": 3,
-			"strength": 12
+			"strength": 14
 		}
 	},
 	{
@@ -31,8 +29,7 @@
 		"value": 3,
 		"price": 300,
 		"requirements": {
-			"level": 2,
-			"strength": 4
+			"strength": 10
 		}
 	},
 	{
@@ -43,8 +40,8 @@
 		"value": 4,
 		"price": 650,
 		"requirements": {
-			"level": 4,
-			"strength": 4
+			"strength": 4,
+			"intelligence": 16
 		}
 	},
 	{
@@ -55,8 +52,7 @@
 		"value": 5,
 		"price": 600,
 		"requirements": {
-			"level": 5,
-			"strength": 15
+			"strength": 17
 		}
 	},
 	{
@@ -67,7 +63,6 @@
 		"value": 3,
 		"price": 150,
 		"requirements": {
-			"level": 1,
 			"strength": 8
 		}
 	},
@@ -79,7 +74,6 @@
 		"value": 4,
 		"price": 250,
 		"requirements": {
-			"level": 2,
 			"strength": 12
 		}
 	},
@@ -91,7 +85,6 @@
 		"value": 5,
 		"price": 400,
 		"requirements": {
-			"level": 4,
 			"strength": 16
 		}
 	},
@@ -103,7 +96,6 @@
 		"value": 3,
 		"price": 400,
 		"requirements": {
-			"level": 1,
 			"strength": 2
 		}
 	},
@@ -115,8 +107,7 @@
 		"value": 4,
 		"price": 350,
 		"requirements": {
-			"level": 2,
-			"strength": 5
+			"strength": 12
 		}
 	},
 	{
@@ -127,7 +118,6 @@
 		"value": 6,
 		"price": 900,
 		"requirements": {
-			"level": 6,
 			"strength": 17
 		}
 	},
@@ -139,8 +129,8 @@
 		"value": 5,
 		"price": 800,
 		"requirements": {
-			"level": 5,
-			"strength": 12
+			"strength": 12,
+			"dexterity": 16
 		}
 	},
 	{
@@ -151,8 +141,8 @@
 		"value": 6,
 		"price": 1200,
 		"requirements": {
-			"level": 6,
-			"strength": 4
+			"strength": 4,
+			"intelligence": 19
 		}
 	},
 	{
@@ -163,7 +153,6 @@
 		"value": 2,
 		"price": 50,
 		"requirements": {
-			"level": 1,
 			"strength": 5
 		}
 	},
@@ -175,8 +164,8 @@
 		"value": 3,
 		"price": 150,
 		"requirements": {
-			"level": 2,
-			"strength": 8
+			"strength": 11,
+			"dexterity": 10
 		}
 	},
 	{
@@ -187,8 +176,7 @@
 		"value": 4,
 		"price": 300,
 		"requirements": {
-			"level": 3,
-			"strength": 14
+			"strength": 15
 		}
 	},
 	{
@@ -199,8 +187,8 @@
 		"value": 3,
 		"price": 300,
 		"requirements": {
-			"level": 2,
-			"strength": 5
+			"strength": 4,
+			"intelligence": 16
 		}
 	},
 	{
@@ -208,12 +196,11 @@
 		"name": "Twin Swords",
 		"description": "A description of the item",
 		"modifier": "dexterity",
-		"value": 4,
+		"value": 5,
 		"price": 700,
 		"requirements": {
-			"level": 5,
-			"strength": 9,
-			"dexterity": 15
+			"strength": 12,
+			"dexterity": 17
 		}
 	},
 	{
@@ -224,8 +211,7 @@
 		"value": 6,
 		"price": 800,
 		"requirements": {
-			"level": 4,
-			"strength": 14
+			"strength": 19
 		}
 	},
 	{
@@ -236,8 +222,8 @@
 		"value": 6,
 		"price": 650,
 		"requirements": {
-			"level": 4,
-			"strength": 5
+			"strength": 5,
+			"intelligence": 20
 		}
 	},
 	{
@@ -248,8 +234,7 @@
 		"value": 2,
 		"price": 100,
 		"requirements": {
-			"level": 1,
-			"strength": 3
+			"strength": 5
 		}
 	},
 	{
@@ -260,8 +245,7 @@
 		"value": 4,
 		"price": 250,
 		"requirements": {
-			"level": 2,
-			"strength": 12
+			"strength": 14
 		}
 	},
 	{
@@ -272,8 +256,7 @@
 		"value": 3,
 		"price": 200,
 		"requirements": {
-			"level": 2,
-			"strength": 8
+			"strength": 13
 		}
 	},
 	{
@@ -284,8 +267,7 @@
 		"value": 4,
 		"price": 100,
 		"requirements": {
-			"level": 2,
-			"strength": 3
+			"strength": 5
 		}
 	},
 	{
@@ -296,8 +278,7 @@
 		"value": 4,
 		"price": 500,
 		"requirements": {
-			"level": 4,
-			"strength": 4
+			"strength": 6
 		}
 	},
 	{
@@ -308,8 +289,7 @@
 		"value": 4,
 		"price": 750,
 		"requirements": {
-			"level": 3,
-			"strength": 12
+			"strength": 9
 		}
 	},
 	{
@@ -320,8 +300,8 @@
 		"value": 4,
 		"price": 650,
 		"requirements": {
-			"level": 4,
-			"strength": 3
+			"strength": 1,
+			"intelligence": 17
 		}
 	},
 	{
@@ -332,8 +312,7 @@
 		"value": 1,
 		"price": 100,
 		"requirements": {
-			"level": 1,
-			"strength": 7
+			"strength": 6
 		}
 	},
 	{
@@ -344,7 +323,6 @@
 		"value": 3,
 		"price": 250,
 		"requirements": {
-			"level": 2,
 			"strength": 13
 		}
 	},
@@ -356,8 +334,8 @@
 		"value": 2,
 		"price": 200,
 		"requirements": {
-			"level": 1,
-			"strength": 2
+			"strength": 2,
+			"intelligence": 13
 		}
 	},
 	{
@@ -368,8 +346,7 @@
 		"value": 2,
 		"price": 200,
 		"requirements": {
-			"level": 1,
-			"strength": 4
+			"strength": 6
 		}
 	},
 	{
@@ -380,8 +357,7 @@
 		"value": 4,
 		"price": 600,
 		"requirements": {
-			"level": 4,
-			"strength": 15
+			"strength": 14
 		}
 	},
 	{
@@ -392,8 +368,7 @@
 		"value": 4,
 		"price": 800,
 		"requirements": {
-			"level": 5,
-			"strength": 5
+			"strength": 8
 		}
 	},
 	{
@@ -404,8 +379,7 @@
 		"value": 5,
 		"price": 1000,
 		"requirements": {
-			"level": 6,
-			"strength": 17
+			"strength": 18
 		}
 	},
 	{
@@ -416,7 +390,6 @@
 		"value": 6,
 		"price": 200,
 		"requirements": {
-			"level": 5
 		}
 	},
 	{
@@ -427,7 +400,6 @@
 		"value": 3,
 		"price": 400,
 		"requirements": {
-			"level": 4
 		}
 	},
 	{
@@ -438,7 +410,6 @@
 		"value": 4,
 		"price": 500,
 		"requirements": {
-			"level": 5
 		}
 	},
 	{
@@ -449,7 +420,6 @@
 		"value": 4,
 		"price": 400,
 		"requirements": {
-			"level": 3
 		}
 	},
 	{
@@ -460,7 +430,6 @@
 		"value": 2,
 		"price": 150,
 		"requirements": {
-			"level": 1
 		}
 	},
 	{
@@ -471,7 +440,7 @@
 		"value": 6,
 		"price": 1500,
 		"requirements": {
-			"level": 8
+			"intelligence": 20
 		}
 	},
 	{
@@ -482,7 +451,6 @@
 		"value": 4,
 		"price": 500,
 		"requirements": {
-			"level": 4
 		}
 	},
 	{
@@ -493,7 +461,6 @@
 		"value": 3,
 		"price": 250,
 		"requirements": {
-			"level": 2
 		}
 	},
 	{
@@ -504,7 +471,6 @@
 		"value": 3,
 		"price": 250,
 		"requirements": {
-			"level": 2
 		}
 	},
 	{
@@ -515,7 +481,6 @@
 		"value": 3,
 		"price": 250,
 		"requirements": {
-			"level": 2
 		}
 	}
 ]
