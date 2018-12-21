@@ -91,7 +91,8 @@
 			"initiative": 6
 		},
 		"abilities": [
-			"Attack"
+			"Attack",
+			"Backstab"
 		],
 		"challenge": 1,
 		"magicResistance": 6,
@@ -244,7 +245,8 @@
 			"Attack",
 			"Precise Strike",
 			"Gap In The Armour",
-			"Dizzying Blow"
+			"Dizzying Blow",
+			"Backstab"
 		],
 		"challenge": 5,
     "armour": 4,
@@ -353,7 +355,7 @@
 			"Attack",
 			"Cleave",
 			"Stand Ground",
-      "Leg Breaker",
+      "Arm Breaker",
       "Cure Major Wounds"
 		],
 		"challenge": 7,
@@ -378,6 +380,7 @@
 			"Fireball",
 			"Lightning Bolt",
 			"Iron Skin",
+			"Major Spell Protection",
 			"Confusion"
 		],
 		"challenge": 8,
@@ -403,7 +406,8 @@
 			"Agile Footwork",
 			"Magic Arrow",
 			"Cure Major Wounds",
-			"Dancing Defense"
+			"Dancing Defense",
+			"Spring The Trap"
 		],
 		"challenge": 8,
 		"armour": 4,
@@ -471,7 +475,7 @@
 		"abilities": [
 			"Attack",
 			"Acrobatic Strike",
-			"Lunging Strike",
+			"Cloak Of Shadows",
       "Shadow Strike",
       "Cripple",
 			"Fireball",
@@ -545,7 +549,8 @@
       "Attack",
       "Crushing Blow",
 			"Stand Ground",
-			"Brutal Advance"
+			"Brutal Advance",
+			"Knockout"
 		],
 		"challenge": 11,
 		"armour": 14,

@@ -166,10 +166,7 @@
           "max": 4
         },
         {
-          "type": "debuff",
-          "modifiers": {
-            "dexterity": -8
-          },
+          "type": "incapacitate",
           "accuracy": 100,
           "duration": 1
         } 
@@ -263,6 +260,22 @@
       "level": 4
     },
     {
+      "name": "Knockout",
+      "description": "Knock the opponent unconscious.",
+      "image": "",
+      "plane": "physical",
+      "effects": [
+        {
+          "type": "incapacitate",
+          "accuracy": 80,
+          "duration": 3
+        } 
+      ],
+      "price": 560,
+      "maxUses": 2,
+      "level": 4
+    },
+    {
       "name": "Whirlwind Strike",
       "description": "Attack three times in quick succession.",
       "image": "",
@@ -291,7 +304,7 @@
         }
       ],
       "price": 850,
-      "maxUses": 2,
+      "maxUses": 1,
       "level": 5
     }
   ],
@@ -528,7 +541,7 @@
         {
           "type": "damage",
           "modifier": "strength",
-          "multiplier": 1.6,
+          "multiplier": 1.2,
           "min": 1,
           "max": 4
         },
@@ -940,20 +953,20 @@
       "level": 4
     },
     {
-      "name": "Hold Person",
+      "name": "Paralyze",
       "description": "Target the opponent with paralysis.",
       "image": "",
       "plane": "magical",
       "effects": [
         {
           "type": "incapacitate",
-          "accuracy": 75,
+          "accuracy": 80,
           "duration": 3
         } 
       ],
       "price": 600,
       "maxUses": 2,
-      "level": 0
+      "level": 5
     }
   ],
   "cleric": 

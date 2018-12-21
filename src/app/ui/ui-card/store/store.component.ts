@@ -55,11 +55,13 @@ export class StoreComponent implements OnInit, OnDestroy {
 
   // Check if player meets the requirements
   checkRequirements(item) {
+    let requirementsMet = true;
     for (let req of this.keys(item.requirements)) {
       if (item.requirements[req] > this.player.stats[req].value) {
-        return false;
+        requirementsMet = false;
       }
     }
+    return requirementsMet;
   }
 
   // Purchase selected item

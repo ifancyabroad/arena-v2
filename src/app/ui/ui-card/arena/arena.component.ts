@@ -113,17 +113,17 @@ export class ArenaComponent implements OnInit, OnDestroy {
           turnLog.unshift(this.bs.getLog(attacker, defender, attack['state'], ability, attack['damage']));
           break;
 
-        case 'incapacitate':
-          if (attack['state'] !== 'miss') {
-            this.bs.getEffect(defender, effect, ability);
-            turnLog.unshift(this.bs.getLog(attacker, defender, effect.type, ability));
-          }
-          break;
-
         case 'heal':
           if (attack['state'] !== 'miss') {
             this.bs.getHeal(attacker, effect);
             turnLog.unshift(this.bs.getLog(attacker, defender, effect.type, ability, effect.value));
+          }
+          break;
+
+        case 'incapacitate':
+          if (attack['state'] !== 'miss' && attacker.effectHit(effect)) {
+            this.bs.getEffect(defender, effect, ability);
+            turnLog.unshift(this.bs.getLog(attacker, defender, effect.type, ability));
           }
           break;
 
