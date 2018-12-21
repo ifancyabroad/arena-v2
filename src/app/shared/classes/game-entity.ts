@@ -113,7 +113,7 @@ export class GameEntity {
   }
 
   // Get specific stat types
-  getStats = function(type): Object {
+  getStats = function (type): Object {
     const stats = {};
     for (let stat of Object.keys(this.stats)) {
       if (this.stats[stat].type === type) {
@@ -167,14 +167,35 @@ export class GameEntity {
   effectActive = (effect): boolean => this.activeEffects.indexOf(effect) > -1;
   effectHit = (effect): boolean => effect.accuracy >= this.dice.roll(1, 100);
 
+  // Update effect modifiers
+  updateEffectModifiers(effect, change) {
+    if (change === 'add') {
+      for (let modifier of Object.keys(effect.modifiers)) {
+        this.stats[modifier].battle += effect.modifiers[modifier];
+      }
+    } else if (change === 'remove') {
+      for (let modifier of Object.keys(effect.modifiers)) {
+        this.stats[modifier].battle -= effect.modifiers[modifier];
+      }
+    }
+  }
+
   // Add a new effect
   addEffect(name, effect): void {
-    for (let modifier of Object.keys(effect.modifiers)) {
-      this.stats[modifier].battle += effect.modifiers[modifier];
+    if (effect.modifiers) {
+      this.updateEffectModifiers(effect, 'add');
     }
     effect.name = name;
     effect.remaining = effect.duration;
     this.activeEffects.push(effect);
+  }
+
+  // Remove an active effect
+  removeEffect(index, effect) {
+    if (effect.modifiers) {
+      this.updateEffectModifiers(effect, 'remove');
+    }
+    this.activeEffects.splice(index, 1);
   }
 
   // Refresh an active effect
@@ -187,15 +208,15 @@ export class GameEntity {
     for (let i = this.activeEffects.length - 1; i >= 0; i--) {
       this.activeEffects[i]['remaining']--;
       if (this.activeEffects[i]['remaining'] < 0) {
-        for (let modifier of Object.keys(this.activeEffects[i]['modifiers'])) {
-          this.stats[modifier].battle -= this.activeEffects[i]['modifiers'][modifier];
-        }
-        this.activeEffects.splice(i, 1);
+        this.removeEffect(i, this.activeEffects[i]);
       }
     }
   }
 
-  // Remove active effects
+  // Check effects before start of turn
+  checkEffects = (): boolean => this.activeEffects.filter(effect => effect['type'] === 'incapacitate').length === 0;
+
+  // Remove all active effects
   removeEffects(): void {
     for (let stat of Object.keys(this.stats)) {
       this.stats[stat].battle = 0;

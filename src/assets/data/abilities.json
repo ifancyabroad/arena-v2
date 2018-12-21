@@ -566,6 +566,22 @@
       "level": 4
     },
     {
+      "name": "Spring The Trap",
+      "description": "Trap your opponent to immobilise them.",
+      "image": "",
+      "plane": "physical",
+      "effects": [
+        {
+          "type": "incapacitate",
+          "accuracy": 70,
+          "duration": 3
+        } 
+      ],
+      "price": 550,
+      "maxUses": 2,
+      "level": 4
+    },
+    {
       "name": "Shadow Strike",
       "description": "Strike from the shadows.",
       "image": "",
@@ -924,23 +940,20 @@
       "level": 4
     },
     {
-      "name": "Paralyze",
+      "name": "Hold Person",
       "description": "Target the opponent with paralysis.",
       "image": "",
       "plane": "magical",
       "effects": [
         {
-          "type": "debuff",
-          "modifiers": {
-            "dexterity": -10
-          },
-          "accuracy": 100,
+          "type": "incapacitate",
+          "accuracy": 75,
           "duration": 3
         } 
       ],
       "price": 600,
       "maxUses": 2,
-      "level": 5
+      "level": 0
     }
   ],
   "cleric": 

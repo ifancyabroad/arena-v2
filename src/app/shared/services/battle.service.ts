@@ -26,7 +26,8 @@ export class BattleService {
           miss: `You miss the ${defender.name}`,
           buff: `Your ${stat} ${moves} by ${modifier}`,
           debuff: `${defender.name}'s ${stat} ${moves} by ${modifier}`,
-          heal: `You heal ${damage} points of damage`
+          heal: `You heal ${damage} points of damage`,
+          incapacitate: `${defender.name} is successfully incapacitated`
         },
         enemy: {
           attackHit: `${attacker.name} attacks you for ${damage} damage`,
@@ -37,7 +38,8 @@ export class BattleService {
           miss: `${attacker.name} misses you`,
           buff: `${attacker.name}'s ${stat} ${moves} by ${modifier}`,
           debuff: `Your ${stat} ${moves} by ${modifier}`,
-          heal: `${attacker.name} heals ${damage} points of damage`
+          heal: `${attacker.name} heals ${damage} points of damage`,
+          incapacitate: `${attacker.name} successfully incapacitates you`
         }
       };
     } else {
@@ -45,7 +47,11 @@ export class BattleService {
         player: {
           victory: `You have slain the ${defender.name}!`,
           exp: `You gain ${defender.expValue} experience`,
-          gold: `${defender.goldValue} gold earned`
+          gold: `${defender.goldValue} gold earned`,
+          incapacitated: `You are incapacitated and unable to move`
+        },
+        enemy: {
+          incapacitated: `${attacker.name} is incapacitated and unable to move`
         }
       };
     }

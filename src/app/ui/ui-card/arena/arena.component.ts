@@ -90,16 +90,34 @@ export class ArenaComponent implements OnInit, OnDestroy {
 
   // Check if magical or physical attack and proceed accordingly
   turn(attacker, defender, ability) {
-    let attack = {};
-    const turnLog = [];
-    attacker.useAbility(ability);
-    turnLog.unshift(this.bs.getLog(attacker, defender, 'use', ability));
+    let turnLog = [];
+    if (this.turnChecks(attacker)) {
+      attacker.useAbility(ability);
+      turnLog.unshift(this.bs.getLog(attacker, defender, 'use', ability));
+      turnLog = this.handleAbility(attacker, defender, ability, turnLog);
+      turnLog = this.checkDead(attacker, defender, turnLog);
+    } else {
+      turnLog.unshift(this.bs.getLog(attacker, defender, 'incapacitated'));
+      turnLog = this.checkDead(attacker, defender, turnLog);
+    }
+    this.endTurn(turnLog);
+  }
 
+  // Handle the ability being used
+  handleAbility(attacker, defender, ability, turnLog) {
+    let attack = {};
     ability['effects'].forEach(effect => {
       switch (effect['type']) {
         case 'damage':
           attack = this.bs.getAttack(attacker, defender, ability['plane'], effect);
           turnLog.unshift(this.bs.getLog(attacker, defender, attack['state'], ability, attack['damage']));
+          break;
+
+        case 'incapacitate':
+          if (attack['state'] !== 'miss') {
+            this.bs.getEffect(defender, effect, ability);
+            turnLog.unshift(this.bs.getLog(attacker, defender, effect.type, ability));
+          }
           break;
 
         case 'heal':
@@ -128,19 +146,7 @@ export class ArenaComponent implements OnInit, OnDestroy {
           break;
       }
     });
-
-    if (this.checkDead(defender)) {
-      if (defender.type === 'enemy') {
-        this.turnCounter = 3; // Stop the turn cycle
-        turnLog.unshift(this.bs.getLog(attacker, defender, 'victory'));
-        turnLog.unshift(this.bs.getLog(attacker, defender, 'exp'));
-        turnLog.unshift(this.bs.getLog(attacker, defender, 'gold'));
-      } else {
-        this.turnCounter = 4; // Stop the turn cycle
-      }
-    }
-
-    this.endTurn(turnLog);
+    return turnLog;
   }
 
   // Log text from the turn
@@ -173,7 +179,19 @@ export class ArenaComponent implements OnInit, OnDestroy {
   }
 
   // Check if dead
-  checkDead = (entity) => entity.dead();
+  checkDead(attacker, defender, turnLog) {
+    if (defender.dead()) {
+      if (defender.type === 'enemy') {
+        this.turnCounter = 3; // Stop the turn cycle
+        turnLog.unshift(this.bs.getLog(attacker, defender, 'victory'));
+        turnLog.unshift(this.bs.getLog(attacker, defender, 'exp'));
+        turnLog.unshift(this.bs.getLog(attacker, defender, 'gold'));
+      } else {
+        this.turnCounter = 4; // Stop the turn cycle
+      }
+    }
+    return turnLog;
+  }
 
   // Enemy defeated
   enemySlain() {
@@ -187,7 +205,10 @@ export class ArenaComponent implements OnInit, OnDestroy {
     alert('You died :(');
   }
 
-  // End of round checks
+  // Start of turn checks
+  turnChecks = (entity) => entity.checkEffects();
+
+  // Start of round checks
   roundChecks() {
     this.roundCounter++;
     this.player.updateEffects();
