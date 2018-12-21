@@ -23,9 +23,47 @@
   }
 }
 
+.battle-stats {
+  display: flex;
+  min-height: 30px;
+  width: 80%;
+  margin: auto;
+
+  .battle-stat {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-right: 10px;
+
+    img {
+      max-width: 25px;
+    }
+
+    span {
+      font-size: 0.8em;
+    }
+
+    p {
+      position: absolute;
+      top: -25px;
+      left: 0;
+      transform: translateX(-50%);
+      width: max-content;
+      display: none;
+      background-color: white;
+      border: 1px solid grey;
+    }
+  }
+
+  .battle-stat:hover p {
+    display: block;
+  }
+}
+
 figure {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 85%;
+  height: 80%;
 }

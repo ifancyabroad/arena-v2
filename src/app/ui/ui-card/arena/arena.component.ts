@@ -154,7 +154,7 @@ export class ArenaComponent implements OnInit, OnDestroy {
         clearInterval(timer);
         this.toggleTurn();
       }
-    }, 1000);
+    }, 800);
   }
 
   // Turn toggle

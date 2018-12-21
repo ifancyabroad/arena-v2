@@ -14,6 +14,8 @@ import { Ability } from 'src/app/shared/classes/ability';
 })
 export class EnemyDetailsComponent implements OnInit {
 
+  keys = Object.keys;
+
   player: Player;
   enemy: Enemy;
   enemiesList: Object[];
