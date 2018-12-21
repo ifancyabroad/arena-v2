@@ -92,7 +92,9 @@ export class BattleService {
     if (entity.effectActive(effect)) {
       entity.refreshEffect(effect);
     } else {
-      entity.addEffect(ability['name'], effect);
+      effect.name = ability['name'];
+      effect.remaining = effect.duration;
+      entity.addEffect(effect);
     }
   }
 }

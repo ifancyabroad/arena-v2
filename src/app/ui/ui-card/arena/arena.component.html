@@ -6,7 +6,6 @@
       <p>{{ ability.description }}</p>
       <p *ngIf="ability.maxUses">Uses: {{ ability.uses }}</p>
       <p *ngIf="!ability.maxUses">Uses: Unlimited</p>
-      <img class="arena-btn-icon" [ngClass]="{'disabled': battleState !== 'waiting' || ability.uses < 1}" src="/assets/img/icons/weapon.png" alt="Crossed swords icon">
     </button>
   </div>
   <button class="btn btn-home" type="button" [disabled]="battleState !== 'victory'" (click)="proceed()">

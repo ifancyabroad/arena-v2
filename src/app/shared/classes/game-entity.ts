@@ -181,12 +181,10 @@ export class GameEntity {
   }
 
   // Add a new effect
-  addEffect(name, effect): void {
+  addEffect(effect): void {
     if (effect.modifiers) {
       this.updateEffectModifiers(effect, 'add');
     }
-    effect.name = name;
-    effect.remaining = effect.duration;
     this.activeEffects.push(effect);
   }
 
