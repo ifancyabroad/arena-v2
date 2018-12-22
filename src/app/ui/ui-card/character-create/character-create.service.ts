@@ -17,7 +17,7 @@ export class CharacterCreateService {
     if (this.characterDetails) {
       return of(this.characterDetails);
     } else {
-      return this.http.get('../../../assets/data/character.json').pipe(
+      return this.http.get('./assets/data/character.json').pipe(
         map(data => {
           this.characterDetails = data;
           return this.characterDetails;

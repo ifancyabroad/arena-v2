@@ -16,7 +16,7 @@ export class AbilitiesService {
     if (this.abilities) {
       return of(this.abilities);
     } else {
-      return this.http.get('../../../assets/data/abilities.json').pipe(
+      return this.http.get('./assets/data/abilities.json').pipe(
         map(data => {
           this.abilities = data;
           for (let cl of Object.keys(this.abilities)) {

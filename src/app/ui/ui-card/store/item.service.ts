@@ -17,7 +17,7 @@ export class ItemService {
     if (this.items) {
       return of(this.items);
     } else {
-      return this.http.get('../../../assets/data/items.json').pipe(
+      return this.http.get('./assets/data/items.json').pipe(
         map(data => {
           this.items = data;
           return this.items;
