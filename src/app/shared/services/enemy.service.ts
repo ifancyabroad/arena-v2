@@ -20,7 +20,7 @@ export class EnemyService {
     if (this.enemyList) {
       return of(this.enemyList);
     } else {
-      return this.http.get('../../assets/data/enemies.json').pipe(
+      return this.http.get('../../../assets/data/enemies.json').pipe(
         map(data => {
           this.enemyList = data;
           return this.enemyList;
