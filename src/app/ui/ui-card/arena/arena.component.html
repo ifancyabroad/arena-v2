@@ -9,7 +9,7 @@
     </button>
   </div>
   <button class="btn btn-home" type="button" [disabled]="battleState !== 'victory'" (click)="proceed()">
-    <img class="arena-btn-icon" [ngClass]="{'disabled': battleState !== 'victory'}" src="/assets/img/icons/home.png" alt="Crossed swords icon">
+    <img class="arena-btn-icon" [ngClass]="{'disabled': battleState !== 'victory'}" src="assets/img/icons/home.png" alt="Crossed swords icon">
   </button>
   <div class="log-container">
     <p *ngFor="let log of combatLog">{{ log }}</p>

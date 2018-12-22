@@ -8,7 +8,7 @@
       </div>
     </div>
     <figure class="portrait-container">
-      <img class="player-portrait" src="/assets/img/portraits/{{ player.portrait }}">
+      <img class="player-portrait" src="assets/img/portraits/{{ player.portrait }}">
     </figure>
     <h3>Level {{ player.level }} {{ player.cl.name }}</h3>
     <table class="stats-table">
@@ -33,17 +33,17 @@
     <div class="add-stats">
       <div class="add-stat">
         <p class="tooltip">Armour</p>
-        <img class="player-stat-icon" src="/assets/img/icons/armour.png">
+        <img class="player-stat-icon" src="assets/img/icons/armour.png">
         <span>{{ player.stats.armour.total }}</span>
       </div>
       <div class="add-stat">
         <p class="tooltip">Magic Resistance</p>
-        <img class="player-stat-icon" src="/assets/img/icons/magicResistance.png">
+        <img class="player-stat-icon" src="assets/img/icons/magicResistance.png">
         <span>{{ player.stats.magicResistance.total }}</span>
       </div>
       <div class="add-stat">
         <p class="tooltip">Critical Strike Chance</p>
-        <img class="player-stat-icon" src="/assets/img/icons/crit-chance.png">
+        <img class="player-stat-icon" src="assets/img/icons/crit-chance.png">
         <span>{{ player.critChance() }}%</span>
       </div>
     </div>

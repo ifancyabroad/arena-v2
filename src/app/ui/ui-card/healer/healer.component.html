@@ -4,7 +4,7 @@
     <div class="ui-view-content">
       <p class="healer-log">{{ healerLog }}</p>
       <div class="healer-stats">
-        <img class="healer-icon" src="/assets/img/icons/gold.png"><span>{{ player.gold }}</span>	
+        <img class="healer-icon" src="assets/img/icons/gold.png"><span>{{ player.gold }}</span>	
       </div>
       <div class="centered">
         <button class="btn" type="button" (click)="buyService(service.price, service.value)" *ngFor="let service of services">

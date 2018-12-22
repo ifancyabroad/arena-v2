@@ -4,7 +4,7 @@
   <div class="ui-view-content">
     <p class="store-log">{{ storeLog }}</p>
     <div class="store-stats">
-      <img class="store-icon" src="/assets/img/icons/gold.png"><span>{{ player.gold }}</span>	
+      <img class="store-icon" src="assets/img/icons/gold.png"><span>{{ player.gold }}</span>	
     </div>
     <div class="item-table-container">
       <table class="item-table">
@@ -22,7 +22,7 @@
           <tr class="item" *ngFor="let item of items">
             <td>{{ item.name }}</td>
             <td>Increases {{ item.modifier }} by {{ item.value }}</td>
-            <td><img class="store-icon" src="/assets/img/icons/{{ item.type }}.png" alt="Inventory icon"></td>
+            <td><img class="store-icon" src="assets/img/icons/{{ item.type }}.png" alt="Inventory icon"></td>
             <td>
               <p *ngFor="let req of keys(item.requirements)">{{ item.requirements[req] }} {{ req }}</p>
             </td>

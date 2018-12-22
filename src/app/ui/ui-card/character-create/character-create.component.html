@@ -13,7 +13,7 @@
         <div class="portrait-container">
           <button class="btn" type="button" (click)="changeSelection(portraits, portraits.indexOf(portraitInput) - 1)">&#60;</button>
           <figure class="portrait">
-            <img src="/assets/img/portraits/{{ portraitInput }}" alt="A character portrait">
+            <img src="assets/img/portraits/{{ portraitInput }}" alt="A character portrait">
           </figure>
           <button class="btn" type="button" (click)="changeSelection(portraits, portraits.indexOf(portraitInput) + 1)">&#62;</button>
         </div>
@@ -25,7 +25,7 @@
           <button class="btn" type="button" (click)="changeSelection(classes, classes.indexOf(classInput) - 1)">&#60;</button>
           <div class="class">
             <h3>{{ classInput.name }}</h3>
-            <img class="class-icon" src="/assets/img/classes/{{ classInput.image }}" alt="A character portrait">
+            <img class="class-icon" src="assets/img/classes/{{ classInput.image }}" alt="A character portrait">
             <p>{{ classInput.description }}</p>
           </div>
           <button class="btn" type="button" (click)="changeSelection(classes, classes.indexOf(classInput) + 1)">&#62;</button>
