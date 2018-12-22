@@ -113,11 +113,15 @@ export class GameEntity {
   }
 
   // Get specific stat types
-  getStats = function (type): Object {
-    const stats = {};
-    for (let stat of Object.keys(this.stats)) {
-      if (this.stats[stat].type === type) {
-        stats[stat] = this.stats[stat];
+  getStats = function (type?): Object {
+    let stats = {};
+    if (!type) {
+      stats = this.stats;
+    } else {
+      for (let stat of Object.keys(this.stats)) {
+        if (this.stats[stat].type === type) {
+          stats[stat] = this.stats[stat];
+        }
       }
     }
     return stats;

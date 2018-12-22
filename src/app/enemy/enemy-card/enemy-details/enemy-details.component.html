@@ -6,11 +6,11 @@
     </div>
   </div>
   <div class="battle-stats">
-    <ng-container *ngFor="let stat of keys(enemy.getStats('main'))">
+    <ng-container *ngFor="let stat of keys(enemy.getStats())">
       <div class="battle-stat" *ngIf="enemy.stats[stat].battle">
         <img src="/assets/img/icons/{{ stat }}.png" alt="Stat icon">
         <span *ngIf="enemy.stats[stat].battle > 0">+</span><span>{{ enemy.stats[stat].battle }}</span>
-        <p>{{ enemy.stats[stat].name }}</p>
+        <p class="tooltip">{{ enemy.stats[stat].name }}</p>
       </div>
     </ng-container>
   </div>

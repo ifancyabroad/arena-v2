@@ -43,20 +43,9 @@
     span {
       font-size: 0.8em;
     }
-
-    p {
-      position: absolute;
-      top: -25px;
-      left: 0;
-      transform: translateX(-50%);
-      width: max-content;
-      display: none;
-      background-color: white;
-      border: 1px solid grey;
-    }
   }
 
-  .battle-stat:hover p {
+  .battle-stat:hover .tooltip {
     display: block;
   }
 }
@@ -66,4 +55,9 @@ figure {
   flex-direction: column;
   justify-content: center;
   height: 80%;
+
+  img {
+    height: 100%;
+    object-fit: contain;
+  }
 }

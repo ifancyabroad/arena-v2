@@ -1,3 +1,5 @@
+@import '~src/variables';
+
 .level-up {
   height: 20px;
   width: 20px;
@@ -57,7 +59,16 @@
   
     td:not(:first-child) {
       text-align: center;
+      font-weight: 700;
       width: 40px;
+    }
+
+    td:nth-child(3) {
+      color: $primary-color;
+    }
+
+    td:nth-child(4) {
+      color: $secondary-color;
     }
   }
   
@@ -69,23 +80,12 @@
     .add-stat {
       position: relative;
   
-      p {
-        position: absolute;
-        top: -25px;
-        left: 0;
-        transform: translateX(-50%);
-        width: max-content;
-        display: none;
-        background-color: white;
-        border: 1px solid grey;
-      }
-  
       .player-stat-icon {
         max-width: 25px;
       }
     }
   
-    .add-stat:hover p {
+    .add-stat:hover .tooltip {
       display: block;
     }
   }

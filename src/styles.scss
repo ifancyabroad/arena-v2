@@ -27,6 +27,19 @@ table {
   }
 }
 
+.tooltip {
+  padding: 5px;
+  font-size: 0.8em;
+  position: absolute;
+  top: -25px;
+  left: 0;
+  transform: translateX(-50%);
+  width: max-content;
+  display: none;
+  background-color: white;
+  border: 1px solid grey;
+}
+
 .centered {
 	position: absolute;
 	top: 50%;

@@ -406,7 +406,7 @@
       "effects": [
         {
           "type": "damage",
-          "modifier": "dexterity",
+          "modifier": "strength",
           "multiplier": 0.8,
           "min": 1,
           "max": 6
@@ -488,7 +488,7 @@
       "effects": [
         {
           "type": "damage",
-          "modifier": "dexterity",
+          "modifier": "strength",
           "multiplier": 0.5,
           "min": 1,
           "max": 4
@@ -514,7 +514,7 @@
       "effects": [
         {
           "type": "damage",
-          "modifier": "dexterity",
+          "modifier": "strength",
           "multiplier": 1,
           "min": 1,
           "max": 6

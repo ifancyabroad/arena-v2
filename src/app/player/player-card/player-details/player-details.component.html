@@ -19,24 +19,30 @@
             <span class="part">{{ player.stats[stat].name.slice(0, 3).toUpperCase() }}</span>
           </td>
           <td>{{ player.stats[stat].value }}</td>
-          <td><span *ngIf="player.stats[stat].modifier"> +{{ player.stats[stat].modifier }}</span></td>
-          <td><span *ngIf="player.stats[stat].battle"> {{ player.stats[stat].battle }}</span></td>
+          <td>
+            <span *ngIf="player.stats[stat].modifier > 0">+</span>
+            <span *ngIf="player.stats[stat].modifier">{{ player.stats[stat].modifier }}</span>
+          </td>
+          <td>
+            <span *ngIf="player.stats[stat].battle > 0">+</span>
+            <span *ngIf="player.stats[stat].battle">{{ player.stats[stat].battle }}</span>
+          </td>
         </tr>
       </tbody>
     </table>
     <div class="add-stats">
       <div class="add-stat">
-        <p>Armour</p>
+        <p class="tooltip">Armour</p>
         <img class="player-stat-icon" src="/assets/img/icons/armour.png">
         <span>{{ player.stats.armour.total }}</span>
       </div>
       <div class="add-stat">
-        <p>Magic Resistance</p>
-        <img class="player-stat-icon" src="/assets/img/icons/magic-resistance.png">
+        <p class="tooltip">Magic Resistance</p>
+        <img class="player-stat-icon" src="/assets/img/icons/magicResistance.png">
         <span>{{ player.stats.magicResistance.total }}</span>
       </div>
       <div class="add-stat">
-        <p>Critical Strike Chance</p>
+        <p class="tooltip">Critical Strike Chance</p>
         <img class="player-stat-icon" src="/assets/img/icons/crit-chance.png">
         <span>{{ player.critChance() }}%</span>
       </div>
