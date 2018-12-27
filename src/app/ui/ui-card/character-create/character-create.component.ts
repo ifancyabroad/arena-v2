@@ -52,10 +52,10 @@ export class CharacterCreateComponent implements OnInit {
   }
 
   // Set initial stats
-  setStats(maxStats) {
+  setStats(minStats, maxStats) {
     const stats: Object = {};
     for (let stat of Object.keys(maxStats)) {
-      stats[stat] = this.dice.roll(maxStats[stat] - 5, maxStats[stat]);
+      stats[stat] = this.dice.roll(minStats[stat], maxStats[stat]);
     }
     return stats;
   }
@@ -85,7 +85,7 @@ export class CharacterCreateComponent implements OnInit {
       this.nameInput,
       this.portraitInput,
       this.classInput,
-      this.setStats(this.classInput['maxStats']),
+      this.setStats(this.classInput['minStats'], this.classInput['maxStats']),
       this.setAbilities(this.classInput['name'].toLowerCase())
     );
 

@@ -7,7 +7,7 @@
         <img class="healer-icon" src="/assets/img/icons/gold.png"><span>{{ player.gold }}</span>	
       </div>
       <div class="centered">
-        <button class="btn" type="button" (click)="buyService(service.price, service.value)" *ngFor="let service of services">
+        <button class="btn" type="button" (click)="buyService(service.name, service.price, service.value)" *ngFor="let service of services">
           <h4>{{ service.name }}</h4>
           <p>Price: {{ service.price }}</p>
         </button>

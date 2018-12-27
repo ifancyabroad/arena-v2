@@ -19,3 +19,12 @@
     font-weight: 700;
   }
 }
+
+@media screen and (max-height: 840px) {
+  .ability {
+
+    p:first-of-type {
+      display: none;
+    }
+  }
+}

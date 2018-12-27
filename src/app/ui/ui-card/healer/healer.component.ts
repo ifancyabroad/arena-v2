@@ -15,10 +15,10 @@ export class HealerComponent implements OnInit, OnDestroy {
   healerLog = 'Hello and welcome to the healer!';
 
   services = [
-    { name: 'Cure Minor Wounds', value: 30, price: 120 },
-    { name: 'Cure Major Wounds', value: 60, price: 160 },
-    { name: 'Cure Critical Wounds', value: 90, price: 200 },
-    { name: 'Rest', price: 60 },
+    { name: 'Cure Minor Wounds', value: 30, price: 80 },
+    { name: 'Cure Major Wounds', value: 60, price: 120 },
+    { name: 'Cure Critical Wounds', value: 90, price: 160 },
+    { name: 'Rest', value: 15, price: 60 },
   ];
 
   navSubscription: Subscription;
@@ -36,15 +36,15 @@ export class HealerComponent implements OnInit, OnDestroy {
   }
 
   // Heal specified amount or rest
-  buyService(price, health?) {
+  buyService(name, price, health?) {
     if (this.player.gold < price) {
       this.healerLog = 'You do not have enough gold for that';
-    } else if (health) {
-      this.player.gold -= price;
-      this.player.heal(health);
     } else {
       this.player.gold -= price;
-      this.player.rest();
+      this.player.heal(health);
+      if (name === 'Rest') {
+        this.player.rest();
+      }
     }
   }
 
