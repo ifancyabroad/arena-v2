@@ -91,6 +91,34 @@
   }
 }
 
+@media screen and (max-height: 840px) {
+  .player-view-content {
+
+    .portrait-container {
+      max-width: 142px;
+    }
+
+    .stats-table {
+      margin: 6px 0 10px;
+  
+      td {
+        padding: 3px;
+        font-size: 0.8em;
+      }
+    }
+
+    .add-stats {
+    
+      .add-stat {
+    
+        .player-stat-icon {
+          max-width: 20px;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 1250px) {
   .full {
     display: none;

@@ -50,3 +50,9 @@ p {
 	text-align: center;
 	margin: 40px 0;
 }
+
+@media screen and (max-height: 840px) {
+	.game-area {
+		height: 500px;
+	}
+}

@@ -22,6 +22,8 @@
   }
 }
 
-@media screen and (max-width: 1250px) {
-  
+@media screen and (max-height: 840px) {
+  .item-table-container {
+    max-height: 300px;
+  }
 }

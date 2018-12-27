@@ -178,6 +178,32 @@ table {
   }
 }
 
+@media screen and (max-height: 840px) {
+  .card-entity {
+    
+    .entity-view {
+  
+      h2 {
+        font-size: 1.8em;
+      }
+    }
+  }
+
+  .card-ui {
+    
+    .ui-view {
+
+      .ui-view-controls {
+        bottom: 2%;
+
+        .btn {
+          line-height: 0.6;
+        }  
+      }  
+    }
+  }
+}
+
 @media screen and (max-width: 1250px) {
   .card-ui {
     
