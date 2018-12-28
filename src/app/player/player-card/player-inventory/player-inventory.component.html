@@ -5,7 +5,10 @@
       <tbody>
         <tr *ngFor="let type of keys(player.inventory)">
           <td ><img class="inv-icon" src="/assets/img/icons/{{ type }}.png"></td>
-          <td>{{ player.inventory[type].name }}</td>
+          <td>
+            <h3>{{ player.inventory[type].name }}</h3>
+            <p *ngIf="player.inventory[type].value">Increases your {{ player.inventory[type].modifier }} by {{ player.inventory[type].value }}</p>
+          </td>
         </tr>
       </tbody>
     </table>

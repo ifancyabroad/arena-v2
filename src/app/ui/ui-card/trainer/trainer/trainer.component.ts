@@ -52,6 +52,9 @@ export class TrainerComponent implements OnInit, OnDestroy {
     });
   }
 
+  // Check if player already has ability
+  checkAbility = (ability) => this.player.abilities.filter(a => a.name === ability.name).length > 0;
+
   // Purchase selected ability
   learnAbility(ability) {
     if (this.player.gold < ability.price) {

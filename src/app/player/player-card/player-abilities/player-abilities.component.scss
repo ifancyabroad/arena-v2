@@ -18,6 +18,10 @@
     font-family: $regular-font;
     font-weight: 700;
   }
+
+  p {
+    font-size: 0.9em;
+  }
 }
 
 @media screen and (max-height: 840px) {

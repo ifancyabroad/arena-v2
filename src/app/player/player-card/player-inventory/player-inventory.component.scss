@@ -1,16 +1,39 @@
+@import '~src/variables';
+
 .inventory-table {
   width: 80%;
   margin: auto;
 
-  .inv-icon {
-    width: 25px;
-  }
+  tr {
+    height: 58px;
 
-  td:first-child {
-    width: 42px;
-  }
+    td:first-child {
+      width: 42px;
 
-  td:last-child {
-    text-align: center;
+      .inv-icon {
+        width: 25px;
+      }
+    }
+
+    h3 {
+      font-family: $regular-font;
+      font-weight: 700;
+    }
+  
+    p:first-of-type {
+      font-size: 0.9em;
+    }
+  }
+}
+
+@media screen and (max-height: 840px), screen and (max-width: 1200px) {
+  .inventory-table {
+  
+    tr {
+    
+      p:first-of-type {
+        display: none;
+      }
+    }
   }
 }
