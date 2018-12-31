@@ -22,3 +22,11 @@
     color: $primary-color;
   }
 }
+
+@media screen and (max-height: 840px) {
+  .reroll-table {
+    p {
+      font-size: 0.8em;
+    }
+  }
+}

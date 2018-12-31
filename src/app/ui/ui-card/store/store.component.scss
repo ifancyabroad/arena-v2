@@ -1,3 +1,5 @@
+@import '~src/variables';
+
 .store-icon {
   width: 25px;
 }
@@ -19,9 +21,24 @@
     td:last-child {
       text-align: center;
     }
+
+    td:first-child {
+      font-weight: 700;
+    }
+
+    td:nth-child(4) {
+      color: $primary-color;
+    }
+
+    td:nth-child(5) {
+      font-weight: 700;
+      color: $secondary-color;
+    }
   }
 }
 
-@media screen and (max-width: 1250px) {
-  
+@media screen and (max-height: 840px) {
+  .item-table-container {
+    max-height: 300px;
+  }
 }

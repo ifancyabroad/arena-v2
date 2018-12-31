@@ -27,7 +27,7 @@
             <td>{{ ability.maxUses }}</td>
             <td>{{ ability.level }}</td>
             <td>{{ ability.price }}</td>
-            <td><button class="btn" type="button" [disabled]="player.abilities.indexOf(ability) > -1" (click)="learnAbility(ability)">Learn</button></td>
+            <td><button class="btn" type="button" [disabled]="checkAbility(ability)" (click)="learnAbility(ability)">Learn</button></td>
           </tr>
         </tbody>
       </table>

@@ -5,7 +5,7 @@ export class Player extends GameEntity {
 
   type = 'player';
   experience = 0; // Experience starts at 0
-  gold = 0; // Gold starts at 0
+  gold = 99999; // Gold starts at 0
   level = 1; // Start at level 1
   kills = 0; // Kills starts at 0;
   rerolls = 10; // 10 initial rerolls allowed

@@ -14,9 +14,16 @@
       "description": "Proud and honorable, specialising in brute strength. Primary stats are strength and constitution.",
       "image": "warrior.png",
       "trainer": "High Warlord",
+      "minStats": {
+        "strength": 10,
+        "dexterity": 8,
+        "constitution": 10,
+        "intelligence": 1,
+        "initiative": 7
+      },
       "maxStats": {
         "strength": 15,
-        "dexterity": 10,
+        "dexterity": 12,
         "constitution": 13,
         "intelligence": 6,
         "initiative": 10
@@ -27,12 +34,19 @@
       "description": "Trained in the arcane arts and proficient with all forms of magic. Primary stat is intelligence.",
       "image": "mage.jpg",
       "trainer": "Arch Mage",
+      "minStats": {
+        "strength": 1,
+        "dexterity": 3,
+        "constitution": 5,
+        "intelligence": 12,
+        "initiative": 7
+      },
       "maxStats": {
         "strength": 6,
         "dexterity": 9,
         "constitution": 8,
         "intelligence": 15,
-        "initiative": 12
+        "initiative": 10
       }
     },
     {
@@ -40,12 +54,19 @@
       "description": "Unscrupulous and underhanded, strikes from the shadows. Primary stats are dexterity and initiative.",
       "image": "rogue.jpg",
       "trainer": "Master Assassin",
+      "minStats": {
+        "strength": 7,
+        "dexterity": 11,
+        "constitution": 7,
+        "intelligence": 4,
+        "initiative": 10
+      },
       "maxStats": {
-        "strength": 9,
+        "strength": 10,
         "dexterity": 15,
         "constitution": 11,
         "intelligence": 8,
-        "initiative": 12
+        "initiative": 14
       }
     }
   ]

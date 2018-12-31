@@ -29,9 +29,10 @@ export class RollStatsComponent implements OnInit {
   rollStats() {
     if (this.player.rerolls) {
       this.player.rerolls--;
+      const minStats = this.player.cl['minStats'];
       const maxStats = this.player.cl['maxStats'];
       for (let stat of Object.keys(maxStats)) {
-        this.player.stats[stat].value = this.dice.roll(maxStats[stat] - 5, maxStats[stat]);
+        this.player.stats[stat].value = this.dice.roll(minStats[stat], maxStats[stat]);
       }
       this.player.setFullHealth();
     }
