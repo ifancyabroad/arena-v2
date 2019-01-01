@@ -37,3 +37,16 @@
     }
   }
 }
+
+@media screen and (max-height: 700px) {
+  .inventory-table {
+  
+    tr {
+      height: 48px;
+    
+      h3 {
+        font-size: 1em;
+      }
+    }
+  }
+}

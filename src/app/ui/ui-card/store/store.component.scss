@@ -2,6 +2,16 @@
 
 .store-icon {
   width: 25px;
+}  
+
+.store-stats {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.store-log {
+  margin: 8px 0;
 }
 
 .item-table-container {
@@ -40,5 +50,11 @@
 @media screen and (max-height: 840px) {
   .item-table-container {
     max-height: 300px;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .item-table-container {
+    max-height: 240px;
   }
 }

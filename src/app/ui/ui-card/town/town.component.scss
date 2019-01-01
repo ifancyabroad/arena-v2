@@ -36,3 +36,15 @@
     }
   }
 }
+
+@media screen and (max-height: 700px) {
+  .town {
+
+    .town-controls {
+
+      .btn-town {
+        height: auto;
+      }
+    }
+  }
+}

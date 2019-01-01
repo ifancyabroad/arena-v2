@@ -63,3 +63,15 @@
     }
   }
 }
+
+@media screen and (max-height: 700px) {
+  .arena {
+  
+    .arena-controls {
+  
+      p:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+}

@@ -27,6 +27,15 @@ table {
   }
 }
 
+@media screen and (max-height: 700px) {
+  table {
+  
+    td, th {
+      padding: 4px;
+    }
+  }
+}
+
 .tooltip {
   padding: 5px;
   font-size: 0.8em;
@@ -126,6 +135,7 @@ table {
   .ui-view {
     height: 100%;
     padding: 10px;
+    position: relative;
 
     h1 {
       font-family: $cursive-font;
@@ -204,13 +214,25 @@ table {
   }
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1250px), screen and (max-height: 840px) {
   .card-ui {
     
     .ui-view {
   
       h1 {
         font-size: 2em;
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .card-ui {
+    
+    .ui-view {
+  
+      h1 {
+        margin-bottom: 8px;
       }
     }
   }

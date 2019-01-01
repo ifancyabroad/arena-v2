@@ -123,13 +123,13 @@
   }
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1250px), screen and (max-height: 840px) {
   .full {
     display: none;
   }
 }
 
-@media screen and (min-width: 1251px) {
+@media screen and (min-width: 1251px) and (min-height: 841px) {
   .part {
     display: none;
   }

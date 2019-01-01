@@ -40,6 +40,8 @@
       
       .portrait,
       .class {
+        height: 260px;
+        width: 200px;
         overflow: hidden;
         margin: 0 8px;
       }
@@ -59,23 +61,50 @@
   }
 }
 
-@media screen and (max-width: 1250px) {
-  h2 {
-    font-size: 1.2em;
-  }
-
-  .portrait,
-  .class {
-    height: 200px;
-    width: 150px;
+@media screen and (max-width: 1250px), screen and (max-height: 840px) {
+  .character-details {
+  
+    .portrait-select,
+    .class-select {
+  
+      h2 {
+        font-size: 1.2em;
+      }
+  
+      .portrait-container,
+      .class-container {
+        
+        .portrait,
+        .class {
+          height: 200px;
+          width: 150px;
+        }
+      }
+    }
   }
 }
 
-@media screen and (min-width: 1251px) {
-  .portrait,
-  .class {
-    height: 260px;
-    width: 200px;
+@media screen and (max-height: 700px) {
+  .name-select,
+  .character-details {
+    margin: 6px 0;
+  }
+
+  .character-details {
+  
+    .portrait-select,
+    .class-select {
+  
+      .portrait-container,
+      .class-container {
+        
+        .portrait,
+        .class {
+          height: 180px;
+          width: 140px;
+        }
+      }
+    }
   }
 }
 
@@ -96,10 +125,20 @@
   }
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1250px), screen and (max-height: 840px) {
   .class {
     p {
       font-size: 0.7em;
+    }
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .class {
+    padding: 6px;
+  
+    .class-icon {
+      max-width: 50px;
     }
   }
 }

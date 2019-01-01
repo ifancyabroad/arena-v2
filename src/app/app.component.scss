@@ -23,12 +23,17 @@ h1 {
 	}
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1250px), screen and (max-height: 840px) {
 	h1 {
-		font-size: 3em;
+		font-size: 2em;
+
+		span {
+			top: 20px;
+		}
 
 		.underline {
-			width: 450px;
+			width: 300px;
+			bottom: 15px;
 		}
 	}
 }
@@ -54,5 +59,15 @@ p {
 @media screen and (max-height: 840px) {
 	.game-area {
 		height: 500px;
+	}
+}
+
+@media screen and (max-height: 700px) {
+	.game-area {
+		height: 400px;
+	}
+
+	p {
+		margin: 20px 0;
 	}
 }
