@@ -11,6 +11,7 @@ export class PlayerDetailsComponent implements OnInit {
 
   keys = Object.keys;
   player: Player;
+  showTable = true;
 
   constructor(private ps: PlayerService) {
   }
@@ -23,4 +24,7 @@ export class PlayerDetailsComponent implements OnInit {
     });
   }
 
+  toggleTable() {
+    this.showTable = !this.showTable;
+  }
 }

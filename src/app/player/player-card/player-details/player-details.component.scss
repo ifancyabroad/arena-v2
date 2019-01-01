@@ -134,3 +134,38 @@
     display: none;
   }
 }
+
+@media screen and (min-height: 701px) {
+  .player-view-content {
+  
+    .stats-table {
+    
+      thead {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .player-view-content {
+  
+    .stats-table {
+      position: relative;
+    
+      tbody {
+        position: absolute;
+        display: table;
+        width: 100%;
+        z-index: 1;
+
+        tr:first-child {
+
+          td {
+            border-top: none;
+          }
+        }
+      }
+    }
+  }
+}
