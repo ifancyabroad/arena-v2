@@ -1,9 +1,11 @@
 import { UtilitiesService } from '../services/utilities.service';
 import { Ability } from './ability';
+import { Config } from '../config';
 
 export class GameEntity {
 
   dice = new UtilitiesService; // Get dice
+  config = new Config; // Get config
 
   stats: Object; // Entity main stats
   activeEffects: Object[] = []; // Currently active effects
@@ -103,13 +105,13 @@ export class GameEntity {
     };
 
     // Health and alive variables
-    this.maxHealth = (): number => this.stats['constitution'].total * 10;
+    this.maxHealth = (): number => this.stats['constitution'].total * this.config.healthMultiplier;
     this.currentHealth = this.maxHealth();
     this.dead = (): boolean => this.currentHealth <= 0;
 
     // Hit and crit chance
-    this.hitChance = (): number => this.stats['dexterity'].total * 5;
-    this.critChance = (): number => this.stats['dexterity'].total * 0.75;
+    this.hitChance = (): number => this.stats['dexterity'].total * this.config.hitMultiplier;
+    this.critChance = (): number => this.stats['dexterity'].total * this.config.critMultiplier;
   }
 
   // Get specific stat types
