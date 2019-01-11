@@ -40,6 +40,26 @@ table {
   }
 }
 
+.btn {
+  position: relative;
+  margin: 5px;
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(235, 235, 235, 0.8);
+  transition: 0.4s;
+  font-family: $regular-font;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: rgba(235, 235, 235, 1);
+}
+
+.btn:active {
+  top: 2px;
+}
+
 .tooltip {
   padding: 5px;
   font-size: 0.8em;
@@ -146,26 +166,6 @@ table {
       text-align: center;
       font-size: 3em;
       margin-bottom: 14px;
-    }
-
-    .btn {
-      position: relative;
-      margin: 5px;
-      padding: 5px;
-      border: none;
-      border-radius: 10px;
-      background-color: rgba(235, 235, 235, 0.8);
-      transition: 0.4s;
-      font-family: $regular-font;
-    }
-
-    .btn:hover {
-      cursor: pointer;
-      background-color: rgba(235, 235, 235, 1);
-    }
-
-    .btn:active {
-      top: 2px;
     }
 
     .ui-view-content {

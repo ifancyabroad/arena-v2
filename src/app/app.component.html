@@ -16,7 +16,8 @@
 
 <p>Coded by &copy; Edgar Nightingale</p>
 
-<div *ngIf="gameOver">
-  <p>You have died</p>
+<div class="game-over" *ngIf="gameOver">
+  <!--Game Over Modal-->
+  <app-game-over (close)="reset()"></app-game-over>
 </div>
 

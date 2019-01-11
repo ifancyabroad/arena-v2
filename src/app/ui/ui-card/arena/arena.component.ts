@@ -202,7 +202,7 @@ export class ArenaComponent implements OnInit, OnDestroy {
 
   // Player defeated
   playerSlain() {
-    alert('You died :(');
+
   }
 
   // Start of turn checks

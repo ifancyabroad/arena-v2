@@ -12,7 +12,7 @@
 
   <!--Back of card-->
   <div class="card-back" [ngSwitch]="backFace">
-    <div class="card-hidden" *ngSwitchCase="'hidden'" (click)="flipCard()">
+    <div class="card-hidden" *ngSwitchCase="'hidden'" (click)="proceed()">
       <img class="centered" src="assets/img/icons/dragon-ui.png" alt="Dragon symbol">
     </div>
     <app-town *ngSwitchCase="'town'"></app-town>

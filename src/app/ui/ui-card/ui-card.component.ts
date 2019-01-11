@@ -36,4 +36,9 @@ export class UiCardComponent implements OnInit {
     this.cardFace === 'back' ? this.cardFace = 'front' : this.cardFace = 'back';
   }
 
+  // Start the game
+  proceed() {
+    this.nav.uiCard.next({ face: 'front', view: 'character-create', flip: true });
+  }
+
 }

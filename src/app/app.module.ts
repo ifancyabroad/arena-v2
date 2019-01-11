@@ -21,6 +21,7 @@ import { HealerComponent } from './ui/ui-card/healer/healer.component';
 import { TownComponent } from './ui/ui-card/town/town.component';
 import { TrainerComponent } from './ui/ui-card/trainer/trainer/trainer.component';
 import { PlayerAbilitiesComponent } from './player/player-card/player-abilities/player-abilities.component';
+import { GameOverComponent } from './game-over/game-over.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { PlayerAbilitiesComponent } from './player/player-card/player-abilities/
     HealerComponent,
     TownComponent,
     TrainerComponent,
-    PlayerAbilitiesComponent
+    PlayerAbilitiesComponent,
+    GameOverComponent
   ],
   imports: [
     BrowserModule,
