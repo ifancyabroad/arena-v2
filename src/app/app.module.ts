@@ -22,6 +22,7 @@ import { TownComponent } from './ui/ui-card/town/town.component';
 import { TrainerComponent } from './ui/ui-card/trainer/trainer/trainer.component';
 import { PlayerAbilitiesComponent } from './player/player-card/player-abilities/player-abilities.component';
 import { GameOverComponent } from './game-over/game-over.component';
+import { Config } from './shared/config';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,7 @@ import { GameOverComponent } from './game-over/game-over.component';
     BrowserAnimationsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [Config],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
