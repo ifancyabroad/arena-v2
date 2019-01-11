@@ -7,6 +7,7 @@ export class Player extends GameEntity {
   level = 1; // Start at level 1
   kills = 0; // Kills starts at 0;
   experience = 0; // Experience starts at 0
+  levelingTier: Array<Object>;
   skillPoints: number; // Skill points available for spending
   gold: number; // Gold starts at 0
   rerolls: number; // 10 initial rerolls allowed
@@ -31,6 +32,7 @@ export class Player extends GameEntity {
   ) {
     super(name, portrait, st, abilities);
 
+    this.levelingTier = this.config.levelTier;
     this.skillPoints = this.config.skillPoints;
     this.gold = this.config.gold;
     this.rerolls = this.config.rerolls;
@@ -38,29 +40,7 @@ export class Player extends GameEntity {
   }
 
   // Find what level the player has earned through exp
-  levelTier = (): number => {
-    if (this.experience > this.config.levelTier.level_10) {
-      return 10;
-    } else if (this.experience > this.config.levelTier.level_9) {
-      return 9;
-    } else if (this.experience > this.config.levelTier.level_8) {
-      return 8;
-    } else if (this.experience > this.config.levelTier.level_7) {
-      return 7;
-    } else if (this.experience > this.config.levelTier.level_6) {
-      return 6;
-    } else if (this.experience > this.config.levelTier.level_5) {
-      return 5;
-    } else if (this.experience > this.config.levelTier.level_4) {
-      return 4;
-    } else if (this.experience > this.config.levelTier.level_3) {
-      return 3;
-    } else if (this.experience > this.config.levelTier.level_2) {
-      return 2;
-    } else {
-      return 1;
-    }
-  }
+  levelTier = (): number => this.levelingTier.filter(level => this.experience >= level['exp']).pop()['level'];
 
   // Gain exp and check if skill point is earned
   experienceGain(xp): void {

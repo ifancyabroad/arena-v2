@@ -10,17 +10,18 @@ export class Config {
   readonly maxAbilities = 6; // Number of abilities allowed
 
   // Experience required for each level
-  readonly levelTier = {
-    'level_2': 100,
-    'level_3': 300,
-    'level_4': 800,
-    'level_5': 1500,
-    'level_6': 3000,
-    'level_7': 5000,
-    'level_8': 8000,
-    'level_9': 12000,
-    'level_10': 20000
-  };
+  readonly levelTier = [
+    { 'level': 1, 'exp': 0 },
+    { 'level': 2, 'exp': 100 },
+    { 'level': 3, 'exp': 300 },
+    { 'level': 4, 'exp': 800 },
+    { 'level': 5, 'exp': 1500 },
+    { 'level': 6, 'exp': 3000 },
+    { 'level': 7, 'exp': 5000 },
+    { 'level': 8, 'exp': 8000 },
+    { 'level': 9, 'exp': 12000 },
+    { 'level': 10, 'exp': 20000 }
+  ];
 
   // Kills needed for each rank
   readonly rankTier = [
