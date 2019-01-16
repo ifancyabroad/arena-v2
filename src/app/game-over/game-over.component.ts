@@ -39,7 +39,7 @@ export class GameOverComponent implements OnInit {
   getRank = () => this.rankingTier.filter(rank => this.player.kills >= rank['kills']).shift();
 
   // Restart the game
-  reset() {
+  closeModal() {
     this.close.emit();
   }
 

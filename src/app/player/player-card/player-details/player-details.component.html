@@ -11,33 +11,58 @@
       <img class="player-portrait" src="assets/img/portraits/{{ player.portrait }}">
     </figure>
     <h3>Level {{ player.level }} {{ player.cl.name }}</h3>
-    <table class="stats-table">
-      <thead (click)="toggleTable()">
+
+    <!--Navigatable table for smaller screens-->
+    <table class="stats-table hidden-lg">
+      <thead *ngIf="currentStat === 'title'">
         <tr>
-          <th colspan="4">Stats 
-            <span *ngIf="showTable">&#x25BC;</span>
-            <span *ngIf="!showTable">&#9658;</span>
-          </th>
+          <th (click)="changeStat(-1)">&#9668;</th>
+          <th colspan="4">Stats</th>
+          <th (click)="changeStat(1)">&#9658;</th>
         </tr>
       </thead>
-      <tbody *ngIf="showTable">
+      <tbody *ngIf="currentStat !== 'title'">
+        <tr>
+          <td (click)="changeStat(-1)">&#9668;</td>
+          <td>
+            <span>{{ player.stats[currentStat].name.slice(0, 3).toUpperCase() }}</span>
+          </td>
+          <td class="base">{{ player.stats[currentStat].value }}</td>
+          <td class="mod">
+            <span *ngIf="player.stats[currentStat].modifier > 0">+</span>
+            <span *ngIf="player.stats[currentStat].modifier">{{ player.stats[currentStat].modifier }}</span>
+          </td>
+          <td class="battle">
+            <span *ngIf="player.stats[currentStat].battle > 0">+</span>
+            <span *ngIf="player.stats[currentStat].battle">{{ player.stats[currentStat].battle }}</span>
+          </td>
+          <td (click)="changeStat(1)">&#9658;</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!--Full table for larger screens-->
+    <table class="stats-table hidden-sm">
+      <tbody>
         <tr *ngFor="let stat of keys(player.getStats('main'))">
           <td>
             <span class="full">{{ player.stats[stat].name }}</span>
             <span class="part">{{ player.stats[stat].name.slice(0, 3).toUpperCase() }}</span>
           </td>
-          <td>{{ player.stats[stat].value }}</td>
-          <td>
+          <td class="base">{{ player.stats[stat].value }}</td>
+          <td class="mod">
             <span *ngIf="player.stats[stat].modifier > 0">+</span>
             <span *ngIf="player.stats[stat].modifier">{{ player.stats[stat].modifier }}</span>
           </td>
-          <td>
+          <td class="battle">
             <span *ngIf="player.stats[stat].battle > 0">+</span>
             <span *ngIf="player.stats[stat].battle">{{ player.stats[stat].battle }}</span>
           </td>
         </tr>
       </tbody>
     </table>
+
+    <!--Additional stats-->
     <div class="add-stats">
       <div class="add-stat">
         <p class="tooltip">Armour</p>

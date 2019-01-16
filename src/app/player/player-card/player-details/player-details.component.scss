@@ -57,18 +57,56 @@
       font-size: 0.9em;
     }
   
-    td:not(:first-child) {
+    .base, .mod, .battle {
       text-align: center;
       font-weight: 700;
       width: 40px;
     }
 
-    td:nth-child(3) {
+    .mod {
       color: $primary-color;
     }
 
-    td:nth-child(4) {
+    .battle {
       color: $secondary-color;
+    }
+  }
+
+  .stats-table.hidden-lg {
+
+    th {
+      text-transform: uppercase;
+      color: white;
+      background-color: $tertiary-color;
+    }
+
+    th, td {
+      text-align: center;
+      padding: 3px 0;
+    }
+
+    th:first-child,
+    th:last-child,
+    td:first-child,
+    td:last-child {
+      width: 10%;
+      color: white;
+      background-color: $tertiary-color;
+    }
+
+    td:first-child:hover,
+    td:last-child:hover {
+      cursor: pointer;
+    }
+
+    td:nth-child(2) {
+      width: 20%;
+    }
+
+    td:nth-child(3),
+    td:nth-child(4),
+    td:nth-child(5) {
+      width: 20%;
     }
   }
   
@@ -101,7 +139,7 @@
     .stats-table {
       margin: 6px 0 10px;
   
-      td {
+      th, td {
         padding: 3px 8px;
         font-size: 0.8em;
       }
@@ -136,36 +174,13 @@
 }
 
 @media screen and (min-height: 701px) {
-  .player-view-content {
-  
-    .stats-table {
-    
-      thead {
-        display: none;
-      }
-    }
+  .hidden-lg {
+    display: none;
   }
 }
 
 @media screen and (max-height: 700px) {
-  .player-view-content {
-  
-    .stats-table {
-      position: relative;
-    
-      tbody {
-        position: absolute;
-        display: table;
-        width: 100%;
-        z-index: 1;
-
-        tr:first-child {
-
-          td {
-            border-top: none;
-          }
-        }
-      }
-    }
+  .hidden-sm {
+    display: none;
   }
 }

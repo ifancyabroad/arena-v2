@@ -11,7 +11,10 @@ export class PlayerDetailsComponent implements OnInit {
 
   keys = Object.keys;
   player: Player;
-  showTable = true;
+
+  stats = ['title', 'strength', 'dexterity', 'constitution', 'intelligence', 'initiative']; // Stats to scroll through on small screens
+  currentStat = 'title'; // Current displayed stat for small screens
+  statIndex = 0; // Index for navigating stats on small screens
 
   constructor(private ps: PlayerService) {
   }
@@ -24,7 +27,10 @@ export class PlayerDetailsComponent implements OnInit {
     });
   }
 
-  toggleTable() {
-    this.showTable = !this.showTable;
+  changeStat(direction) {
+    this.statIndex = this.statIndex + direction > this.stats.length - 1 ?
+      0 : this.statIndex + direction < 0 ?
+        this.stats.length - 1 : this.statIndex + direction;
+    this.currentStat = this.stats[this.statIndex];
   }
 }

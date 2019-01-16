@@ -11,8 +11,7 @@
   background-color: #fff;
   padding: 24px;
 
-  h2 {
-    font-family: $cursive-font;
+  h1 {
     text-align: center;
   }
 
@@ -21,12 +20,34 @@
   }
 
   table {
+    font-size: 1.2em;
     margin: 20px 0;
     width: 100%;
     box-shadow: 2px 2px 8px 0px #9a9a9a;
 
-    td {
+    th, td {
       text-align: center;
+      text-transform: uppercase;
+      padding: 10px;
+      font-weight: 700;
+    }
+
+    th {
+      background-color: $tertiary-color;
+      color: white
+    }
+
+    td:nth-child(1) {
+      color: $primary-color;
+      width: 50px;
+    }
+
+    td:nth-child(2) {
+      color: $secondary-color;
+    }
+
+    td:nth-child(3) {
+      width: 50px;
     }
   }
 }
