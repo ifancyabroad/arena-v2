@@ -14,7 +14,7 @@ export class PlayerDetailsComponent implements OnInit {
 
   currentStat = 'title'; // Current displayed stat for small screens
   stats: Array<string>; // Stats to scroll through on small screens
-  statIndex = 0; // Index for navigating stats on small screens
+  statIndex = -1; // Index for navigating stats on small screens
 
   constructor(private ps: PlayerService) {
   }
@@ -28,10 +28,11 @@ export class PlayerDetailsComponent implements OnInit {
     });
   }
 
+  // Cycle through player stats
   changeStat(direction) {
-    this.statIndex = this.statIndex + direction > this.stats.length ?
-      0 : this.statIndex + direction < 0 ?
-        this.stats.length : this.statIndex + direction;
-    this.currentStat = this.statIndex === this.stats.length ? 'title' : this.stats[this.statIndex];
+    this.statIndex = this.statIndex + direction > this.stats.length - 1 ?
+      -1 : this.statIndex + direction < -1 ?
+        this.stats.length - 1 : this.statIndex + direction;
+    this.currentStat = this.statIndex === -1 ? 'title' : this.stats[this.statIndex];
   }
 }
