@@ -12,8 +12,8 @@ export class PlayerDetailsComponent implements OnInit {
   keys = Object.keys;
   player: Player;
 
-  stats = ['title', 'strength', 'dexterity', 'constitution', 'intelligence', 'initiative']; // Stats to scroll through on small screens
   currentStat = 'title'; // Current displayed stat for small screens
+  stats: Array<string>; // Stats to scroll through on small screens
   statIndex = 0; // Index for navigating stats on small screens
 
   constructor(private ps: PlayerService) {
@@ -23,14 +23,15 @@ export class PlayerDetailsComponent implements OnInit {
     this.ps.characterCreated.subscribe(created => {
       if (created) {
         this.player = this.ps.player;
+        this.stats = this.keys(this.player.getStats('main'));
       }
     });
   }
 
   changeStat(direction) {
-    this.statIndex = this.statIndex + direction > this.stats.length - 1 ?
+    this.statIndex = this.statIndex + direction > this.stats.length ?
       0 : this.statIndex + direction < 0 ?
-        this.stats.length - 1 : this.statIndex + direction;
-    this.currentStat = this.stats[this.statIndex];
+        this.stats.length : this.statIndex + direction;
+    this.currentStat = this.statIndex === this.stats.length ? 'title' : this.stats[this.statIndex];
   }
 }
