@@ -18,7 +18,7 @@ export class GameOverComponent implements OnInit {
   enemy: Enemy; // Enemy object
 
   rankingTier: Array<Object>; // Ranking tier
-  rank: Object; // Players final rank
+  rank: any; // Players final rank
 
   @Output() close: EventEmitter<any> = new EventEmitter();
 
