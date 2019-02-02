@@ -5,7 +5,7 @@ export class Config {
   readonly critMultiplier = 0.75; // Multiply by dexterity to get crit chance
 
   readonly skillPoints = 0; // Skill points to start with
-  readonly gold = 999999; // Gold the player starts with
+  readonly gold = 0; // Gold the player starts with
   readonly rerolls = 10; // Number of rerolls allowed
   readonly maxAbilities = 6; // Number of abilities allowed
 
@@ -14,13 +14,23 @@ export class Config {
     { 'level': 1, 'exp': 0 },
     { 'level': 2, 'exp': 100 },
     { 'level': 3, 'exp': 300 },
-    { 'level': 4, 'exp': 800 },
-    { 'level': 5, 'exp': 1500 },
-    { 'level': 6, 'exp': 3000 },
-    { 'level': 7, 'exp': 5000 },
-    { 'level': 8, 'exp': 8000 },
-    { 'level': 9, 'exp': 12000 },
-    { 'level': 10, 'exp': 20000 }
+    { 'level': 4, 'exp': 600 },
+    { 'level': 5, 'exp': 1000 },
+    { 'level': 6, 'exp': 1500 },
+    { 'level': 7, 'exp': 2100 },
+    { 'level': 8, 'exp': 2800 },
+    { 'level': 9, 'exp': 3600 },
+    { 'level': 10, 'exp': 4500 },
+    { 'level': 11, 'exp': 5500 },
+    { 'level': 12, 'exp': 6600 },
+    { 'level': 13, 'exp': 7800 },
+    { 'level': 14, 'exp': 9100 },
+    { 'level': 15, 'exp': 10500 },
+    { 'level': 16, 'exp': 12000 },
+    { 'level': 17, 'exp': 13600 },
+    { 'level': 18, 'exp': 15300 },
+    { 'level': 19, 'exp': 17100 },
+    { 'level': 20, 'exp': 19000 }
   ];
 
   // Kills needed for each rank
